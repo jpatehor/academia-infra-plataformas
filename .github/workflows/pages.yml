@@ -1,0 +1,42 @@
+name: Deploy GitHub Pages
+
+# Publica automaticamente el sitio estatico en GitHub Pages
+# cada vez que se hace push a la rama main (y manualmente con workflow_dispatch).
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Permisos minimos necesarios para el despliegue a Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# No cancelar un despliegue en curso para evitar estados intermedios
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir artefacto (raiz del repo)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Desplegar a Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
