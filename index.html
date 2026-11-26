@@ -434,7 +434,7 @@ function startQuiz(kind, arg){
   else if(kind==='single') items=[shuffled(DATA.questions)[0]];
   else items=shuffled(DATA.questions);
   if(!items.length){ alert('No hay preguntas pendientes en esta categoría 🎉'); return; }
-  QZ={items,i:0,score:0,mode:kind,arg,answered:false,deadline:kind==='sim'?Date.now()+items.length*60000:0};
+  QZ={items,i:0,score:0,mode:kind,arg,wrong:[],answered:false,deadline:kind==='sim'?Date.now()+items.length*60000:0};
   if(timerId){clearInterval(timerId);timerId=null}
   document.querySelectorAll('.view').forEach(s=>s.hidden=true);
   document.getElementById('v-quiz').hidden=false;
@@ -444,7 +444,7 @@ function startQuiz(kind, arg){
 }
 function renderQuestion(){
   const q=QZ.items[QZ.i], box=document.getElementById('quizBox');
-  const title=QZ.mode==='tema'?q.tema:(QZ.mode==='sim'?'Simulacro':QZ.mode==='repaso'?'Repaso de falladas':QZ.mode==='single'?'Sorpréndeme':q.tema);
+  const title=QZ.mode==='tema'?q.tema:(QZ.mode==='sim'?'Simulacro':QZ.mode==='repaso'?'Repaso de falladas':QZ.mode==='retry'?'🔁 Repetir falladas':QZ.mode==='single'?'Sorpréndeme':q.tema);
   box.innerHTML=`<div class="quiz">
     <div class="qhead">
       <span><span class="dot" style="background:${AREA_COLOR[q.area]}"></span>${esc(q.area)} · ${esc(title)}</span>
@@ -476,6 +476,7 @@ function answer(i){
   if(QZ.answered) return;
   const q=QZ.items[QZ.i], ok=(i===q.correcta);
   QZ.answered=true; if(ok)QZ.score++;
+  if(!ok && QZ.wrong && !QZ.wrong.includes(q.id)) QZ.wrong.push(q.id);
   recordAnswer(q.id,ok);
   const box=document.getElementById('quizBox');
   box.querySelectorAll('.opt').forEach((b,idx)=>{
@@ -495,7 +496,11 @@ function finishQuiz(timeout){
   const n=QZ.items.length, sc=QZ.score, p=pct(sc,n);
   if(QZ.mode==='sim'){ S.attempts.push({d:today(),s:sc,n}); save(); }
   const msg= p>=80?'Excelente nivel 👏': p>=60?'Buen trabajo, repasa lo fallado 📈':'Sigue estudiando 💪';
-  let repeat = QZ.mode==='tema' ? "startQuiz('tema','"+(QZ.arg||'').replace(/'/g,"\\'")+"')" : "startQuiz('"+QZ.mode+"')";
+  const wrongItems=QZ.items.filter(q=>(QZ.wrong||[]).includes(q.id));
+  QZ.lastWrong=wrongItems;
+  const repBtn=wrongItems.length
+    ? `<button class="btn primary" onclick="retryWrong()">🔁 Repetir falladas (${wrongItems.length})</button>`
+    : `<button class="btn primary" onclick="repeatQuiz()">🔁 Repetir</button>`;
   document.getElementById('quizBox').innerHTML=`<div class="quiz" style="text-align:center">
     <div style="font-size:40px">🏁</div>
     <div class="qtext" style="border:none">Resultado</div>
@@ -505,9 +510,10 @@ function finishQuiz(timeout){
       <div class="kpi"><div class="n">${n-sc}</div><div class="l">Por repasar</div></div>
     </div>
     <p style="color:var(--muted)">${timeout?'⏰ Tiempo agotado. ':''}${msg}</p>
-    <div class="qnav" style="justify-content:center">
+    <div class="qnav" style="justify-content:center;gap:10px;flex-wrap:wrap">
       <button class="btn ghost" onclick="go('inicio')">Volver al inicio</button>
-      <button class="btn primary" onclick="${repeat}">Repetir</button>
+      ${repBtn}
+      <button class="btn ghost" onclick="startQuiz('single')">➡️ Siguiente</button>
     </div>
   </div>`;
 }
@@ -541,6 +547,27 @@ function startFlash(onlyUnknown,inv){
   FCH={queue:shuffled(pool),flipped:false,known:0,unknown:0,inv:!!inv};
   renderFlash();
 }
+/* --- repetir SOLO las falladas hasta tener claridad --- */
+function retryWrong(){ if(QZ && QZ.lastWrong && QZ.lastWrong.length) startRetry(QZ.lastWrong); }
+function repeatQuiz(){
+  const m=QZ?QZ.mode:'single', a=QZ?QZ.arg:null;
+  if(m==='tema') startQuiz('tema',a);
+  else if(m==='sim') startQuiz('sim');
+  else if(m==='repaso') startQuiz('repaso');
+  else if(m==='single'||m==='retry') startRetry(QZ.items);
+  else startQuiz('single');
+}
+function startRetry(items){
+  const list=items.slice();
+  if(!list.length){ startQuiz('single'); return; }
+  QZ={items:list,i:0,score:0,mode:'retry',arg:null,wrong:[],answered:false,deadline:0};
+  if(timerId){clearInterval(timerId);timerId=null}
+  document.querySelectorAll('.view').forEach(s=>s.hidden=true);
+  document.getElementById('v-quiz').hidden=false;
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
+  renderQuestion();
+}
+
 function renderFlash(){
   const el=document.getElementById('flashBox');
   if(!FCH || !FCH.queue.length){
