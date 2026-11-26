@@ -1895,6 +1895,703 @@
       "pista": "Acción inmediata.",
       "explicacion": "Se rota enseguida, se audita el acceso y se deja de guardar secretos en código (gestores de secretos).",
       "img": "assets/img/security-defense.svg"
+    },
+    {
+      "id": "pl-001",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "¿Cuál es la diferencia entre una aplicación monolítica y una de microservicios?",
+      "opciones": [
+        "La monolítica usa SO Windows y la microservicia Linux",
+        "La monolítica es un único bloque; los microservicios son piezas pequeñas e independientes",
+        "No hay diferencia",
+        "Los microservicios solo corren en contenedor"
+      ],
+      "correcta": 1,
+      "pista": "Un bloque vs varios procesos.",
+      "explicacion": "El monolito concentra todo en un proceso acoplado; los microservicios desacoplan funcionalidades, permitiendo desplegarlos y escalarlos por separado (a cambio de mayor complejidad operativa)."
+    },
+    {
+      "id": "pl-002",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "Un SLA de 99.9% equivale aproximadamente a cuánto tiempo caído al mes?",
+      "opciones": [
+        "4 minutos",
+        "43 minutos",
+        "9 horas",
+        "Cero"
+      ],
+      "correcta": 1,
+      "pista": "0.1% del mes.",
+      "explicacion": "99.9% de disponibilidad permite ~43 min/mes de caída (99.99% ≈ 4 min; 99.999% ≈ 26 s). Sirve para dimensionar redundancia y coste."
+    },
+    {
+      "id": "pl-003",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "En RAID 1, ¿qué característica principal ofrece?",
+      "opciones": [
+        "Paridad distribuida (tolerancia de fallos)",
+        "Reflejo: duplica los datos en dos discos (espejo)",
+        "Stripe de datos sin espejo",
+        "No es un nivel de RAID"
+      ],
+      "correcta": 1,
+      "pista": "Espejo.",
+      "explicacion": "RAID 1 duplica cada dato en dos discos: si uno falla, el otro conserva la copia. RAID 5 añade paridad distribuida con stripe."
+    },
+    {
+      "id": "pl-004",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "¿Qué es una nube híbrida?",
+      "opciones": [
+        "Solo nube pública",
+        "Combinación de nube pública y privada (o on-premise) conectadas",
+        "Dos proveedores distintos",
+        "Una nube mal configurada"
+      ],
+      "correcta": 1,
+      "pista": "Mezcla de nubes.",
+      "explicacion": "La nube híbrida integra infraestructura pública con recursos privados/on-premise, permitiendo mover cargas según coste, cumplimiento o latencia."
+    },
+    {
+      "id": "pl-005",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "En una arquitectura de 3 capas (presentación, lógica, datos), ¿dónde vive la base de datos?",
+      "opciones": [
+        "Capa de presentación",
+        "Capa de lógica",
+        "Capa de datos",
+        "Ninguna de las anteriores"
+      ],
+      "correcta": 2,
+      "pista": "Es la capa de datos.",
+      "explicacion": "Presentación atiende al usuario (web/app), lógica procesa reglas (API) y datos persiste en base de datos. Separarlas facilita escalar cada capa por separado."
+    },
+    {
+      "id": "lin-015",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué sistema reemplazó al viejo init / SysV en las distribuciones Linux modernas?",
+      "opciones": [
+        "Cron",
+        "systemd",
+        "GRUB",
+        "udev"
+      ],
+      "correcta": 1,
+      "pista": "Arranca servicios y unidades.",
+      "explicacion": "systemd gestiona unidades de servicio (systemctl), dependencias de arranque y el journal; sustituyó al arranque secuencial de SysVinit."
+    },
+    {
+      "id": "lin-016",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué es la partición swap en Linux?",
+      "opciones": [
+        "Un disco para respaldos",
+        "Memoria virtual en disco que el kernel usa cuando falta RAM",
+        "Una partición de arranque",
+        "Un tipo de sistema de archivos de red"
+      ],
+      "correcta": 1,
+      "pista": "Memoria de apoyo.",
+      "explicacion": "Swap aporta memoria virtual en disco; si la RAM se agota, el kernel desplaza páginas a swap. Mejora la estabilidad pero es mucho más lento que la RAM."
+    },
+    {
+      "id": "lin-017",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué es SELinux en Amazon Linux?",
+      "opciones": [
+        "Un antivirus",
+        "Un sistema de control de acceso obligatorio (MAC) por etiquetas",
+        "Un gestor de paquetes",
+        "Un shell alternativo"
+      ],
+      "correcta": 1,
+      "pista": "Aislamiento más estricto que los permisos.",
+      "explicacion": "SELinux aplica políticas MAC del kernel: aunque tengas permisos sobre un archivo, si la política lo prohíbe, el acceso se bloquea. Reduce el impacto de un compromiso."
+    },
+    {
+      "id": "lin-018",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué limita el comando ulimit?",
+      "opciones": [
+        "El tamaño del disco",
+        "Los límites de recursos (archivos, CPU, memoria) por sesión de usuario",
+        "El número de usuarios conectados",
+        "Las versiones de paquetes"
+      ],
+      "correcta": 1,
+      "pista": "Recursos del proceso.",
+      "explicacion": "ulimit define límites (número de archivos abiertos, memoria, tiempo de CPU) para el usuario o proceso; útil para evitar que un proceso consuma todo el sistema."
+    },
+    {
+      "id": "lin-019",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "imagen",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿En qué ruta viven habitualmente las unidades de servicio propias del sistema con systemd?",
+      "opciones": [
+        "/home/servicios",
+        "/etc/systemd/system",
+        "/var/log/journal",
+        "/opt/bin"
+      ],
+      "correcta": 1,
+      "pista": "Configuración (FHS).",
+      "explicacion": "/etc/systemd/system guarda unidades personalizadas; /usr/lib/systemd/system las de los paquetes. Se activan con systemctl enable."
+    },
+    {
+      "id": "shl-011",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace xargs?",
+      "opciones": [
+        "Borrar archivos",
+        "Toma la salida estándar de un comando y la convierte en argumentos de otro",
+        "Comprimir archivos",
+        "Cambiar de directorio"
+      ],
+      "correcta": 1,
+      "pista": "Construye comandos.",
+      "explicacion": "Ej: `find . -name '*.log' | xargs rm`. Encadena comandos incluso cuando los archivos se listan por salida estándar."
+    },
+    {
+      "id": "shl-012",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace tail -f /var/log/syslog?",
+      "opciones": [
+        "Muestra las últimas 10 líneas y las actualiza en vivo",
+        "Borra el log",
+        "Crea un archivo",
+        "Cuenta las líneas"
+      ],
+      "correcta": 0,
+      "pista": "Seguir (follow) el log.",
+      "explicacion": "tail muestra el final y -f lo sigue en tiempo real, ideal para observar un servicio mientras se genera actividad."
+    },
+    {
+      "id": "shl-013",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace export VARIABLE=valor?",
+      "opciones": [
+        "Borra la variable",
+        "Hace la variable de entorno visible para los procesos hijos",
+        "La guarda solo en el log",
+        "La convierte en raíz"
+      ],
+      "correcta": 1,
+      "pista": "Entorno para subprocesos.",
+      "explicacion": "export crea una variable de entorno heredable. PATH, HOME o variables usadas en scripts son ejemplos clásicos."
+    },
+    {
+      "id": "shl-014",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué cuenta el comando wc -l archivo.log?",
+      "opciones": [
+        "Los bytes",
+        "Las líneas",
+        "Los caracteres",
+        "Los procesos"
+      ],
+      "correcta": 1,
+      "pista": "word count (conteo).",
+      "explicacion": "wc cuenta: -l líneas, -w palabras, -c bytes. Muy usado junto a grep para contar coincidencias."
+    },
+    {
+      "id": "shl-015",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Para qué sirve tee comandosalida.txt?",
+      "opciones": [
+        "Borra el archivo",
+        "Muestra la salida por pantalla y la guarda en un archivo a la vez",
+        "Cambia permisos",
+        "Comprime"
+      ],
+      "correcta": 1,
+      "pista": "Doble salida.",
+      "explicacion": "tee duplica el flujo: escribe en la consola y en el archivo simultáneamente, permitiendo observar y registrar a la vez."
+    },
+    {
+      "id": "vz-012",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "¿Qué diferencia hay entre una imagen de contenedor y un contenedor en ejecución?",
+      "opciones": [
+        "Son la misma cosa",
+        "La imagen es la plantilla inmutable; el contenedor es esa imagen ejecutándose",
+        "El contenedor es la imagen comprimida",
+        "La imagen solo sirve para Windows"
+      ],
+      "correcta": 1,
+      "pista": "Plantilla vs proceso.",
+      "explicacion": "La imagen es un molde en capas de solo lectura; al iniciarla se crea el contenedor, instancia con capa escribible y proceso en ejecución."
+    },
+    {
+      "id": "vz-013",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "Gracias a las capas (Union File System), ¿qué gana un contenedor frente a una VM?",
+      "opciones": [
+        "Más seguridad automática",
+        "No duplica el SO base y arranca en segundos",
+        "Usa más disco",
+        "Requiere hipervisor dedicado"
+      ],
+      "correcta": 1,
+      "pista": "Capas compartidas.",
+      "explicacion": "Las imágenes comparten capas base (SO) entre contenedores y solo se añaden las diferencias: arranque rápido y ocupan mucho menos disco."
+    },
+    {
+      "id": "vz-014",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "¿Qué es un template de VM en relación con un snapshot?",
+      "opciones": [
+        "Es el mismo concepto",
+        "El template es una copia base para crear nuevas VM; el snapshot es un punto de restauración de una VM",
+        "El snapshot crea VM; el template las borra",
+        "No existen templates"
+      ],
+      "correcta": 1,
+      "pista": "Molde vs foto.",
+      "explicacion": "El template (clon base) sirve para instanciar nuevas máquinas iguales; el snapshot congela el estado actual para poder revertir."
+    },
+    {
+      "id": "vz-015",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "¿Dónde se publican y almacenan las imágenes de contenedores (p. ej. Docker)?",
+      "opciones": [
+        "En el hipervisor",
+        "En un registry (p. ej. Docker Hub)",
+        "En /etc",
+        "En el swap"
+      ],
+      "correcta": 1,
+      "pista": "Registro de imágenes.",
+      "explicacion": "El registry almacena imágenes versionadas; docker pull/push las descargan y suben, usando etiquetas (tags) para versiones."
+    },
+    {
+      "id": "aws-011",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "¿Qué es Amazon EFS y en qué se diferencia de EBS?",
+      "opciones": [
+        "EFS es de bloques para una EC2; EFS es de objetos",
+        "EFS es un sistema de archivos elástico en red (montable en varias instancias); EFS/ EBS es de bloque por instancia",
+        "Ambos son de objetos",
+        "EFS es de respaldo"
+      ],
+      "correcta": 1,
+      "pista": "Red vs disco local.",
+      "explicacion": "EFS permite un filesystem en red compartido por varias instancias (NFS); EBS es un volumen de bloque que se conecta a una sola instancia como disco."
+    },
+    {
+      "id": "aws-012",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "¿Qué significa que una AMI sea 'pública'?",
+      "opciones": [
+        "Cualquier cuenta AWS puede usarla como plantilla",
+        "Está siempre en la región incorrecta",
+        "No requiere permisos IAM",
+        "Es gratuita indefinidamente"
+      ],
+      "correcta": 0,
+      "pista": "Disponible para todos.",
+      "explicacion": "Una AMI pública puede lanzarse desde cualquier cuenta; una AMI privada solo desde la cuenta que la creó (o compartida explícitamente)."
+    },
+    {
+      "id": "aws-013",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "En Amazon S3, ¿qué es un bucket?",
+      "opciones": [
+        "Una instancia EC2",
+        "Un contenedor de objetos (archivos) en el almacenamiento de objetos",
+        "Un tipo de política IAM",
+        "Una VPC"
+      ],
+      "correcta": 1,
+      "pista": "Unidad de S3.",
+      "explicacion": "El bucket es el contenedor lógico de objetos; tiene nombre global único, versionado, cifrado y políticas de acceso."
+    },
+    {
+      "id": "aws-014",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "En una política IAM, cuando una sentencia Allow y otra Denie aplican al mismo recurso, ¿cuál gana?",
+      "opciones": [
+        "El Allow",
+        "El Denie (siempre)",
+        "La más antigua",
+        "La que tenga más acciones"
+      ],
+      "correcta": 1,
+      "pista": "Denie es explícito.",
+      "explicacion": "El DENIE siempre prevalece sobre el ALLOW; si no hay coincidencia, el resultado es implicitDeny (denegado por defecto)."
+    },
+    {
+      "id": "so-006",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿Por qué conviene definir retención en un log group de CloudWatch?",
+      "opciones": [
+        "Para acelerar la máquina",
+        "Para limitar el consumo y coste de almacenamiento de logs",
+        "Porque los logs caducan por ley siempre",
+        "No afecta a nada"
+      ],
+      "correcta": 1,
+      "pista": "Coste de logs.",
+      "explicacion": "Sin retención, los logs se acumulan indefinidamente y elevan el coste; elegir 7/14/30 días balancea auditoría y gasto."
+    },
+    {
+      "id": "so-007",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿Qué hace el health check de un balanceador de carga?",
+      "opciones": [
+        "Comprueba la CPU del servidor",
+        "Verifica que el backend responda antes de enviarle tráfico",
+        "Actualiza la AMI",
+        "Cifra el tráfico"
+      ],
+      "correcta": 1,
+      "pista": "Sondeo de disponibilidad.",
+      "explicacion": "El balanceador envía peticiones periódicas (p. ej. GET /health); si no responden con éxito, la instancia se marca unhealthy y se le quita tráfico."
+    },
+    {
+      "id": "so-008",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿A qué puede apuntar una acción de alarma de CloudWatch?",
+      "opciones": [
+        "Solo a enviar un correo",
+        "A SNS (notificaciones), auto-scaling o una remediación automática",
+        "A borrar la instancia directamente sin control",
+        "Nada, solo muestra"
+      ],
+      "correcta": 1,
+      "pista": "Avisar o actuar.",
+      "explicacion": "Una alarma dispara acciones: publicar en SNS (SMS/correo/Slack), escalar o ejecutar automations; es la base del monitoreo proactivo."
+    },
+    {
+      "id": "red-006",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "imagen",
+      "img": "assets/img/osi-model.svg",
+      "enunciado": "¿Qué es la puerta de enlace (gateway) por defecto de un equipo?",
+      "opciones": [
+        "La IP del DNS",
+        "El router usado para salir de la red local (0.0.0.0/0)",
+        "El servidor web",
+        "La IP pública del equipo"
+      ],
+      "correcta": 1,
+      "pista": "Salida por defecto.",
+      "explicacion": "La ruta 0.0.0.0/0 indica: 'cualquier destino fuera de mi red se envía por este router'. Sin ella, la máquina no sale a internet."
+    },
+    {
+      "id": "red-007",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "imagen",
+      "img": "assets/img/osi-model.svg",
+      "enunciado": "¿Qué representa un puerto en TCP/UDP?",
+      "opciones": [
+        "Un canal lógico que identifica el servicio de destino",
+        "Un conector físico",
+        "Una dirección MAC",
+        "Un tipo de cable"
+      ],
+      "correcta": 0,
+      "pista": "Múltiples servicios en una IP.",
+      "explicacion": "La IP identifica el equipo y el puerto el servicio: 80 HTTP, 443 HTTPS, 22 SSH, 53 DNS. Permite varias aplicaciones en el mismo host."
+    },
+    {
+      "id": "red-008",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "imagen",
+      "img": "assets/img/osi-model.svg",
+      "enunciado": "¿En qué se diferencia un switch de un hub?",
+      "opciones": [
+        "El switch segmenta tráfico por MAC; el hub lo reenvía a todos",
+        "No hay diferencia",
+        "El hub trabaja en capa 3",
+        "El switch no usa MAC"
+      ],
+      "correcta": 0,
+      "pista": "Uno es inteligente.",
+      "explicacion": "El hub retransmite a todos los puertos (colisiones); el switch aprende las direcciones MAC y envía solo al puerto de destino (dominio de colisión por puerto)."
+    },
+    {
+      "id": "seg-006",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "type": "imagen",
+      "img": "assets/img/security-defense.svg",
+      "enunciado": "En cifrado asimétrico, ¿qué claves se usan?",
+      "opciones": [
+        "Dos claves idénticas",
+        "Un par: una pública y una privada relacionadas",
+        "Solo una clave secreta compartida",
+        "Ninguna"
+      ],
+      "correcta": 1,
+      "pista": "Par de claves.",
+      "explicacion": "La pública se comparte para cifrar y la privada descifra (o firma). Permite intercambiar claves y firmas sin canal seguro previo (RSA, ECC)."
+    },
+    {
+      "id": "seg-007",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "type": "imagen",
+      "img": "assets/img/security-defense.svg",
+      "enunciado": "¿Qué es un certificado X.509 y quién lo valida?",
+      "opciones": [
+        "Un archivo de respaldo firmado por el usuario",
+        "Un certificado digital emitido y firmado por una Autoridad Certificadora (CA) que acredita la identidad",
+        "Una llave SSH",
+        "Un ticket de sistema"
+      ],
+      "correcta": 1,
+      "pista": "CA firmante.",
+      "explicacion": "La CA firma el certificado que vincula un dominio con su clave pública; el navegador valida la cadena de confianza para establecer TLS."
+    },
+    {
+      "id": "seg-008",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "type": "imagen",
+      "img": "assets/img/security-defense.svg",
+      "enunciado": "¿Qué significa la regla de respaldo 3-2-1?",
+      "opciones": [
+        "3 errores, 2 revisiones, 1 deploy",
+        "3 copias de los datos, en 2 medios distintos y 1 copia fuera de sitio",
+        "3 servidores, 2 AZ, 1 región",
+        "3 veces al día"
+      ],
+      "correcta": 1,
+      "pista": "Copias, medios, ubicación.",
+      "explicacion": "Regla de continuidad: 3 copias, en 2 tipos de soporte y 1 alejada (offsite), protegiendo frente a fallos locales y catástrofes."
+    },
+    {
+      "id": "dev-001",
+      "area": "DEVOPS",
+      "tema": "DevOps CM",
+      "type": "imagen",
+      "img": "assets/img/cicd-pipeline.svg",
+      "enunciado": "¿Qué es la infraestructura como código (IaC)?",
+      "opciones": [
+        "Programar aplicaciones en Java",
+        "Describir la infraestructura en archivos de código versionados y reproducibles",
+        "Crear servidores a mano",
+        "Documentar la red en PDF"
+      ],
+      "correcta": 1,
+      "pista": "Infra en código.",
+      "explicacion": "IaC (CloudFormation, Terraform) deja la infraestructura declarada en texto, revisable, reproducible y auditable; detecta deriva y permite destruir/recrear."
+    },
+    {
+      "id": "dev-002",
+      "area": "DEVOPS",
+      "tema": "DevOps RM",
+      "type": "imagen",
+      "img": "assets/img/cicd-pipeline.svg",
+      "enunciado": "¿Qué son las feature flags?",
+      "opciones": [
+        "Permiten activar/desactivar funcionalidades sin desplegar código nuevo",
+        "Son llaves de acceso",
+        "Bugs pendientes",
+        "Tipos de repositorio"
+      ],
+      "correcta": 0,
+      "pista": "Activar sin desplegar.",
+      "explicacion": "Las feature flags separan despliegue de liberación: se publica el código desactivado y se enciende cuando se decide, permitiendo rollback instantáneo."
+    },
+    {
+      "id": "dev-003",
+      "area": "DEVOPS",
+      "tema": "DevOps CI",
+      "type": "imagen",
+      "img": "assets/img/cicd-pipeline.svg",
+      "enunciado": "¿Para qué sirve un pull request (PR) en el flujo DevOps?",
+      "opciones": [
+        "Para desplegar a producción directamente",
+        "Para proponer, revisar y validar cambios antes de integrarlos a la rama principal",
+        "Para crear servidores",
+        "Para medir el rendimiento"
+      ],
+      "correcta": 1,
+      "pista": "Revisión antes de integrar.",
+      "explicacion": "El PR es la puerta de calidad: permite revisión por pares, ejecutar pruebas automáticas y conversar sobre el cambio antes de fusionar."
+    },
+    {
+      "id": "dev-004",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
+      "type": "imagen",
+      "img": "assets/img/cicd-pipeline.svg",
+      "enunciado": "¿Qué es una variable group en Azure DevOps?",
+      "opciones": [
+        "Una carpeta del repositorio",
+        "Un grupo de variables/secretos reutilizable entre pipelines",
+        "Un tipo de agente",
+        "Una etapa del pipeline"
+      ],
+      "correcta": 1,
+      "pista": "Config compartida.",
+      "explicacion": "Los variable groups centralizan valores (incluso secretos marcados como secretos) reutilizables por varios pipelines, fuera del YAML del repositorio."
+    },
+    {
+      "id": "dev-005",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
+      "type": "imagen",
+      "img": "assets/img/cicd-pipeline.svg",
+      "enunciado": "¿Qué aporta la federación OIDC frente a guardar access keys en el pipeline?",
+      "opciones": [
+        "Acelera el despliegue",
+        "Usa credenciales temporales vía confianza entre identidades, sin llaves estáticas",
+        "No aporta nada",
+        "Requiere más permisos"
+      ],
+      "correcta": 1,
+      "pista": "Sin secretos.",
+      "explicacion": "Con OIDC el pipeline asume un rol AWS con un token de identidad temporal; no se almacenan llaves, se elimina el riesgo de filtración y la rotación manual."
+    },
+    {
+      "id": "web-010",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
+      "type": "imagen",
+      "img": "assets/img/http-flow.svg",
+      "enunciado": "¿Qué es la conexión persistente (keep-alive) en HTTP?",
+      "opciones": [
+        "Mantener abierta la conexión TCP para reutilizar peticiones",
+        "Volver a conectar en cada petición",
+        "Cifrar la conexión",
+        "Recargar el servidor"
+      ],
+      "correcta": 0,
+      "pista": "Reutilizar conexión.",
+      "explicacion": "HTTP/1.1 mantiene viva la conexión TCP entre peticiones, evitando el coste del handshake TLS/TCP en cada recurso y acelerando la carga."
+    },
+    {
+      "id": "web-011",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
+      "type": "imagen",
+      "img": "assets/img/http-flow.svg",
+      "enunciado": "¿Qué hace un CDN respecto al contenido estático?",
+      "opciones": [
+        "Guarda copias de recursos estáticos en nodos cercanos al usuario",
+        "Compila el código",
+        "Gestiona la base de datos",
+        "Crea las imágenes"
+      ],
+      "correcta": 0,
+      "pista": "Caché en el borde.",
+      "explicacion": "El CDN replica CSS/JS/imágenes en edge servers geográficamente cercanos, reduciendo latencia y descarga del servidor de origen."
+    },
+    {
+      "id": "web-012",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
+      "type": "imagen",
+      "img": "assets/img/http-flow.svg",
+      "enunciado": "¿Qué logra un 'graceful reload' de Nginx?",
+      "opciones": [
+        "Borra la caché",
+        "Recarga configuración nuevas conexiones sin cortar las existentes",
+        "Reinicia el SO",
+        "Cambia de versión mayor"
+      ],
+      "correcta": 1,
+      "pista": "Recarga sin caída.",
+      "explicacion": "nginx -s reload lanza un nuevo maestro y termina las conexiones viejas con gracia: se aplica la config sin interrumpir tráfico."
+    },
+    {
+      "id": "web-013",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
+      "type": "imagen",
+      "img": "assets/img/http-flow.svg",
+      "enunciado": "¿Qué debe responder un endpoint de salud para que el balanceador lo considere disponible?",
+      "opciones": [
+        "404 Not Found",
+        "200 OK",
+        "503",
+        "301"
+      ],
+      "correcta": 1,
+      "pista": "Éxito.",
+      "explicacion": "El health check espera un 2xx (típicamente 200). Códigos 4xx/5xx o timeout marcan la instancia como no saludable."
     }
   ]
 }
