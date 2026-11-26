@@ -19,6 +19,41 @@
     --IA:#a371f7; --NU:#39c5cf; --DE:#3fb950; --CO:#ff9d33; --SE:#f85149; --PR:#FDDA24;
     --radius:16px;
   }
+  /* ===== TEMA CLARO (paleta Bancolombia) ===== */
+  :root.light{
+    --bg:#f1f2f5; --panel:#ffffff; --panel2:#f6f7f9; --line:#d9dbe2;
+    --txt:#14151a; --muted:#5b5e6a;
+    --brand:#b8790a; --brand2:#d16a00; --accent:#b8790a;
+    --ok:#15803d; --bad:#c53030; --warn:#8a5b00;
+    --IA:#6d3fd6; --NU:#0e7490; --DE:#15803d; --CO:#c2410c; --SE:#c53030; --PR:#8a6d00;
+  }
+  .themeBtn{background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:999px;padding:8px 11px;cursor:pointer;font-size:15px;transition:.15s;line-height:1}
+  .themeBtn:hover{border-color:var(--brand)}
+  .light header.top{background:rgba(241,242,245,.93)}
+  .light .hero{background:radial-gradient(900px 380px at 12% -10%, rgba(184,121,10,.13), transparent 60%),radial-gradient(700px 400px at 95% 20%, rgba(209,106,0,.10), transparent 55%),linear-gradient(135deg,#ffffff,#f7f8fa 60%)}
+  .light .hero .lead{color:#3b3e48}
+  .light .hero .cta.ghost{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.22);color:#14151a}
+  .light .hero .reset{background:rgba(0,0,0,.045)}
+  .light .btn.ghost{border-color:#b9bcc6;color:#14151a}
+  .light .ring-bg{stroke:rgba(0,0,0,.10)}
+  .light .stat{background:rgba(0,0,0,.04)}
+  .light .stat .l{color:var(--muted)}
+  .light .area .bar,.light .progressbar{background:#e4e6ec}
+  .light .progressbar.lg{background:#eceef3;border-color:#c3c6d0;box-shadow:none}
+  .light .barlab{color:var(--muted)}
+  .light .qimg{background:#f6f7f9}
+  .light .opt.correct{background:#dcfce7}
+  .light .opt.wrong{background:#ffe4e6}
+  .light .fb.ok{background:#dcfce7}
+  .light .fb.bad{background:#ffe4e6}
+  .light .fb.hint{background:#fef3c7;border-color:#d97706}
+  .light .mcard.done{background:#dcfce7}
+  .light .mcard.sel{background:rgba(184,121,10,.13);box-shadow:0 0 0 2px rgba(184,121,10,.35)}
+  .light .b-Alto{color:#b91c1c;border-color:#b91c1c33;background:#b91c1c12}
+  .light .b-Medio{color:#b8790a;border-color:#b8790a33;background:#b8790a12}
+  .light .b-baja{color:#15803d;border-color:#15803d33;background:#15803d12}
+  .light .empty{color:var(--muted)}
+
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%;line-height:1.5}
@@ -57,7 +92,10 @@
   .hero .cta{padding:13px 22px;font-size:15px;border-radius:12px}
   .hero .cta.ghost{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.38);color:#ffffff;font-weight:700}
   .hero .meta{font-size:13.5px;color:#d7d7e0;font-weight:600;margin-top:18px;letter-spacing:.2px}
-  .hero .reset{margin-left:14px;color:var(--bad);border:none;background:none;cursor:pointer;font-size:13px;text-decoration:underline;opacity:.85}
+  .hero .reset{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.06);color:var(--txt);font-size:12.5px;font-weight:700;cursor:pointer;margin-left:10px;vertical-align:middle;transition:.15s}
+  .hero .reset:hover{border-color:var(--brand);background:rgba(253,218,36,.12)}
+  .hero .reset.danger{color:#ff8078;border-color:#f8514944}
+  .hero .reset.danger:hover{border-color:var(--bad);background:#f8514914}
   .hero .reset:hover{opacity:1}
   .hero .right{display:flex;gap:18px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
   .ringwrap{position:relative;width:150px;height:150px;flex:0 0 auto}
@@ -202,6 +240,7 @@
       <button data-view="repaso">🔁 Repaso</button>
       <button data-view="flash">🃏 Flashcards</button>
     </nav>
+    <button class="themeBtn" id="themeBtn" title="Cambiar a tema claro / oscuro">🌙</button>
     <div class="sub" id="subtitle">Ingeniero de Infraestructura y Plataformas</div>
   </div>
 </header>
@@ -336,8 +375,8 @@ function renderHero(){
   document.getElementById('sRep').textContent=pend;
   document.getElementById('heroMeta').innerHTML=
     `${total} preguntas · ${Object.keys(groupBy(DATA.questions,'area')).length} áreas · ${pend} por repasar `+
-    `<button class="reset" style="color:var(--brand);margin-left:14px" onclick="paintAll()">🔄 Actualizar progreso</button>`+
-    `<button class="reset" onclick="resetProgress()">♻️ Reiniciar progreso</button>`;
+    `<button class="reset" onclick="paintAll()">🔄 Actualizar progreso</button>`+
+    `<button class="reset danger" onclick="resetProgress()">♻️ Reiniciar progreso</button>`;
   document.getElementById('heroLead').textContent =
     `Tu banco de ${total} preguntas con explicación, flashcards y repaso espaciado. Todo lo que necesitas para la prueba, en un solo lugar.`;
 }
@@ -716,13 +755,20 @@ function renderMatch(){
 }
 
 /* ---------------- init ---------------- */
+function applyTheme(t){
+  document.documentElement.classList.toggle('light', t==='light');
+  const b=document.getElementById('themeBtn'); if(b) b.textContent = t==='light'?'☀️':'🌙';
+  S.theme = t; save();
+}
+function toggleTheme(){ applyTheme(document.documentElement.classList.contains('light')?'dark':'light'); }
 document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>go(b.dataset.view));
+document.getElementById('themeBtn').onclick=toggleTheme;
 document.getElementById('startSim').onclick=()=>startQuiz('sim');
 document.getElementById('btnRandom').onclick=()=>startQuiz('single');
 document.getElementById('btnContinue').onclick=()=>{ const t=nextTemaSugerido(); t?startQuiz('tema',t):startQuiz('single'); };
 
 fetch('data/questions.json').then(r=>r.json()).then(d=>{
-  DATA=d; loadState(); paintAll();
+  DATA=d; loadState(); applyTheme(S.theme||'dark'); paintAll();
   document.getElementById('subtitle').textContent=`${d.meta.titulo} · ${d.questions.length} preguntas · ${d.meta.totalPuntaje} pts`;
   document.getElementById('loading').remove();
   go('inicio');
