@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 250" role="img" aria-label="Defensa en profundidad y MFA">
+  <rect width="540" height="250" fill="#0f0f12"/>
+  <text x="16" y="26" fill="#FDDA24" font-family="system-ui,sans-serif" font-size="14" font-weight="800">DEFENSA EN PROFUNDIDAD</text>
+  <g font-family="system-ui,sans-serif" font-size="12" fill="#f5f5f6">
+    <path d="M150 60 L250 44 L350 60 L350 150 Q250 205 150 150 Z" fill="#1c1c20" stroke="#FDDA24" stroke-width="2"/>
+    <text x="250" y="96" text-anchor="middle" fill="#FDDA24" font-weight="800" font-size="14">Candado</text>
+    <text x="250" y="120" text-anchor="middle" fill="#9a9aa3" font-size="11">Cifrado en tránsito (TLS)</text>
+    <text x="250" y="140" text-anchor="middle" fill="#9a9aa3" font-size="11">y en reposo (KMS)</text>
+    <text x="250" y="164" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="700">MFA · 2 factores</text>
+    <g>
+      <rect x="24" y="60" width="112" height="34" rx="8" fill="#16161a" stroke="#39c5cf"/>
+      <text x="80" y="82" text-anchor="middle" fill="#39c5cf" font-size="11">Red (SG / NACL)</text>
+      <rect x="24" y="104" width="112" height="34" rx="8" fill="#16161a" stroke="#39c5cf"/>
+      <text x="80" y="126" text-anchor="middle" fill="#39c5cf" font-size="11">IAM (menor privilegio)</text>
+      <rect x="24" y="148" width="112" height="34" rx="8" fill="#16161a" stroke="#39c5cf"/>
+      <text x="80" y="170" text-anchor="middle" fill="#39c5cf" font-size="11">SO parcheado</text>
+    </g>
+    <g>
+      <rect x="404" y="60" width="112" height="34" rx="8" fill="#16161a" stroke="#a371f7"/>
+      <text x="460" y="82" text-anchor="middle" fill="#a371f7" font-size="11">Cuentas</text>
+      <rect x="404" y="104" width="112" height="34" rx="8" fill="#16161a" stroke="#a371f7"/>
+      <text x="460" y="126" text-anchor="middle" fill="#a371f7" font-size="11">Sin secretos en código</text>
+      <rect x="404" y="148" width="112" height="34" rx="8" fill="#16161a" stroke="#a371f7"/>
+      <text x="460" y="170" text-anchor="middle" fill="#a371f7" font-size="11">Auditoría (CloudTrail)</text>
+    </g>
+    <line x1="136" y1="121" x2="150" y2="115" stroke="#2b2b31" stroke-width="2"/>
+    <line x1="350" y1="115" x2="404" y2="121" stroke="#2b2b31" stroke-width="2"/>
+    <text x="270" y="232" fill="#9a9aa3" font-size="11" text-anchor="middle">Principio de menor privilegio · rotar credenciales filtradas de inmediato</text>
+  </g>
+</svg>

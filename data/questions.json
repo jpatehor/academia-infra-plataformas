@@ -7,844 +7,1894 @@
     "totalPuntaje": 790
   },
   "temas": [
-    { "id": "t01", "area": "INFRAESTRUCTURA", "tema": "Fundamentos de plataformas de TI", "preguntas": 5,  "puntaje": 50,  "prioridad": "Alto" },
-    { "id": "t02", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",                    "preguntas": 13, "puntaje": 130, "prioridad": "Medio" },
-    { "id": "t03", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",        "preguntas": 10, "puntaje": 100, "prioridad": "Medio" },
-    { "id": "t04", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",      "preguntas": 10, "puntaje": 100, "prioridad": "Medio" },
-    { "id": "t05", "area": "PROGRAMACION",    "tema": "Webservers",                      "preguntas": 8,  "puntaje": 80,  "prioridad": "Medio" },
-    { "id": "t06", "area": "NUBE",            "tema": "Conocimientos en AWS",            "preguntas": 10, "puntaje": 100, "prioridad": "media" },
-    { "id": "t07", "area": "NUBE",            "tema": "AWS SysOps",                      "preguntas": 5,  "puntaje": 50,  "prioridad": "media" },
-    { "id": "t08", "area": "COMUNICACIONES",  "tema": "Fundamentos de redes de TI",      "preguntas": 5,  "puntaje": 50,  "prioridad": "media" },
-    { "id": "t09", "area": "SEGURIDAD",       "tema": "Seguridad de TI",                 "preguntas": 5,  "puntaje": 50,  "prioridad": "baja" },
-    { "id": "t10", "area": "DEVOPS",          "tema": "DevOps CI",                       "preguntas": 4,  "puntaje": 20,  "prioridad": "baja" },
-    { "id": "t11", "area": "DEVOPS",          "tema": "DevOps CD",                       "preguntas": 4,  "puntaje": 20,  "prioridad": "baja" },
-    { "id": "t12", "area": "DEVOPS",          "tema": "DevOps CM",                       "preguntas": 4,  "puntaje": 20,  "prioridad": "baja" },
-    { "id": "t13", "area": "DEVOPS",          "tema": "DevOps RM",                       "preguntas": 4,  "puntaje": 20,  "prioridad": "baja" }
+    {
+      "id": "t01",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "preguntas": 5,
+      "puntaje": 50,
+      "prioridad": "Alto"
+    },
+    {
+      "id": "t02",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "preguntas": 13,
+      "puntaje": 130,
+      "prioridad": "Medio"
+    },
+    {
+      "id": "t03",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "preguntas": 10,
+      "puntaje": 100,
+      "prioridad": "Medio"
+    },
+    {
+      "id": "t04",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "preguntas": 10,
+      "puntaje": 100,
+      "prioridad": "Medio"
+    },
+    {
+      "id": "t05",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
+      "preguntas": 8,
+      "puntaje": 80,
+      "prioridad": "Medio"
+    },
+    {
+      "id": "t06",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "preguntas": 10,
+      "puntaje": 100,
+      "prioridad": "media"
+    },
+    {
+      "id": "t07",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "preguntas": 5,
+      "puntaje": 50,
+      "prioridad": "media"
+    },
+    {
+      "id": "t08",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "preguntas": 5,
+      "puntaje": 50,
+      "prioridad": "media"
+    },
+    {
+      "id": "t09",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "preguntas": 5,
+      "puntaje": 50,
+      "prioridad": "baja"
+    },
+    {
+      "id": "t10",
+      "area": "DEVOPS",
+      "tema": "DevOps CI",
+      "preguntas": 4,
+      "puntaje": 20,
+      "prioridad": "baja"
+    },
+    {
+      "id": "t11",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
+      "preguntas": 4,
+      "puntaje": 20,
+      "prioridad": "baja"
+    },
+    {
+      "id": "t12",
+      "area": "DEVOPS",
+      "tema": "DevOps CM",
+      "preguntas": 4,
+      "puntaje": 20,
+      "prioridad": "baja"
+    },
+    {
+      "id": "t13",
+      "area": "DEVOPS",
+      "tema": "DevOps RM",
+      "preguntas": 4,
+      "puntaje": 20,
+      "prioridad": "baja"
+    }
   ],
   "questions": [
     {
-      "id": "fp-001", "area": "INFRAESTRUCTURA", "tema": "Fundamentos de plataformas de TI",
+      "id": "fp-001",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
       "enunciado": "En una arquitectura cliente-servidor, ¿cuál es el rol del servidor?",
-      "opciones": ["Procesar la interfaz gráfica del usuario", "Ofrecer recursos y servicios solicitados por los clientes", "Almacenar el navegador web del cliente", "Gestionar el cableado físico de la red"],
+      "opciones": [
+        "Procesar la interfaz gráfica del usuario",
+        "Ofrecer recursos y servicios solicitados por los clientes",
+        "Almacenar el navegador web del cliente",
+        "Gestionar el cableado físico de la red"
+      ],
       "correcta": 1,
       "pista": "El servidor comparte, no consume.",
-      "explicacion": "El servidor expone servicios (archivo, web, base de datos) que los clientes consumen mediante peticiones sobre la red."
+      "explicacion": "El servidor expone servicios (archivo, web, base de datos) que los clientes consumen mediante peticiones sobre la red.",
+      "img": "assets/img/server-components.svg"
     },
     {
-      "id": "fp-002", "area": "INFRAESTRUCTURA", "tema": "Fundamentos de plataformas de TI",
+      "id": "fp-002",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
       "enunciado": "¿Qué nivel de servicio cloud (IaaS, PaaS, SaaS) corresponde a una máquina virtual completa (servidor, SO y red) que el cliente gestiona?",
-      "opciones": ["IaaS", "PaaS", "SaaS", "On-premise"],
+      "opciones": [
+        "IaaS",
+        "PaaS",
+        "SaaS",
+        "On-premise"
+      ],
       "correcta": 0,
       "pista": "Solo se virtualiza la infraestructura.",
-      "explicacion": "IaaS entrega recursos de cómputo, red y almacenamiento virtualizados; el cliente es responsable del SO, parches y aplicaciones."
+      "explicacion": "IaaS entrega recursos de cómputo, red y almacenamiento virtualizados; el cliente es responsable del SO, parches y aplicaciones.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "fp-003", "area": "INFRAESTRUCTURA", "tema": "Fundamentos de plataformas de TI",
+      "id": "fp-003",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
       "enunciado": "¿Qué significa el término 'alta disponibilidad' (HA)?",
-      "opciones": ["El sistema siempre está al 100% de carga", "El sistema sigue operando pese a la falla de algún componente", "Se vende con SLA premium", "No requiere monitoreo"],
+      "opciones": [
+        "El sistema siempre está al 100% de carga",
+        "El sistema sigue operando pese a la falla de algún componente",
+        "Se vende con SLA premium",
+        "No requiere monitoreo"
+      ],
       "correcta": 1,
       "pista": "Resiliencia ante fallos.",
-      "explicacion": "HA se logra con redundancia y failover para que la caída de un componente no interrumpa el servicio; se mide con métricas como disponibilidad (99.9%, 99.99%)."
+      "explicacion": "HA se logra con redundancia y failover para que la caída de un componente no interrumpa el servicio; se mide con métricas como disponibilidad (99.9%, 99.99%).",
+      "img": "assets/img/server-components.svg"
     },
     {
-      "id": "fp-004", "area": "INFRAESTRUCTURA", "tema": "Fundamentos de plataformas de TI",
+      "id": "fp-004",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
       "enunciado": "En un servidor, ¿cuál componente es el responsable de ejecutar instrucciones de forma masiva?",
-      "opciones": ["Disco duro", "CPU", "Tarjeta de red", "Fuente de poder"],
+      "opciones": [
+        "Disco duro",
+        "CPU",
+        "Tarjeta de red",
+        "Fuente de poder"
+      ],
       "correcta": 1,
       "pista": "Procesador.",
-      "explicacion": "La CPU ejecuta el ciclo instrucción-decodificación-ejecución; la RAM aloja datos en uso y el disco los persiste."
+      "explicacion": "La CPU ejecuta el ciclo instrucción-decodificación-ejecución; la RAM aloja datos en uso y el disco los persiste.",
+      "img": "assets/img/server-components.svg"
     },
     {
-      "id": "fp-005", "area": "INFRAESTRUCTURA", "tema": "Fundamentos de plataformas de TI",
+      "id": "fp-005",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
       "enunciado": "¿Cuál es la diferencia entre escalabilidad vertical y horizontal?",
-      "opciones": ["Vertical = más réplicas; Horizontal = más potencia", "Vertical = más potencia (scale-up); Horizontal = más instancias (scale-out)", "Ambas son iguales", "Vertical es para cloud, horizontal es local"],
+      "opciones": [
+        "Vertical = más réplicas; Horizontal = más potencia",
+        "Vertical = más potencia (scale-up); Horizontal = más instancias (scale-out)",
+        "Ambas son iguales",
+        "Vertical es para cloud, horizontal es local"
+      ],
       "correcta": 1,
       "pista": "Una sube de tamaño, la otra agrega copias.",
-      "explicacion": "Scale-up aumenta CPU/RAM de la máquina; scale-out agrega más máquinas al conjunto. En cloud se prefiere horizontal por su flexibilidad."
+      "explicacion": "Scale-up aumenta CPU/RAM de la máquina; scale-out agrega más máquinas al conjunto. En cloud se prefiere horizontal por su flexibilidad.",
+      "img": "assets/img/server-components.svg"
     },
-
     {
-      "id": "lin-001", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-001",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué distinción existe entre el kernel y la distribución en Linux?",
-      "opciones": ["Son lo mismo", "El kernel es el núcleo; la distribución lo empaqueta con herramientas y servicios", "El kernel es la interfaz gráfica", "La distribución es el navegador"],
+      "opciones": [
+        "Son lo mismo",
+        "El kernel es el núcleo; la distribución lo empaqueta con herramientas y servicios",
+        "El kernel es la interfaz gráfica",
+        "La distribución es el navegador"
+      ],
       "correcta": 1,
       "pista": "Núcleo vs envoltorio.",
-      "explicacion": "El kernel gestiona CPU, memoria, discos y red. La distribución (Ubuntu, RHEL, Amazon Linux) agrega gestor de paquetes, systemd, librerías y utilidades."
+      "explicacion": "El kernel gestiona CPU, memoria, discos y red. La distribución (Ubuntu, RHEL, Amazon Linux) agrega gestor de paquetes, systemd, librerías y utilidades.",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "lin-002", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-002",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué directorio guarda la configuración de los servicios en Linux?",
-      "opciones": ["/var/log", "/etc", "/home", "/tmp"],
+      "opciones": [
+        "/var/log",
+        "/etc",
+        "/home",
+        "/tmp"
+      ],
       "correcta": 1,
       "pista": "Configuración (etcétera).",
-      "explicacion": "FHS: /etc guarda configuración, /var/log los logs, /home los usuarios y /tmp temporales. En diagnóstico de incidentes /etc es el punto de partida."
+      "explicacion": "FHS: /etc guarda configuración, /var/log los logs, /home los usuarios y /tmp temporales. En diagnóstico de incidentes /etc es el punto de partida.",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "lin-003", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-003",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "En un archivo con permisos -rwxr-x---, ¿qué puede hacer el grupo?",
-      "opciones": ["Ler y ejecutar, pero no escribir", "Todo", "Nada", "Solo escribir"],
+      "opciones": [
+        "Ler y ejecutar, pero no escribir",
+        "Todo",
+        "Nada",
+        "Solo escribir"
+      ],
       "correcta": 0,
       "pista": "Los tres bloques son usuario / grupo / otros.",
-      "explicacion": "rwx = dueño (7), r-x = grupo (5, leer y ejecutar), --- = otros (0)."
+      "explicacion": "rwx = dueño (7), r-x = grupo (5, leer y ejecutar), --- = otros (0).",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "lin-004", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-004",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Cuál es la buena práctica para operaciones administrativas en lugar de iniciar sesión como root?",
-      "opciones": ["Usar sudo con un usuario dedicado", "Compartir la contraseña root", "Deshabilitar el usuario root", "Usar SSH con contraseña vacía"],
+      "opciones": [
+        "Usar sudo con un usuario dedicado",
+        "Compartir la contraseña root",
+        "Deshabilitar el usuario root",
+        "Usar SSH con contraseña vacía"
+      ],
       "correcta": 0,
       "pista": "Principio de menor privilegio.",
-      "explicacion": "Se trabaja con sudo: da privilegios temporales y deja trazabilidad en los logs, reduciendo el riesgo de un uso indebido de root."
+      "explicacion": "Se trabaja con sudo: da privilegios temporales y deja trazabilidad en los logs, reduciendo el riesgo de un uso indebido de root.",
+      "img": "assets/img/security-defense.svg"
     },
     {
-      "id": "lin-005", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-005",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Cómo se reinicia y se habilita un servicio con systemd?",
-      "opciones": ["service <svc> enable --now", "systemctl restart <svc> && systemctl enable <svc>", "systemctl start <svc> -enable", "rc.d <svc> restart"],
+      "opciones": [
+        "service <svc> enable --now",
+        "systemctl restart <svc> && systemctl enable <svc>",
+        "systemctl start <svc> -enable",
+        "rc.d <svc> restart"
+      ],
       "correcta": 1,
       "pista": "systemctl es la interfaz de systemd.",
-      "explicacion": "systemctl gestiona servicios: restart reinicia, enable habilita al arranque, status muestra el estado y journalctl <svc> los logs."
+      "explicacion": "systemctl gestiona servicios: restart reinicia, enable habilita al arranque, status muestra el estado y journalctl <svc> los logs.",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "lin-006", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-006",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "En Linux, ¿qué es un proceso?",
-      "opciones": ["Un archivo de configuración", "Un programa en ejecución con su PID", "Un usuario con privilegios", "Una partición de disco"],
+      "opciones": [
+        "Un archivo de configuración",
+        "Un programa en ejecución con su PID",
+        "Un usuario con privilegios",
+        "Una partición de disco"
+      ],
       "correcta": 1,
       "pista": "Se identifica con PID.",
-      "explicacion": "Cada proceso tiene un PID; se listan con ps aux o top, se finaliza con kill (SIGTERM de forma elegante, SIGKILL para forzar)."
+      "explicacion": "Cada proceso tiene un PID; se listan con ps aux o top, se finaliza con kill (SIGTERM de forma elegante, SIGKILL para forzar).",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "lin-007", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-007",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué gestor de paquetes se usa en Amazon Linux 2023 y en Ubuntu?",
-      "opciones": ["dnf en Amazon Linux y apt en Ubuntu", "yum en ambos", "apt en ambos", "npm en ambos"],
+      "opciones": [
+        "dnf en Amazon Linux y apt en Ubuntu",
+        "yum en ambos",
+        "apt en ambos",
+        "npm en ambos"
+      ],
       "correcta": 0,
       "pista": "Familia RedHat vs Debian.",
-      "explicacion": "Amazon Linux 2023 usa dnf; Ubuntu/Debian usan apt. No existen los paquetes 'apt' en Amazon Linux, error común en pruebas técnicas."
+      "explicacion": "Amazon Linux 2023 usa dnf; Ubuntu/Debian usan apt. No existen los paquetes 'apt' en Amazon Linux, error común en pruebas técnicas.",
+      "img": "assets/img/osi-model.svg"
     },
     {
-      "id": "lin-008", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-008",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué comando muestra los eventos del sistema de forma cronológica con systemd?",
-      "opciones": ["dmesg", "journalctl", "tail /var/log/syslog", "grep -r"],
+      "opciones": [
+        "dmesg",
+        "journalctl",
+        "tail /var/log/syslog",
+        "grep -r"
+      ],
       "correcta": 1,
       "pista": "El 'diario' de systemd.",
-      "explicacion": "journalctl consulta el journal de systemd (con -u <servicio> para filtrar por unidad). /var/log sigue vigente para logs no gestionados por systemd."
+      "explicacion": "journalctl consulta el journal de systemd (con -u <servicio> para filtrar por unidad). /var/log sigue vigente para logs no gestionados por systemd.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "lin-009", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-009",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué es el archivo /etc/passwd y por qué /etc/shadow no debe ser legible?",
-      "opciones": ["El primero lista usuarios; el segundo guarda hashes de contraseñas y solo lo lee root", "Ambos guardan contraseñas", "El primero es binario", "Son respaldos"],
+      "opciones": [
+        "El primero lista usuarios; el segundo guarda hashes de contraseñas y solo lo lee root",
+        "Ambos guardan contraseñas",
+        "El primero es binario",
+        "Son respaldos"
+      ],
       "correcta": 0,
       "pista": "Lista vs hash.",
-      "explicacion": "/etc/passwd (mundo legible) solo contiene datos no sensibles; los hashes viven en /etc/shadow con permisos restringidos."
+      "explicacion": "/etc/passwd (mundo legible) solo contiene datos no sensibles; los hashes viven en /etc/shadow con permisos restringidos.",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "lin-010", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-010",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Cómo agrego un usuario al grupo sudo y le asigno contraseña?",
-      "opciones": ["useradd -G sudo juan && passwd juan", "adduser --admin juan", "chmod +s juan", "echo juan >> /etc/sudoers"],
+      "opciones": [
+        "useradd -G sudo juan && passwd juan",
+        "adduser --admin juan",
+        "chmod +s juan",
+        "echo juan >> /etc/sudoers"
+      ],
       "correcta": 0,
       "pista": "useradd -G agrega a un grupo.",
-      "explicacion": "useradd -G sudo juan + passwd juan. Nunca se debe editar /etc/sudoers a mano; se usa visudo para evitar romper el acceso sudo."
+      "explicacion": "useradd -G sudo juan + passwd juan. Nunca se debe editar /etc/sudoers a mano; se usa visudo para evitar romper el acceso sudo.",
+      "img": "assets/img/security-defense.svg"
     },
-
     {
-      "id": "shl-001", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-001",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Qué hace el operador pipe (|) en la línea de comandos?",
-      "opciones": ["Redirige a un archivo", "Conecta la salida estándar de un comando con la entrada del siguiente", "Ejecuta en segundo plano", "Combina dos archivos"],
+      "opciones": [
+        "Redirige a un archivo",
+        "Conecta la salida estándar de un comando con la entrada del siguiente",
+        "Ejecuta en segundo plano",
+        "Combina dos archivos"
+      ],
       "correcta": 1,
       "pista": "Entrada/salida estándar.",
-      "explicacion": "Ej: cat acceso.log | grep ERROR | wc -l. Es el fundamento de la filosofía de Unix: pequeñas herramientas encadenadas."
+      "explicacion": "Ej: cat acceso.log | grep ERROR | wc -l. Es el fundamento de la filosofía de Unix: pequeñas herramientas encadenadas.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-002", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-002",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Cuál es la diferencia entre > y >> en una redirección?",
-      "opciones": ["No hay diferencia", "> sobrescribe, >> añade al final", "> añade, >> sobrescribe", "Ambos crean un archivo nuevo"],
+      "opciones": [
+        "No hay diferencia",
+        "> sobrescribe, >> añade al final",
+        "> añade, >> sobrescribe",
+        "Ambos crean un archivo nuevo"
+      ],
       "correcta": 1,
       "pista": "Un signo crea, dos siguen.",
-      "explicacion": "> trunca el archivo destino; >> concatena al final. Cuidado con > sobre archivos de sistema."
+      "explicacion": "> trunca el archivo destino; >> concatena al final. Cuidado con > sobre archivos de sistema.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-003", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-003",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Qué significa chmod 755 archivo.sh?",
-      "opciones": ["Dueño rw-, grupo r--, otros r--", "Dueño rwx, grupo r-x, otros r-x", "Todos escriben", "Solo root"],
+      "opciones": [
+        "Dueño rw-, grupo r--, otros r--",
+        "Dueño rwx, grupo r-x, otros r-x",
+        "Todos escriben",
+        "Solo root"
+      ],
       "correcta": 1,
       "pista": "7=4+2+1 (rwx), 5=4+1 (r-x).",
-      "explicacion": "Es el permiso típico de scripts ejecutables: el dueño puede editar y ejecutar; el resto solo ejecuta/lee."
+      "explicacion": "Es el permiso típico de scripts ejecutables: el dueño puede editar y ejecutar; el resto solo ejecuta/lee.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-004", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-004",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Cómo cuento las líneas que contienen 'ERROR' en un log con grep?",
-      "opciones": ["grep ERROR log", "grep -c ERROR log", "grep -l ERROR log", "grep ERROR -n"],
+      "opciones": [
+        "grep ERROR log",
+        "grep -c ERROR log",
+        "grep -l ERROR log",
+        "grep ERROR -n"
+      ],
       "correcta": 1,
       "pista": "count.",
-      "explicacion": "-c devuelve el número de coincidencias, -l lista archivos, -n muestra el número de línea. -r busca recursivamente."
+      "explicacion": "-c devuelve el número de coincidencias, -l lista archivos, -n muestra el número de línea. -r busca recursivamente.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-005", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-005",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Qué hace echo $? y cómo se comprueba si un comando terminó bien?",
-      "opciones": ["Muestra la ruta actual", "Muestra el código de salida (0 = éxito)", "Muestra el usuario", "Repite el último comando"],
+      "opciones": [
+        "Muestra la ruta actual",
+        "Muestra el código de salida (0 = éxito)",
+        "Muestra el usuario",
+        "Repite el último comando"
+      ],
       "correcta": 1,
       "pista": "Exit code 0.",
-      "explicacion": "Todo proceso devuelve un exit code; 0 = éxito y distinto de 0 = error. En scripts se usa set -e para abortar ante cualquier fallo."
+      "explicacion": "Todo proceso devuelve un exit code; 0 = éxito y distinto de 0 = error. En scripts se usa set -e para abortar ante cualquier fallo.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-006", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-006",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Para qué sirve find /var -name '*.log' -size +100M?",
-      "opciones": ["Lista archivos que coinciden con nombre y tamaño", "Borra logs", "Comprime archivos", "Cambia permisos"],
+      "opciones": [
+        "Lista archivos que coinciden con nombre y tamaño",
+        "Borra logs",
+        "Comprime archivos",
+        "Cambia permisos"
+      ],
       "correcta": 0,
       "pista": "Busca por patrón y tamaño.",
-      "explicacion": "find recorre un árbol aplicando filtros (nombre, tamaño, fecha, tipo). Es típico en limpieza de disco y auditorías."
+      "explicacion": "find recorre un árbol aplicando filtros (nombre, tamaño, fecha, tipo). Es típico en limpieza de disco y auditorías.",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "shl-007", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-007",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Qué diferencia hay entre sed y awk?",
-      "opciones": ["Sed sustituye texto; awk procesa columnas con patrones", "No hay diferencia", "awk es un editor, sed una calculadora", "Sed solo trabaja en líneas pares"],
+      "opciones": [
+        "Sed sustituye texto; awk procesa columnas con patrones",
+        "No hay diferencia",
+        "awk es un editor, sed una calculadora",
+        "Sed solo trabaja en líneas pares"
+      ],
       "correcta": 0,
       "pista": "sed = stream editor, awk = filas por campos.",
-      "explicacion": "sed reemplaza en flujo (sed 's/a/b/g'); awk divide la línea en campos y ejecuta acciones (awk '{print $1}') — muy usado para reportes."
+      "explicacion": "sed reemplaza en flujo (sed 's/a/b/g'); awk divide la línea en campos y ejecuta acciones (awk '{print $1}') — muy usado para reportes.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-008", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-008",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Qué significan los tres descriptores estándar 0, 1 y 2?",
-      "opciones": ["0 stdin, 1 stdout, 2 stderr", "0 salida, 1 error, 2 entrada", "Son números de proceso", "Permisos de archivo"],
+      "opciones": [
+        "0 stdin, 1 stdout, 2 stderr",
+        "0 salida, 1 error, 2 entrada",
+        "Son números de proceso",
+        "Permisos de archivo"
+      ],
       "correcta": 0,
       "pista": "Entrada, salida y error.",
-      "explicacion": "2> archivo.log captura los errores en un archivo; 2>/dev/null descarta el mensaje de error."
+      "explicacion": "2> archivo.log captura los errores en un archivo; 2>/dev/null descarta el mensaje de error.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-009", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-009",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Cómo ejecuto un comando en segundo plano y cómo lo traigo al frente?",
-      "opciones": ["con & para segundo plano y fg para traerlo", "con nohup y bg", "con set -x", "con alias"],
+      "opciones": [
+        "con & para segundo plano y fg para traerlo",
+        "con nohup y bg",
+        "con set -x",
+        "con alias"
+      ],
       "correcta": 0,
       "pista": "Ampersanda y foreground.",
-      "explicacion": "El operador & pone un proceso en background; bg/fg lo gestionan y jobs lo lista. nohup desacopia el proceso de la sesión SSH para que sobreviva al logout."
+      "explicacion": "El operador & pone un proceso en background; bg/fg lo gestionan y jobs lo lista. nohup desacopia el proceso de la sesión SSH para que sobreviva al logout.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "shl-010", "area": "INFRAESTRUCTURA", "tema": "Preguntas teoricas shell",
+      "id": "shl-010",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
       "enunciado": "¿Qué hace un cron job y cómo se configura?",
-      "opciones": ["Tareas programadas en crontab (minuto hora día mes día-semana comando)", "Servicio de red", "Reinicio automático", "Cifrado de discos"],
+      "opciones": [
+        "Tareas programadas en crontab (minuto hora día mes día-semana comando)",
+        "Servicio de red",
+        "Reinicio automático",
+        "Cifrado de discos"
+      ],
       "correcta": 0,
       "pista": "Programación de tareas.",
-      "explicacion": "Se edita con crontab -e. Ej: 0 2 * * * /usr/bin/backup.sh (todos los días a las 2:00). Típico para respaldos y rotación de logs."
+      "explicacion": "Se edita con crontab -e. Ej: 0 2 * * * /usr/bin/backup.sh (todos los días a las 2:00). Típico para respaldos y rotación de logs.",
+      "img": "assets/img/terminal-shell.svg"
     },
-
     {
-      "id": "vz-001", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-001",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué es un hipervisor tipo 1 (bare-metal)?",
-      "opciones": ["Corre sobre un SO host", "Corre directamente sobre el hardware físico", "Es un contenedor", "Es una aplicación"],
+      "opciones": [
+        "Corre sobre un SO host",
+        "Corre directamente sobre el hardware físico",
+        "Es un contenedor",
+        "Es una aplicación"
+      ],
       "correcta": 1,
       "pista": "Sin sistema operativo debajo.",
-      "explicacion": "Ej: VMware ESXi, Hyper-V, KVM. Mejor rendimiento. Tipo 2 (VirtualBox, VMware Workstation) corre sobre un SO host y añade capas."
+      "explicacion": "Ej: VMware ESXi, Hyper-V, KVM. Mejor rendimiento. Tipo 2 (VirtualBox, VMware Workstation) corre sobre un SO host y añade capas.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-002", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-002",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Cuál es la diferencia clave entre una máquina virtual y un contenedor?",
-      "opciones": ["Cada VM tiene su propio kernel; los contenedores comparten el kernel del host", "No hay diferencia", "Los contenedores son más pesados", "Las VM no aíslan recursos"],
+      "opciones": [
+        "Cada VM tiene su propio kernel; los contenedores comparten el kernel del host",
+        "No hay diferencia",
+        "Los contenedores son más pesados",
+        "Las VM no aíslan recursos"
+      ],
       "correcta": 0,
       "pista": "Kernel compartido.",
-      "explicacion": "Las VM virtualizan hardware completo (SO propio); los contenedores aíslan procesos en el mismo kernel — arrancan en segundos y usan menos recursos."
+      "explicacion": "Las VM virtualizan hardware completo (SO propio); los contenedores aíslan procesos en el mismo kernel — arrancan en segundos y usan menos recursos.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-003", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-003",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué es un snapshot en entornos virtualizados?",
-      "opciones": ["Respaldo completo verificado", "Punto de estado del disco/VM para revertir", "Clon de producción", "Imagen ISO"],
+      "opciones": [
+        "Respaldo completo verificado",
+        "Punto de estado del disco/VM para revertir",
+        "Clon de producción",
+        "Imagen ISO"
+      ],
       "correcta": 1,
       "pista": "Punto de restauración.",
-      "explicacion": "Captura el estado en un instante. No sustituye a un backup: los snapshots dependen del hipervisor y del mismo almacén."
+      "explicacion": "Captura el estado en un instante. No sustituye a un backup: los snapshots dependen del hipervisor y del mismo almacén.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-004", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-004",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué es Docker en el contexto de virtualización?",
-      "opciones": ["Un hipervisor", "Una plataforma para empaquetar y ejecutar aplicaciones en contenedores", "Un sistema de archivos", "Un balanceador"],
+      "opciones": [
+        "Un hipervisor",
+        "Una plataforma para empaquetar y ejecutar aplicaciones en contenedores",
+        "Un sistema de archivos",
+        "Un balanceador"
+      ],
       "correcta": 1,
       "pista": "Contenedores + imagen.",
-      "explicacion": "Docker empaqueta la app con sus dependencias en una imagen ligera y reproducible; la imagen corre en cualquier host con Docker."
+      "explicacion": "Docker empaqueta la app con sus dependencias en una imagen ligera y reproducible; la imagen corre en cualquier host con Docker.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-005", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-005",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué recurso asigna el hipervisor a cada VM de forma virtualizada?",
-      "opciones": ["Cables", "vCPU, memoria RAM y almacenamiento", "Impresoras físicas", "Solo la MAC"],
+      "opciones": [
+        "Cables",
+        "vCPU, memoria RAM y almacenamiento",
+        "Impresoras físicas",
+        "Solo la MAC"
+      ],
       "correcta": 1,
       "pista": "Recursos virtuales.",
-      "explicacion": "El hipervisor reparte el hardware real entre VMs (vCPU, vRAM, vDisco) según la confignación."
+      "explicacion": "El hipervisor reparte el hardware real entre VMs (vCPU, vRAM, vDisco) según la confignación.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-006", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-006",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué es la orquestación de contenedores y qué herramienta es referente?",
-      "opciones": ["Git", "Kubernetes", "Ansible", "Nginx"],
+      "opciones": [
+        "Git",
+        "Kubernetes",
+        "Ansible",
+        "Nginx"
+      ],
       "correcta": 1,
       "pista": "Coordina muchos contenedores.",
-      "explicacion": "Kubernetes (K8s) automatiza despliegue, escalado y recuperación de contenedores en clúster; Docker solo ejecuta contenedores individuales."
+      "explicacion": "Kubernetes (K8s) automatiza despliegue, escalado y recuperación de contenedores en clúster; Docker solo ejecuta contenedores individuales.",
+      "img": "assets/img/vm-vs-container.svg"
     },
-
     {
-      "id": "web-001", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-001",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Qué puertos usan HTTP y HTTPS por defecto?",
-      "opciones": ["80 y 8080", "80 y 443", "443 y 8443", "21 y 22"],
+      "opciones": [
+        "80 y 8080",
+        "80 y 443",
+        "443 y 8443",
+        "21 y 22"
+      ],
       "correcta": 1,
       "pista": "HTTP en 80, el cifrado en 443.",
-      "explicacion": "HTTPS añade TLS sobre HTTP en el puerto 443; 80/443 son los puertos por defecto de los servidores web."
+      "explicacion": "HTTPS añade TLS sobre HTTP en el puerto 443; 80/443 son los puertos por defecto de los servidores web.",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "web-002", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-002",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Qué código HTTP indica que el recurso no fue encontrado?",
-      "opciones": ["200", "301", "404", "500"],
+      "opciones": [
+        "200",
+        "301",
+        "404",
+        "500"
+      ],
       "correcta": 2,
       "pista": "Página 'no encontrada' clásica.",
-      "explicacion": "200 OK, 301 redirección permanente, 404 Not Found y 500 error interno del servidor."
+      "explicacion": "200 OK, 301 redirección permanente, 404 Not Found y 500 error interno del servidor.",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "web-003", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-003",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Cuál es la diferencia principal entre Apache y Nginx?",
-      "opciones": ["Apache es para Windows y Nginx para Linux", "Nginx maneja de forma eficiente muchas conexiones concurrentes (event-driven)", "Apache es un lenguaje", "Nginx no sirve páginas"],
+      "opciones": [
+        "Apache es para Windows y Nginx para Linux",
+        "Nginx maneja de forma eficiente muchas conexiones concurrentes (event-driven)",
+        "Apache es un lenguaje",
+        "Nginx no sirve páginas"
+      ],
       "correcta": 1,
       "pista": "Modelo de concurrencia.",
-      "explicacion": "Apache usa procesos/hilos (prefork/worker); Nginx es orientado a eventos y no bloqueante, ideal para servir estático y como reverse proxy."
+      "explicacion": "Apache usa procesos/hilos (prefork/worker); Nginx es orientado a eventos y no bloqueante, ideal para servir estático y como reverse proxy.",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "web-004", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-004",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Qué es un reverse proxy?",
-      "opciones": ["Un cliente que oculta su IP", "Un servidor que recibe peticiones y las reenvía a servidores de atrás", "Un balanceador sin configuración", "Una VPN"],
+      "opciones": [
+        "Un cliente que oculta su IP",
+        "Un servidor que recibe peticiones y las reenvía a servidores de atrás",
+        "Un balanceador sin configuración",
+        "Una VPN"
+      ],
       "correcta": 1,
       "pista": "Nginx delante de la app.",
-      "explicacion": "Centraliza el tráfico, termina TLS, balancea y cachea; el cliente nunca ve los servidores internos."
+      "explicacion": "Centraliza el tráfico, termina TLS, balancea y cachea; el cliente nunca ve los servidores internos.",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "web-005", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-005",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Cuál es la diferencia entre los métodos HTTP GET y POST?",
-      "opciones": ["GET pide datos sin alterar estado; POST envía datos para crear/modificar recursos", "GET es seguro, POST no", "POST solo descarga", "No hay diferencia"],
+      "opciones": [
+        "GET pide datos sin alterar estado; POST envía datos para crear/modificar recursos",
+        "GET es seguro, POST no",
+        "POST solo descarga",
+        "No hay diferencia"
+      ],
       "correcta": 0,
       "pista": "Idempotencia y cuerpo.",
-      "explicacion": "GET es seguro e idempotente (los datos van en la URL); POST no es idempotente y lleva cuerpo en la petición (formularios, APIs)."
+      "explicacion": "GET es seguro e idempotente (los datos van en la URL); POST no es idempotente y lleva cuerpo en la petición (formularios, APIs).",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "web-006", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-006",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Qué es un virtual host en Apache/Nginx?",
-      "opciones": ["Un host virtual dedicado", "Sirve varios sitios (mismo servidor) bajo distintos nombres de dominio", "Un contenedor", "Un certificado"],
+      "opciones": [
+        "Un host virtual dedicado",
+        "Sirve varios sitios (mismo servidor) bajo distintos nombres de dominio",
+        "Un contenedor",
+        "Un certificado"
+      ],
       "correcta": 1,
       "pista": "Varios sitios, un servidor.",
-      "explicacion": "Permite que una misma IP atienda dominios distintos con su DocumentRoot/serve block separado — base del hosting compartido."
+      "explicacion": "Permite que una misma IP atienda dominios distintos con su DocumentRoot/serve block separado — base del hosting compartido.",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "web-007", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-007",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Qué es el DocumentRoot (raíz de documentos) de un servidor web?",
-      "opciones": ["El directorio de instalación del binario", "La carpeta donde vive el contenido publicado", "/etc", "El directorio temporal"],
+      "opciones": [
+        "El directorio de instalación del binario",
+        "La carpeta donde vive el contenido publicado",
+        "/etc",
+        "El directorio temporal"
+      ],
       "correcta": 1,
       "pista": "Dónde están los archivos.",
-      "explicacion": "En Apache es DocumentRoot (p.ej. /var/www/html); en Nginx el root de cada server block. Debe estar en modo 755 y propiedad del usuario web."
+      "explicacion": "En Apache es DocumentRoot (p.ej. /var/www/html); en Nginx el root de cada server block. Debe estar en modo 755 y propiedad del usuario web.",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "web-008", "area": "PROGRAMACION", "tema": "Webservers",
+      "id": "web-008",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
       "enunciado": "¿Qué es TLS y por qué es obligatorio hoy con HTTPS?",
-      "opciones": ["Un protocolo de compresión", "Capa de seguridad que cifra y autentica el tráfico HTTP", "Una base de datos", "Un tipo de servidor"],
+      "opciones": [
+        "Un protocolo de compresión",
+        "Capa de seguridad que cifra y autentica el tráfico HTTP",
+        "Una base de datos",
+        "Un tipo de servidor"
+      ],
       "correcta": 1,
       "pista": "Cifrado + certificado.",
-      "explicacion": "TLS aporta confidencialidad (cifrado), integridad y autenticidad mediante certificados digitales firmados por una autoridad certificadora."
+      "explicacion": "TLS aporta confidencialidad (cifrado), integridad y autenticidad mediante certificados digitales firmados por una autoridad certificadora.",
+      "img": "assets/img/http-flow.svg"
     },
-
     {
-      "id": "aws-001", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-001",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Qué es una Security Group y cómo difiere de una NACL?",
-      "opciones": ["SG trabaja a nivel de instancia y es stateful; NACL a nivel de subred y es stateless", "Ambas son iguales", "SG es stateless, NACL stateful", "NACL aplica a instancias"],
+      "opciones": [
+        "SG trabaja a nivel de instancia y es stateful; NACL a nivel de subred y es stateless",
+        "Ambas son iguales",
+        "SG es stateless, NACL stateful",
+        "NACL aplica a instancias"
+      ],
       "correcta": 0,
       "pista": "Estado de la conexión.",
-      "explicacion": "La SG permite tráfico a la instancia y recuerda el retorno; la NACL filtra en la subred sin memoria de conexiones. SG no soporta reglas de denegación."
+      "explicacion": "La SG permite tráfico a la instancia y recuerda el retorno; la NACL filtra en la subred sin memoria de conexiones. SG no soporta reglas de denegación.",
+      "img": "assets/img/vpc-topology.svg"
     },
     {
-      "id": "aws-002", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-002",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Cuál es la diferencia entre un IAM Role y un IAM User?",
-      "opciones": ["El rol tiene credenciales permanentes; el usuario no", "El rol se asume temporalmente (sin llaves); el usuario tiene credenciales de larga vida", "Son lo mismo", "El usuario no puede acceder a consola"],
+      "opciones": [
+        "El rol tiene credenciales permanentes; el usuario no",
+        "El rol se asume temporalmente (sin llaves); el usuario tiene credenciales de larga vida",
+        "Son lo mismo",
+        "El usuario no puede acceder a consola"
+      ],
       "correcta": 1,
       "pista": "Temporal vs permanente.",
-      "explicacion": "Los roles se asumen por entidades (instancias EC2, pipelines, federación) generando credenciales temporales. Los usuarios tienen llaves de larga duración, que se evitan en la nube."
+      "explicacion": "Los roles se asumen por entidades (instancias EC2, pipelines, federación) generando credenciales temporales. Los usuarios tienen llaves de larga duración, que se evitan en la nube.",
+      "img": "assets/img/aws-cloud.svg"
     },
     {
-      "id": "aws-003", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-003",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Qué almacena Amazon S3?",
-      "opciones": ["Archivos de forma persistente (objetos) en buckets", "Memoria RAM", "Volúmenes de bloque conectados a EC2", "Base de datos relacional"],
+      "opciones": [
+        "Archivos de forma persistente (objetos) en buckets",
+        "Memoria RAM",
+        "Volúmenes de bloque conectados a EC2",
+        "Base de datos relacional"
+      ],
       "correcta": 0,
       "pista": "Objetos en buckets.",
-      "explicacion": "S3 es almacenamiento de objetos (casi infinito, no local). EBS es bloque para EC2 y EFS es sistema de archivos compartido."
+      "explicacion": "S3 es almacenamiento de objetos (casi infinito, no local). EBS es bloque para EC2 y EFS es sistema de archivos compartido.",
+      "img": "assets/img/aws-cloud.svg"
     },
     {
-      "id": "aws-004", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-004",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Qué es una región y qué es una zona de disponibilidad (AZ)?",
-      "opciones": ["Región = país, AZ = ciudad", "Región = ubicación geográfica con múltiples datacenters; AZ = un datacenter aislado dentro de la región", "Ambas son datacenters", "AZ es una zona horaria"],
+      "opciones": [
+        "Región = país, AZ = ciudad",
+        "Región = ubicación geográfica con múltiples datacenters; AZ = un datacenter aislado dentro de la región",
+        "Ambas son datacenters",
+        "AZ es una zona horaria"
+      ],
       "correcta": 1,
       "pista": "Contenedor vs unidad de aislamiento.",
-      "explicacion": "Regiones agrupan varias AZ aisladas. Para alta disponibilidad se despliega en al menos 2 AZ."
+      "explicacion": "Regiones agrupan varias AZ aisladas. Para alta disponibilidad se despliega en al menos 2 AZ.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "aws-005", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-005",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Qué es una VPC?",
-      "opciones": ["Una ruta privada de fibra óptica", "Red privada virtual aislada dentro de la nube", "Una clave SSH", "Una zona DNS"],
+      "opciones": [
+        "Una ruta privada de fibra óptica",
+        "Red privada virtual aislada dentro de la nube",
+        "Una clave SSH",
+        "Una zona DNS"
+      ],
       "correcta": 1,
       "pista": "Red privada lógica.",
-      "explicacion": "La VPC define CIDR, subredes, tablas de ruta, gateways y grupos de seguridad: el límite de red de todo lo que despliegas."
+      "explicacion": "La VPC define CIDR, subredes, tablas de ruta, gateways y grupos de seguridad: el límite de red de todo lo que despliegas.",
+      "img": "assets/img/vpc-topology.svg"
     },
     {
-      "id": "aws-006", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-006",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Cuál es la diferencia entre almacenamiento de bloque y de objetos?",
-      "opciones": ["BLoque = EBS/volúmenes a disco (bajo latencia); objetos = S3 (archivos en buckets)", "Son idénticos", "Objetos solo sirven para imágenes", "Bloque no es persistente"],
+      "opciones": [
+        "BLoque = EBS/volúmenes a disco (bajo latencia); objetos = S3 (archivos en buckets)",
+        "Son idénticos",
+        "Objetos solo sirven para imágenes",
+        "Bloque no es persistente"
+      ],
       "correcta": 0,
       "pista": "Latencia vs escala.",
-      "explicacion": "EBS (gp3) se comporta como disco para la VM con baja latencia; S3 es obJetos con versionado y escala horizontal masiva."
+      "explicacion": "EBS (gp3) se comporta como disco para la VM con baja latencia; S3 es obJetos con versionado y escala horizontal masiva.",
+      "img": "assets/img/aws-cloud.svg"
     },
     {
-      "id": "aws-007", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-007",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Qué es un AMI?",
-      "opciones": ["Una imagen de máster (plantilla) usada para crear instancias EC2", "Una política IAM", "Una IP", "Un tipo de red"],
+      "opciones": [
+        "Una imagen de máster (plantilla) usada para crear instancias EC2",
+        "Una política IAM",
+        "Una IP",
+        "Un tipo de red"
+      ],
       "correcta": 0,
       "pista": "Machine Image.",
-      "explicacion": "El AMI define SO, disco e instalaciones base. AWS publica AMIs de Amazon Linux 2023/Ubuntu y se pueden personalizar para volverlo propio."
+      "explicacion": "El AMI define SO, disco e instalaciones base. AWS publica AMIs de Amazon Linux 2023/Ubuntu y se pueden personalizar para volverlo propio.",
+      "img": "assets/img/aws-cloud.svg"
     },
     {
-      "id": "aws-008", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-008",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Cómo se reduce el costo de una EC2 si se conoce su uso a 3 años?",
-      "opciones": ["Con Reserved Instances o Savings Plans (a cambio de compromiso)", "Apagándola", "Usando Spot sin prácticas", "Subiendo el tamaño"],
+      "opciones": [
+        "Con Reserved Instances o Savings Plans (a cambio de compromiso)",
+        "Apagándola",
+        "Usando Spot sin prácticas",
+        "Subiendo el tamaño"
+      ],
       "correcta": 0,
       "pista": "Compromiso = descuento.",
-      "explicacion": "Reserved/Savings Plans dan descuento por compromiso; Spot es el más barato pero es interrumpible (ideal para cargas transaccionales)."
+      "explicacion": "Reserved/Savings Plans dan descuento por compromiso; Spot es el más barato pero es interrumpible (ideal para cargas transaccionales).",
+      "img": "assets/img/aws-cloud.svg"
     },
     {
-      "id": "aws-009", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-009",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Qué servicio de AWS se usa para DNS gestionado?",
-      "opciones": ["CloudFront", "Route 53", "Elastic Beanstalk", "SNS"],
+      "opciones": [
+        "CloudFront",
+        "Route 53",
+        "Elastic Beanstalk",
+        "SNS"
+      ],
       "correcta": 1,
       "pista": "Puerto 53.",
-      "explicacion": "Route 53 ofrece registros DNS, enrutamiento (latencia, failover) y health checks."
+      "explicacion": "Route 53 ofrece registros DNS, enrutamiento (latencia, failover) y health checks.",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "aws-010", "area": "NUBE", "tema": "Conocimientos en AWS",
+      "id": "aws-010",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
       "enunciado": "¿Cómo se conecta una EC2 a AWS de forma segura y auditable sin abrir el puerto 22?",
-      "opciones": ["Generando una clave de acceso", "SSH con contraseña", "Usando SSM Session Manager con un rol IAM", "Port-forwarding por VPN"],
+      "opciones": [
+        "Generando una clave de acceso",
+        "SSH con contraseña",
+        "Usando SSM Session Manager con un rol IAM",
+        "Port-forwarding por VPN"
+      ],
       "correcta": 2,
       "pista": "Sin puertos abiertos.",
-      "explicacion": "Session Manager da shell a través del agente SSM y un rol, sin IP pública, sin llaves y con auditoría en CloudTrail."
+      "explicacion": "Session Manager da shell a través del agente SSM y un rol, sin IP pública, sin llaves y con auditoría en CloudTrail.",
+      "img": "assets/img/http-flow.svg"
     },
-
     {
-      "id": "so-001", "area": "NUBE", "tema": "AWS SysOps",
+      "id": "so-001",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
       "enunciado": "¿Qué diferencia hay entre CloudWatch y CloudTrail?",
-      "opciones": ["CloudWatch = métricas y alarmas; CloudTrail = auditoría de llamadas a la API", "Ambas hacen métricas", "CloudTrail monitorea, CloudWatch audita", "CloudWatch solo guarda archivos"],
+      "opciones": [
+        "CloudWatch = métricas y alarmas; CloudTrail = auditoría de llamadas a la API",
+        "Ambas hacen métricas",
+        "CloudTrail monitorea, CloudWatch audita",
+        "CloudWatch solo guarda archivos"
+      ],
       "correcta": 0,
       "pista": "Monitoreo vs auditoría.",
-      "explicacion": "CloudWatch mide CPU/red/Logs con alarmas y reacción automática; CloudTrail registra quién llamó a qué API (para forenses y cumplimiento)."
+      "explicacion": "CloudWatch mide CPU/red/Logs con alarmas y reacción automática; CloudTrail registra quién llamó a qué API (para forenses y cumplimiento).",
+      "img": "assets/img/cloudwatch-monitoring.svg"
     },
     {
-      "id": "so-002", "area": "NUBE", "tema": "AWS SysOps",
+      "id": "so-002",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
       "enunciado": "¿Qué es una alarma de CloudWatch?",
-      "opciones": ["Una nota en la consola", "Regla que dispara una acción cuando una métrica supera/inferior un umbral", "Una redirección DNS", "Un respaldo"],
+      "opciones": [
+        "Una nota en la consola",
+        "Regla que dispara una acción cuando una métrica supera/inferior un umbral",
+        "Una redirección DNS",
+        "Un respaldo"
+      ],
       "correcta": 1,
       "pista": "Métrica + umbral + acción.",
-      "explicacion": "Se configura con nombre de métrica, periodo, umbral y acción (SNS, auto-scaling, remediation)."
+      "explicacion": "Se configura con nombre de métrica, periodo, umbral y acción (SNS, auto-scaling, remediation).",
+      "img": "assets/img/cloudwatch-monitoring.svg"
     },
     {
-      "id": "so-003", "area": "NUBE", "tema": "AWS SysOps",
+      "id": "so-003",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
       "enunciado": "¿Qué hace un Auto Scaling Group (ASG)?",
-      "opciones": ["Crea manualmente servidores", "Ajusta automáticamente la cantidad de instancias según la demanda", "Balancea tráfico sin escalar", "Guarda respaldos"],
+      "opciones": [
+        "Crea manualmente servidores",
+        "Ajusta automáticamente la cantidad de instancias según la demanda",
+        "Balancea tráfico sin escalar",
+        "Guarda respaldos"
+      ],
       "correcta": 1,
       "pista": "Escala solo.",
-      "explicacion": "Combina un grupo de instancias con políticas (escalar por CPU/cola) y mantiene el objetivo, mejorando disponibilidad y optimizando costo."
+      "explicacion": "Combina un grupo de instancias con políticas (escalar por CPU/cola) y mantiene el objetivo, mejorando disponibilidad y optimizando costo.",
+      "img": "assets/img/cloudwatch-monitoring.svg"
     },
     {
-      "id": "so-004", "area": "NUBE", "tema": "AWS SysOps",
+      "id": "so-004",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
       "enunciado": "¿Cuál es la diferencia entre ALB y NLB?",
-      "opciones": ["ALB entiende HTTP/gRPC (capa 7) con rutas y hosts; NLB opera en TCP/UDP (capa 4) con menor latencia", "Son iguales", "NLB es de capa 7", "ALB solo balancea SMTP"],
+      "opciones": [
+        "ALB entiende HTTP/gRPC (capa 7) con rutas y hosts; NLB opera en TCP/UDP (capa 4) con menor latencia",
+        "Son iguales",
+        "NLB es de capa 7",
+        "ALB solo balancea SMTP"
+      ],
       "correcta": 0,
       "pista": "Capa 7 vs capa 4.",
-      "explicacion": "ALB enruta por URL/método y es ideal para microservicios; NLB es el más rápido y preserva la IP de origen."
+      "explicacion": "ALB enruta por URL/método y es ideal para microservicios; NLB es el más rápido y preserva la IP de origen.",
+      "img": "assets/img/osi-model.svg"
     },
     {
-      "id": "so-005", "area": "NUBE", "tema": "AWS SysOps",
+      "id": "so-005",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
       "enunciado": "¿Qué es RTO y qué es RPO en continuidad del negocio?",
-      "opciones": ["RTO = tiempo de recuperación (objetivo); RPO = cuánta data puede perderse (objetivo de pérdida)", "Ambos son costos", "RTO = respaldo, RPO = red", "No aplican en cloud"],
+      "opciones": [
+        "RTO = tiempo de recuperación (objetivo); RPO = cuánta data puede perderse (objetivo de pérdida)",
+        "Ambos son costos",
+        "RTO = respaldo, RPO = red",
+        "No aplican en cloud"
+      ],
       "correcta": 0,
       "pista": "Tiempo vs datos.",
-      "explicacion": "RTO define cuánto máximo se tolera caído; RPO cuántos minutos de datos se pueden perder. Definen la estrategia de respaldo y failover."
+      "explicacion": "RTO define cuánto máximo se tolera caído; RPO cuántos minutos de datos se pueden perder. Definen la estrategia de respaldo y failover.",
+      "img": "assets/img/cloudwatch-monitoring.svg"
     },
-
     {
-      "id": "red-001", "area": "COMUNICACIONES", "tema": "Fundamentos de redes de TI",
+      "id": "red-001",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
       "enunciado": "¿En qué capa del modelo OSI opera un enrutador?",
-      "opciones": ["Capa 2 (enlace)", "Capa 3 (red)", "Capa 4 (transporte)", "Capa 7 (aplicación)"],
+      "opciones": [
+        "Capa 2 (enlace)",
+        "Capa 3 (red)",
+        "Capa 4 (transporte)",
+        "Capa 7 (aplicación)"
+      ],
       "correcta": 1,
       "pista": "Direcciones IP.",
-      "explicacion": "El router enrutamenta paquetes por IP (capa 3). El switch opera en capa 2 (MAC) y el firewall de aplicación en capa 7."
+      "explicacion": "El router enrutamenta paquetes por IP (capa 3). El switch opera en capa 2 (MAC) y el firewall de aplicación en capa 7.",
+      "img": "assets/img/vpc-topology.svg"
     },
     {
-      "id": "red-002", "area": "COMUNICACIONES", "tema": "Fundamentos de redes de TI",
+      "id": "red-002",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
       "enunciado": "¿Cuál es la diferencia entre TCP y UDP?",
-      "opciones": ["TCP es orientado a conexión con confirmación; UDP es rápido sin garantía de entrega", "No hay diferencia", "UDP es confiable y TCP no", "TCP solo se usa en video"],
+      "opciones": [
+        "TCP es orientado a conexión con confirmación; UDP es rápido sin garantía de entrega",
+        "No hay diferencia",
+        "UDP es confiable y TCP no",
+        "TCP solo se usa en video"
+      ],
       "correcta": 0,
       "pista": "Confianza vs velocidad.",
-      "explicacion": "TCP garantiza orden y retransmisión (web, correo); UDP prioriza velocidad sin handshakes (DNS, video, juegos)."
+      "explicacion": "TCP garantiza orden y retransmisión (web, correo); UDP prioriza velocidad sin handshakes (DNS, video, juegos).",
+      "img": "assets/img/osi-model.svg"
     },
     {
-      "id": "red-003", "area": "COMUNICACIONES", "tema": "Fundamentos de redes de TI",
+      "id": "red-003",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
       "enunciado": "¿Qué puerto usa DNS por defecto?",
-      "opciones": ["53", "80", "443", "22"],
+      "opciones": [
+        "53",
+        "80",
+        "443",
+        "22"
+      ],
       "correcta": 0,
       "pista": "RFC 1035.",
-      "explicacion": "DNS usa 53 (UDP para consultas, TCP para zonas grandes o transferencias)."
+      "explicacion": "DNS usa 53 (UDP para consultas, TCP para zonas grandes o transferencias).",
+      "img": "assets/img/http-flow.svg"
     },
     {
-      "id": "red-004", "area": "COMUNICACIONES", "tema": "Fundamentos de redes de TI",
+      "id": "red-004",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
       "enunciado": "¿Qué tamaño de subred corresponde a una máscara /26 y cuántas host usa?",
-      "opciones": ["/26 = 254 hosts", "/26 = 62 hosts", "/26 = 126 hosts", "/26 = 14 hosts"],
+      "opciones": [
+        "/26 = 254 hosts",
+        "/26 = 62 hosts",
+        "/26 = 126 hosts",
+        "/26 = 14 hosts"
+      ],
       "correcta": 1,
       "pista": "32 direcciones por bloque; resta 2.",
-      "explicacion": "Un /26 da 64 direcciones por bloque (2^(32-26)=64) y 62 hosts utilizables. /24=254, /25=126, /27=30, /28=14."
+      "explicacion": "Un /26 da 64 direcciones por bloque (2^(32-26)=64) y 62 hosts utilizables. /24=254, /25=126, /27=30, /28=14.",
+      "img": "assets/img/vpc-topology.svg"
     },
     {
-      "id": "red-005", "area": "COMUNICACIONES", "tema": "Fundamentos de redes de TI",
+      "id": "red-005",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
       "enunciado": "¿Qué es NAT y por qué se usa?",
-      "opciones": ["Traduce direcciones IP privadas a públicas para salir a internet", "Es un cortafuegos", "Asigna DNS", "Cifra tráfico"],
+      "opciones": [
+        "Traduce direcciones IP privadas a públicas para salir a internet",
+        "Es un cortafuegos",
+        "Asigna DNS",
+        "Cifra tráfico"
+      ],
       "correcta": 0,
       "pista": "Network Address Translation.",
-      "explicacion": "Permite que redes internas (10.x, 192.168.x) compartan IP pública para salir a internet, conservando direcciones IPv4."
+      "explicacion": "Permite que redes internas (10.x, 192.168.x) compartan IP pública para salir a internet, conservando direcciones IPv4.",
+      "img": "assets/img/osi-model.svg"
     },
-
     {
-      "id": "seg-001", "area": "SEGURIDAD", "tema": "Seguridad de TI",
+      "id": "seg-001",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
       "enunciado": "¿Cuál es el principio de menor privilegio?",
-      "opciones": ["Dar todos los permisos para agilizar", "Otorgar solo el acceso mínimo necesario para la función", "Compartir credenciales", "Usar siempre root"],
+      "opciones": [
+        "Dar todos los permisos para agilizar",
+        "Otorgar solo el acceso mínimo necesario para la función",
+        "Compartir credenciales",
+        "Usar siempre root"
+      ],
       "correcta": 1,
       "pista": "Mínimo necesario.",
-      "explicacion": "Reduce la superficie de ataque: si una cuenta es comprometida, el daño queda limitado."
+      "explicacion": "Reduce la superficie de ataque: si una cuenta es comprometida, el daño queda limitado.",
+      "img": "assets/img/security-defense.svg"
     },
     {
-      "id": "seg-002", "area": "SEGURIDAD", "tema": "Seguridad de TI",
+      "id": "seg-002",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
       "enunciado": "¿Qué es la autenticación multifactor (MFA)?",
-      "opciones": ["Dos contraseñas iguales", "Combinar algo que sabes (clave), algo que tienes (token) o algo que eres (biometría)", "Usar mayúsculas y minúsculas", "Una clave temporal única"],
+      "opciones": [
+        "Dos contraseñas iguales",
+        "Combinar algo que sabes (clave), algo que tienes (token) o algo que eres (biometría)",
+        "Usar mayúsculas y minúsculas",
+        "Una clave temporal única"
+      ],
       "correcta": 1,
       "pista": "Más de un factor.",
-      "explicacion": "Aunque roben la contraseña, el segundo factor detiene el acceso; es el control de mayor impacto/costo para credenciales."
+      "explicacion": "Aunque roben la contraseña, el segundo factor detiene el acceso; es el control de mayor impacto/costo para credenciales.",
+      "img": "assets/img/security-defense.svg"
     },
     {
-      "id": "seg-003", "area": "SEGURIDAD", "tema": "Seguridad de TI",
+      "id": "seg-003",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
       "enunciado": "¿Qué es el cifrado en reposo versus cifrado en tránsito?",
-      "opciones": ["Reposo = datos en disco/almacén; tránsito = datos en la red (TLS)", "Son lo mismo", "Reposo es para archivos de texto", "Tránsito es solo en correo"],
+      "opciones": [
+        "Reposo = datos en disco/almacén; tránsito = datos en la red (TLS)",
+        "Son lo mismo",
+        "Reposo es para archivos de texto",
+        "Tránsito es solo en correo"
+      ],
       "correcta": 0,
       "pista": "Disco vs red.",
-      "explicacion": "Cifrado en reposo protege volúmenes/almacén (KMS); en tránsito protege la comunicación con TLS."
+      "explicacion": "Cifrado en reposo protege volúmenes/almacén (KMS); en tránsito protege la comunicación con TLS.",
+      "img": "assets/img/security-defense.svg"
     },
     {
-      "id": "seg-004", "area": "SEGURIDAD", "tema": "Seguridad de TI",
+      "id": "seg-004",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
       "enunciado": "¿Qué diferencia hay entre un firewall de red y un IDS/IPS?",
-      "opciones": ["IDS/IPS detecta o bloquea tráfico sospechoso; el firewall filtra por reglas", "Son lo mismo", "El firewall detecta malware", "El IDS encripta"],
+      "opciones": [
+        "IDS/IPS detecta o bloquea tráfico sospechoso; el firewall filtra por reglas",
+        "Son lo mismo",
+        "El firewall detecta malware",
+        "El IDS encripta"
+      ],
       "correcta": 0,
       "pista": "Reglas vs detección.",
-      "explicacion": "El firewall aplica reglas (puertos/ips); IDS alerta y bloquea con firmas; el IPS está en línea y lo detiene."
+      "explicacion": "El firewall aplica reglas (puertos/ips); IDS alerta y bloquea con firmas; el IPS está en línea y lo detiene.",
+      "img": "assets/img/security-defense.svg"
     },
     {
-      "id": "seg-005", "area": "SEGURIDAD", "tema": "Seguridad de TI",
+      "id": "seg-005",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
       "enunciado": "¿Cuál es la mejor mitigación para una credencial filtrada en un repositorio?",
-      "opciones": ["Ocultar el archivo", "Rotarla inmediatamente y revisar el alcance del acceso", "Esperar a que expire", "Cambiar el nombre del repositorio"],
+      "opciones": [
+        "Ocultar el archivo",
+        "Rotarla inmediatamente y revisar el alcance del acceso",
+        "Esperar a que expire",
+        "Cambiar el nombre del repositorio"
+      ],
       "correcta": 1,
       "pista": "Acción inmediata.",
-      "explicacion": "Se rota de inmediato, se revisa qué accedió y se evita volver a guardar secretos en código (se usan gestores/secretos)."
+      "explicacion": "Se rota de inmediato, se revisa qué accedió y se evita volver a guardar secretos en código (se usan gestores/secretos).",
+      "img": "assets/img/security-defense.svg"
     },
-
     {
-      "id": "ci-001", "area": "DEVOPS", "tema": "DevOps CI",
+      "id": "ci-001",
+      "area": "DEVOPS",
+      "tema": "DevOps CI",
       "enunciado": "¿Qué significa Integración Continua (CI)?",
-      "opciones": ["Desplegar directo a producción", "Integrar cambios frecuentes en el repositorio con build y pruebas automatizadas", "Documentar el proyecto", "Configurar servidores a mano"],
+      "opciones": [
+        "Desplegar directo a producción",
+        "Integrar cambios frecuentes en el repositorio con build y pruebas automatizadas",
+        "Documentar el proyecto",
+        "Configurar servidores a mano"
+      ],
       "correcta": 1,
       "pista": "Integrar seguido + validar.",
-      "explicacion": "Los desarrolladores fusionan cambios a menudo y cada integración dispara build y pruebas para detectar errores temprano (CI: Jenkins, GitHub Actions, Azure Pipelines)."
+      "explicacion": "Los desarrolladores fusionan cambios a menudo y cada integración dispara build y pruebas para detectar errores temprano (CI: Jenkins, GitHub Actions, Azure Pipelines).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "ci-002", "area": "DEVOPS", "tema": "DevOps CI",
+      "id": "ci-002",
+      "area": "DEVOPS",
+      "tema": "DevOps CI",
       "enunciado": "¿Para qué sirve un pipeline de CI en un repositorio Git?",
-      "opciones": ["Para revisar código manualmente", "Para ejecutar build, pruebas y análisis automáticos en cada push/PR", "Para desplegar sin validar", "Para crear usuarios"],
+      "opciones": [
+        "Para revisar código manualmente",
+        "Para ejecutar build, pruebas y análisis automáticos en cada push/PR",
+        "Para desplegar sin validar",
+        "Para crear usuarios"
+      ],
       "correcta": 1,
       "pista": "Automatiza la validación.",
-      "explicacion": "El pipeline es el contrato de calidad: si falla, no se integra. Se configura con triggers en ramas o pull requests."
+      "explicacion": "El pipeline es el contrato de calidad: si falla, no se integra. Se configura con triggers en ramas o pull requests.",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "ci-003", "area": "DEVOPS", "tema": "DevOps CI",
+      "id": "ci-003",
+      "area": "DEVOPS",
+      "tema": "DevOps CI",
       "enunciado": "¿Qué es la prueba automatizada en CI y por qué se prioriza sobre la manual?",
-      "opciones": ["Es opcional", "Detecta regresiones de forma repetible y rápida en cada cambio", "Reemplaza a los testers", "Solo prueba UI"],
+      "opciones": [
+        "Es opcional",
+        "Detecta regresiones de forma repetible y rápida en cada cambio",
+        "Reemplaza a los testers",
+        "Solo prueba UI"
+      ],
       "correcta": 1,
       "pista": "Repetible y rápida.",
-      "explicacion": "Las pruebas unitarias/integración en CI reducen tiempo de retroalimentación y costo de encontrar errores tardíos (coste del cambio por fase)."
+      "explicacion": "Las pruebas unitarias/integración en CI reducen tiempo de retroalimentación y costo de encontrar errores tardíos (coste del cambio por fase).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "ci-004", "area": "DEVOPS", "tema": "DevOps CI",
+      "id": "ci-004",
+      "area": "DEVOPS",
+      "tema": "DevOps CI",
       "enunciado": "¿Qué se considera 'mala práctica' en CI?",
-      "opciones": ["Integrar a menudo", "Pasos manuales y cambios en la rama principal sin revisión", "Usar control de versiones", "Ejecutar pruebas"],
+      "opciones": [
+        "Integrar a menudo",
+        "Pasos manuales y cambios en la rama principal sin revisión",
+        "Usar control de versiones",
+        "Ejecutar pruebas"
+      ],
       "correcta": 1,
       "pista": "Sin trazabilidad.",
-      "explicacion": "Los pasos manuales y las modificaciones sin revisión rompen la reproducibilidad y generan fricción con el flujo."
-
+      "explicacion": "Los pasos manuales y las modificaciones sin revisión rompen la reproducibilidad y generan fricción con el flujo.",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "cd-001", "area": "DEVOPS", "tema": "DevOps CD",
+      "id": "cd-001",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
       "enunciado": "¿Cuál es la diferencia entre Continuous Delivery y Continuous Deployment?",
-      "opciones": ["CD entrega siempre a mano; Deployment libera a producción automáticamente sin aprobación manual", "Son lo mismo", "Delivery es manual, Deployment no existe", "Deployment es solo para móviles"],
+      "opciones": [
+        "CD entrega siempre a mano; Deployment libera a producción automáticamente sin aprobación manual",
+        "Son lo mismo",
+        "Delivery es manual, Deployment no existe",
+        "Deployment es solo para móviles"
+      ],
       "correcta": 0,
       "pista": "¿Quién aprueba?",
-      "explicacion": "En Continuous Delivery el artefacto queda listo y alguien aprueba; en Continuous Deployment cada paso verificado llega a producción solo."
+      "explicacion": "En Continuous Delivery el artefacto queda listo y alguien aprueba; en Continuous Deployment cada paso verificado llega a producción solo.",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "cd-002", "area": "DEVOPS", "tema": "DevOps CD",
+      "id": "cd-002",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
       "enunciado": "¿Qué es un despliegue azul/verde y en qué ayuda?",
-      "opciones": ["Usar dos servidores de color", "Tener dos entornos idénticos y conmutar tráfico para permitir rollback instantáneo", "Actualizar en frío", "Desplegar solo en horario nocturno"],
+      "opciones": [
+        "Usar dos servidores de color",
+        "Tener dos entornos idénticos y conmutar tráfico para permitir rollback instantáneo",
+        "Actualizar en frío",
+        "Desplegar solo en horario nocturno"
+      ],
       "correcta": 1,
       "pista": "Dos ambientes, un conmutador.",
-      "explicacion": "Permite validar en 'verde' y conmutar desde 'azul' de inmediato; se puede volver atrás apagando el nuevo entorno (blue/green)."
+      "explicacion": "Permite validar en 'verde' y conmutar desde 'azul' de inmediato; se puede volver atrás apagando el nuevo entorno (blue/green).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "cd-003", "area": "DEVOPS", "tema": "DevOps CD",
+      "id": "cd-003",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
       "enunciado": "¿Qué es un despliegue canary?",
-      "opciones": ["Lanzamiento a un subconjunto pequeño de usuarios antes del 100%", "Despliegue instantáneo", "Despliegue por correo", "Rollback"],
+      "opciones": [
+        "Lanzamiento a un subconjunto pequeño de usuarios antes del 100%",
+        "Despliegue instantáneo",
+        "Despliegue por correo",
+        "Rollback"
+      ],
       "correcta": 0,
       "pista": "Porcentaje inicial chico.",
-      "explicacion": "Permite detectar impacto con tráfico limitado (p.ej. 5%) y con la alarma correcta, decide si avanza o revierte (canary release)."
+      "explicacion": "Permite detectar impacto con tráfico limitado (p.ej. 5%) y con la alarma correcta, decide si avanza o revierte (canary release).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "cd-004", "area": "DEVOPS", "tema": "DevOps CD",
+      "id": "cd-004",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
       "enunciado": "¿Qué es el artefacto de despliegue y por qué debe ser inmutable?",
-      "opciones": ["Es el archivo de configuración", "Es el build final que se despliega sin modificarse en cada entorno", "Es el documento de pruebas", "Es una plantilla"],
+      "opciones": [
+        "Es el archivo de configuración",
+        "Es el build final que se despliega sin modificarse en cada entorno",
+        "Es el documento de pruebas",
+        "Es una plantilla"
+      ],
       "correcta": 1,
       "pista": "Mismo binario en todos lados.",
-      "explicacion": "Se compila una vez y se promueve igual por dev→QA→prod; evita el 'works on my machine' y da trazabilidad."
+      "explicacion": "Se compila una vez y se promueve igual por dev→QA→prod; evita el 'works on my machine' y da trazabilidad.",
+      "img": "assets/img/cicd-pipeline.svg"
     },
-
     {
-      "id": "cm-001", "area": "DEVOPS", "tema": "DevOps CM",
+      "id": "cm-001",
+      "area": "DEVOPS",
+      "tema": "DevOps CM",
       "enunciado": "¿Qué es la Gestión de Configuración (CM) en DevOps?",
-      "opciones": ["Editar el código a mano en producción", "Manejar versionada la configuración de sistemas y aplicaciones", "Hacer respaldos", "Gestionar usuarios"],
+      "opciones": [
+        "Editar el código a mano en producción",
+        "Manejar versionada la configuración de sistemas y aplicaciones",
+        "Hacer respaldos",
+        "Gestionar usuarios"
+      ],
       "correcta": 1,
       "pista": "Config como código.",
-      "explicacion": "CM mantiene la configuración versionada, consistente y reproducible; evita la 'deriva de configuración' (config drift)."
+      "explicacion": "CM mantiene la configuración versionada, consistente y reproducible; evita la 'deriva de configuración' (config drift).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "cm-002", "area": "DEVOPS", "tema": "DevOps CM",
+      "id": "cm-002",
+      "area": "DEVOPS",
+      "tema": "DevOps CM",
       "enunciado": "¿Qué es la idempotencia en herramientas de configuración?",
-      "opciones": ["Que el proceso falle si ya existe", "Que ejecutarlo tantas veces como sea necesario produzca siempre el mismo estado", "Que solo corra una vez", "Que sea aleatorio"],
+      "opciones": [
+        "Que el proceso falle si ya existe",
+        "Que ejecutarlo tantas veces como sea necesario produzca siempre el mismo estado",
+        "Que solo corra una vez",
+        "Que sea aleatorio"
+      ],
       "correcta": 1,
       "pista": "Repetible, mismo resultado.",
-      "explicacion": "Piedra angular de Ansible/Chef/Puppet: si el estado ya es el deseado, la tarea no cambia nada (changed=0)."
+      "explicacion": "Piedra angular de Ansible/Chef/Puppet: si el estado ya es el deseado, la tarea no cambia nada (changed=0).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "cm-003", "area": "DEVOPS", "tema": "DevOps CM",
+      "id": "cm-003",
+      "area": "DEVOPS",
+      "tema": "DevOps CM",
       "enunciado": "¿Para qué sirve Ansible?",
-      "opciones": ["Como hipervisor", "Automatizar la configuración y orquestación de servidores de forma declarativa", "Como balanceador", "Como base de datos"],
+      "opciones": [
+        "Como hipervisor",
+        "Automatizar la configuración y orquestación de servidores de forma declarativa",
+        "Como balanceador",
+        "Como base de datos"
+      ],
       "correcta": 1,
       "pista": "Playbooks en YAML.",
-      "explicacion": "Usa inventarios y playbooks YAML, agentless (vía SSH), ideal para configurar, actualizar y orquestar servidores."
+      "explicacion": "Usa inventarios y playbooks YAML, agentless (vía SSH), ideal para configurar, actualizar y orquestar servidores.",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "cm-004", "area": "DEVOPS", "tema": "DevOps CM",
+      "id": "cm-004",
+      "area": "DEVOPS",
+      "tema": "DevOps CM",
       "enunciado": "¿Qué es la 'deriva de configuración' (config drift)?",
-      "opciones": ["Cambio de versión de la herramienta", "Que los sistemas reales se alejen de la configuración declarada", "Un fallo de red", "La falta de documentación"],
+      "opciones": [
+        "Cambio de versión de la herramienta",
+        "Que los sistemas reales se alejen de la configuración declarada",
+        "Un fallo de red",
+        "La falta de documentación"
+      ],
       "correcta": 1,
       "pista": "Real vs declarado.",
-      "explicacion": "Ocurre por cambios manuales; se detecta con detección de deriva o planos (como en CloudFormation/IaC) y se corrige reaplicando la configuración."
+      "explicacion": "Ocurre por cambios manuales; se detecta con detección de deriva o planos (como en CloudFormation/IaC) y se corrige reaplicando la configuración.",
+      "img": "assets/img/cicd-pipeline.svg"
     },
-
     {
-      "id": "rm-001", "area": "DEVOPS", "tema": "DevOps RM",
+      "id": "rm-001",
+      "area": "DEVOPS",
+      "tema": "DevOps RM",
       "enunciado": "¿Qué es la Gestión de Releases (RM)?",
-      "opciones": ["Planificar, coordinar y controlar la entrega de versiones a los entornos", "Escribir código", "Configurar el switch", "El hosting del sitio"],
+      "opciones": [
+        "Planificar, coordinar y controlar la entrega de versiones a los entornos",
+        "Escribir código",
+        "Configurar el switch",
+        "El hosting del sitio"
+      ],
       "correcta": 0,
       "pista": "Entrega de versiones.",
-      "explicacion": "RM define cómo se versiona, comunica, aprueba y libera, cuidando el timing y el rollback."
+      "explicacion": "RM define cómo se versiona, comunica, aprueba y libera, cuidando el timing y el rollback.",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "rm-002", "area": "DEVOPS", "tema": "DevOps RM",
+      "id": "rm-002",
+      "area": "DEVOPS",
+      "tema": "DevOps RM",
       "enunciado": "¿Qué es el versionado semántico y qué significa la última cifra (v1.2.3)?",
-      "opciones": ["La 3ª cifra son cambios compatibles/patch", "Es un número arbitrario", "La 3ª cifra es breaking change", "La primera cifra es fecha"],
+      "opciones": [
+        "La 3ª cifra son cambios compatibles/patch",
+        "Es un número arbitrario",
+        "La 3ª cifra es breaking change",
+        "La primera cifra es fecha"
+      ],
       "correcta": 0,
       "pista": "major.minor.patch.",
-      "explicacion": "Cifra 3 = parche/compatibles (1.2.3); cifra 2 = features compatibles; cifra 1 = cambios incompatibles (breaking)."
+      "explicacion": "Cifra 3 = parche/compatibles (1.2.3); cifra 2 = features compatibles; cifra 1 = cambios incompatibles (breaking).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "rm-003", "area": "DEVOPS", "tema": "DevOps RM",
+      "id": "rm-003",
+      "area": "DEVOPS",
+      "tema": "DevOps RM",
       "enunciado": "¿Cómo funciona Git y cuál es su ventaja sobre el control de versiones centralizado?",
-      "opciones": ["Distribuido: cada quien tiene el historial completo y puede trabajar offline", "Es centralizado", "No guarda historia", "Solo sirve para texto"],
+      "opciones": [
+        "Distribuido: cada quien tiene el historial completo y puede trabajar offline",
+        "Es centralizado",
+        "No guarda historia",
+        "Solo sirve para texto"
+      ],
       "correcta": 0,
       "pista": "Repositorio completo por copia.",
-      "explicacion": "Git es distribuido: permite commit, branch y merge local y hace la colaboración vía remoto (origin)."
+      "explicacion": "Git es distribuido: permite commit, branch y merge local y hace la colaboración vía remoto (origin).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "rm-004", "area": "DEVOPS", "tema": "DevOps RM",
+      "id": "rm-004",
+      "area": "DEVOPS",
+      "tema": "DevOps RM",
       "enunciado": "¿Cuál es la diferencia entre git merge y git rebase?",
-      "opciones": ["merge conserva un historial de fusión; rebase reescribe el historial sobre otra base", "No hay diferencia", "rebase borra commits", "merge no permite ramas"],
+      "opciones": [
+        "merge conserva un historial de fusión; rebase reescribe el historial sobre otra base",
+        "No hay diferencia",
+        "rebase borra commits",
+        "merge no permite ramas"
+      ],
       "correcta": 0,
       "pista": "Historial vs linealidad.",
-      "explicacion": "merge da trazabilidad; rebase lo hace lineal y se evita compartir ramas rebaseadas (se reescriben los commits)."
+      "explicacion": "merge da trazabilidad; rebase lo hace lineal y se evita compartir ramas rebaseadas (se reescriben los commits).",
+      "img": "assets/img/cicd-pipeline.svg"
     },
     {
-      "id": "lin-011", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-011",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué es la variable de entorno PATH?",
-      "opciones": ["Lista de directorios donde el shell busca los comandos que escribes", "El directorio de instalación del SO", "El historial de comandos", "Un tipo de variable de red"],
+      "opciones": [
+        "Lista de directorios donde el shell busca los comandos que escribes",
+        "El directorio de instalación del SO",
+        "El historial de comandos",
+        "Un tipo de variable de red"
+      ],
       "correcta": 0,
       "pista": "Búsqueda de ejecutables.",
-      "explicacion": "Si escribes un comando, bash lo busca en las rutas del PATH. Por eso `export PATH=$PATH:/usr/local/bin` añade un directorio de comandos."
+      "explicacion": "Si escribes un comando, bash lo busca en las rutas del PATH. Por eso `export PATH=$PATH:/usr/local/bin` añade un directorio de comandos.",
+      "img": "assets/img/terminal-shell.svg"
     },
     {
-      "id": "lin-012", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-012",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué contiene el directorio /proc en Linux?",
-      "opciones": ["Archivos físicos del usuario", "Sistema de archivos virtual con información del kernel y los procesos", "Log de arranque", "Ejecutables del sistema"],
+      "opciones": [
+        "Archivos físicos del usuario",
+        "Sistema de archivos virtual con información del kernel y los procesos",
+        "Log de arranque",
+        "Ejecutables del sistema"
+      ],
       "correcta": 1,
       "pista": "Existe solo en memoria.",
-      "explicacion": "/proc no ocupa disco: expone datos en tiempo real (p.ej. /proc/cpuinfo, /proc/<pid>), base de muchas utilidades de monitoreo."
+      "explicacion": "/proc no ocupa disco: expone datos en tiempo real (p.ej. /proc/cpuinfo, /proc/<pid>), base de muchas utilidades de monitoreo.",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "lin-013", "area": "INFRAESTRUCTURA", "tema": "Teoria Linux",
+      "id": "lin-013",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
       "enunciado": "¿Qué significa que Linux sea 'multitarea' y 'multiusuario'?",
-      "opciones": ["Que solo usa un hilo", "Que varios usuarios y procesos usan el sistema de forma concurrente", "Que admite varios sistemas operativos", "Que tiene múltiples discos"],
+      "opciones": [
+        "Que solo usa un hilo",
+        "Que varios usuarios y procesos usan el sistema de forma concurrente",
+        "Que admite varios sistemas operativos",
+        "Que tiene múltiples discos"
+      ],
       "correcta": 1,
       "pista": "Concurrencia de usuarios y procesos.",
-      "explicacion": "El kernel reparte el tiempo de CPU entre muchos procesos y permite varios usuarios simultáneos con espacios aislados (aislamiento por usuario y permisos)."
+      "explicacion": "El kernel reparte el tiempo de CPU entre muchos procesos y permite varios usuarios simultáneos con espacios aislados (aislamiento por usuario y permisos).",
+      "img": "assets/img/linux-fhs.svg"
     },
     {
-      "id": "vz-007", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-007",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué es la migración en caliente (live migration)?",
-      "opciones": ["Mover una VM en ejecución de un host a otro sin apagarla", "Clonar un disco", "Instalar un SO en la VM", "Crear un snapshot"],
+      "opciones": [
+        "Mover una VM en ejecución de un host a otro sin apagarla",
+        "Clonar un disco",
+        "Instalar un SO en la VM",
+        "Crear un snapshot"
+      ],
       "correcta": 0,
       "pista": "Se mueve con la VM encendida.",
-      "explicacion": "Permite mantenimiento de hosts sin caída del servicio; los hipervisores migran la memoria de forma incremental mientras la VM sigue corriendo."
+      "explicacion": "Permite mantenimiento de hosts sin caída del servicio; los hipervisores migran la memoria de forma incremental mientras la VM sigue corriendo.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-008", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-008",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué es un clúster de servidores y qué aporta en virtualización?",
-      "opciones": ["Un solo servidor potente", "Conjunto de hosts que trabajan como una sola unidad con alta disponibilidad", "Un grupo de usuarios", "Una partición de disco"],
+      "opciones": [
+        "Un solo servidor potente",
+        "Conjunto de hosts que trabajan como una sola unidad con alta disponibilidad",
+        "Un grupo de usuarios",
+        "Una partición de disco"
+      ],
       "correcta": 1,
       "pista": "Varios hosts, una unidad.",
-      "explicacion": "En un clúster si un host cae, sus VMs se reinician en otro (HA/FT), logrando alta disponibilidad y balanceo de carga (p.ej. vSphere HA, VMware Cluster)."
+      "explicacion": "En un clúster si un host cae, sus VMs se reinician en otro (HA/FT), logrando alta disponibilidad y balanceo de carga (p.ej. vSphere HA, VMware Cluster).",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-009", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-009",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Qué es la virtualización de red (SDN)?",
-      "opciones": ["Usar más cables", "Programar la red (switches, rutas, firewalls) por software en lugar de configurar dispositivos físicos", "Conectar una impresora", "Un tipo de cableado"],
+      "opciones": [
+        "Usar más cables",
+        "Programar la red (switches, rutas, firewalls) por software en lugar de configurar dispositivos físicos",
+        "Conectar una impresora",
+        "Un tipo de cableado"
+      ],
       "correcta": 1,
       "pista": "Red definida por software.",
-      "explicacion": "SDN separa el plano de control del de datos y permite crear redes virtuales (VPC, VLANs, NSX) de forma programática y con menor configuración física."
+      "explicacion": "SDN separa el plano de control del de datos y permite crear redes virtuales (VPC, VLANs, NSX) de forma programática y con menor configuración física.",
+      "img": "assets/img/vm-vs-container.svg"
     },
     {
-      "id": "vz-010", "area": "INFRAESTRUCTURA", "tema": "Virtualizacion-plataformas",
+      "id": "vz-010",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
       "enunciado": "¿Cuál es la principal ventaja de separar las aplicaciones del hardware físico mediante virtualización?",
-      "opciones": ["Aumenta el consumo eléctrico", "Portabilidad y mejor aprovechamiento del hardware (más eficiencia)", "Elimina el SO", "Reduce la seguridad"],
+      "opciones": [
+        "Aumenta el consumo eléctrico",
+        "Portabilidad y mejor aprovechamiento del hardware (más eficiencia)",
+        "Elimina el SO",
+        "Reduce la seguridad"
+      ],
       "correcta": 1,
       "pista": "Eficiencia y portabilidad.",
-      "explicacion": "Las VM/contenedores se mueven entre hosts, se consolidan y se escalan, subiendo la utilización de CPU/RAM y reduciendo costo y huella del datacenter."
+      "explicacion": "Las VM/contenedores se mueven entre hosts, se consolidan y se escalan, subiendo la utilización de CPU/RAM y reduciendo costo y huella del datacenter.",
+      "img": "assets/img/vm-vs-container.svg"
     },
-
-    {"id":"osi-img1","area":"COMUNICACIONES","tema":"Fundamentos de redes de TI","type":"imagen","img":"assets/img/osi-model.svg",
-     "enunciado":"Observando el diagrama del modelo OSI, ¿en qué capa opera un enrutador (router)?",
-     "opciones":["Capa 1 — Físico","Capa 2 — Enlace","Capa 3 — Red","Capa 7 — Aplicación"],
-     "correcta":2,"pista":"El router toma decisiones con direcciones IP.",
-     "explicacion":"El router enruta paquetes por IP en la capa 3 (Red). El switch opera en capa 2 (MAC) y el cable en capa 1."},
-    {"id":"osi-img2","area":"COMUNICACIONES","tema":"Fundamentos de redes de TI","type":"imagen","img":"assets/img/osi-model.svg",
-     "enunciado":"En la figura, ¿qué capa OSI corresponde a los protocolos HTTP y DNS?",
-     "opciones":["Capa 4 — Transporte","Capa 5 — Sesión","Capa 6 — Presentación","Capa 7 — Aplicación"],
-     "correcta":3,"pista":"Es la capa que ve el usuario final.",
-     "explicacion":"HTTP y DNS operan en la capa 7 (Aplicación). La capa 4 (Transporte) corresponde a TCP/UDP."},
-    {"id":"aws-img1","area":"NUBE","tema":"Conocimientos en AWS","type":"imagen","img":"assets/img/vpc-topology.svg",
-     "enunciado":"Según la topología, ¿dónde reside la IP pública en el diagrama?",
-     "opciones":["En la EC2 de la subred privada","En el NAT Gateway de la subred pública","En la VPC","En el route table"],
-     "correcta":1,"pista":"La EC2 privada sale a internet a través de ese recurso.",
-     "explicacion":"La EC2 vive en subred privada sin IP pública; comparte la IP pública del NAT Gateway para salir a internet."},
-    {"id":"lin-img1","area":"INFRAESTRUCTURA","tema":"Teoria Linux","type":"imagen","img":"assets/img/linux-fhs.svg",
-     "enunciado":"¿Qué directorio del árbol de Linux guarda los archivos de log?",
-     "opciones":["/home","/etc","/var/log","/proc"],
-     "correcta":2,"pista":"'var' por variable.",
-     "explicacion":"FHS: /var/log guarda logs (syslog, journal). /etc es configuración, /home usuarios y /proc es virtual del kernel."},
-    {"id":"vz-img1","area":"INFRAESTRUCTURA","tema":"Virtualizacion-plataformas","type":"imagen","img":"assets/img/vm-vs-container.svg",
-     "enunciado":"En la comparación del diagrama, ¿qué comparten los contenedores pero no las máquinas virtuales?",
-     "opciones":["Su propio kernel","El kernel del sistema host","Su propia tarjeta de red","Su propio hipervisor"],
-     "correcta":1,"pista":"Por eso los contenedores arrancan en segundos.",
-     "explicacion":"Cada VM tiene su SO y kernel propio; los contenedores comparten el kernel del host, aislando sólo procesos (más ligeros)."},
-    {"id":"web-img1","area":"PROGRAMACION","tema":"Webservers","type":"imagen","img":"assets/img/http-flow.svg",
-     "enunciado":"En el flujo de la figura, ¿por qué puerto viaja la petición cuando el sitio usa HTTPS?",
-     "opciones":["80","53","443","3306"],
-     "correcta":2,"pista":"HTTPS = HTTP cifrado con TLS.",
-     "explicacion":"HTTPS usa el puerto 443 con TLS; HTTP sin cifrar usa 80 y DNS usa 53."},
-    {"id":"fp-img1","area":"INFRAESTRUCTURA","tema":"Fundamentos de plataformas de TI","type":"imagen","img":"assets/img/server-components.svg",
-     "enunciado":"¿Qué componente del esquema es el responsable de ejecutar las instrucciones de forma masiva?",
-     "opciones":["Memoria RAM","CPU","Disco","Tarjeta de red"],
-     "correcta":1,"pista":"Es el procesador.",
-     "explicacion":"La CPU ejecuta el ciclo de instrucciones; la RAM mantiene datos en uso y el disco los persiste."},
-
-    {"id":"conf-001","area":"COMUNICACIONES","tema":"Fundamentos de redes de TI","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA?",
-     "opciones":["TCP no confirma entrega y UDP sí","UDP es orientado a conexión con handshakes","TCP confirma entrega y orden; UDP es rápido sin garantía","TCP y UDP son idénticos"],
-     "correcta":2,"pista":"Uno es fiable, el otro veloz.",
-     "explicacion":"Confusión típica: TCP sí garantiza conexión/orden/retransmisión; UDP prioriza velocidad sin handshakes."},
-    {"id":"conf-002","area":"NUBE","tema":"Conocimientos en AWS","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA sobre Security Group y NACL?",
-     "opciones":["Son exactamente lo mismo","SG es stateful a nivel de instancia; NACL es stateless a nivel de subred","NACL aplica a instancias y SG a subredes","SG no permite tráfico saliente"],
-     "correcta":1,"pista":"Estado y nivel de aplicación.",
-     "explicacion":"SG trabaja por instancia y recuerda la conexión (stateful, sin negaciones); NACL filtra por subred de forma stateless (con negaciones)."},
-    {"id":"conf-003","area":"INFRAESTRUCTURA","tema":"Teoria Linux","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA sobre gestores de paquetes?",
-     "opciones":["Ubuntu y Amazon Linux usan apt","Amazon Linux 2023 usa dnf y Ubuntu usa apt","RHEL usa brew","Los dos usan npm"],
-     "correcta":1,"pista":"Familia RedHat vs Debian.",
-     "explicacion":"Amazon Linux 2023/RHEL usan dnf; Ubuntu/Debian usan apt. Es error frecuente intentar 'apt' en Amazon Linux."},
-    {"id":"conf-004","area":"DEVOPS","tema":"DevOps CI","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA sobre Integración Continua?",
-     "opciones":["CI significa desplegar directo a producción","CI integra cambios frecuentes con build y pruebas automatizadas","CI es instalar servidores a mano","CI reemplaza al revisor de código"],
-     "correcta":1,"pista":"Integrar + validar.",
-     "explicacion":"CI = integrar cambios seguido y validarlos automáticamente en cada push/PR; no es despliegue ni configuración manual."},
-    {"id":"conf-005","area":"INFRAESTRUCTURA","tema":"Virtualizacion-plataformas","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA sobre los contenedores?",
-     "opciones":["Cada contenedor incluye su propio SO","Los contenedores comparten el kernel del host","Los contenedores son más pesados que las VM","Docker es un hipervisor"],
-     "correcta":1,"pista":"Kernel compartido.",
-     "explicacion":"Los contenedores aíslan procesos sobre el mismo kernel del host; por eso son ligeros y arrancan rápido. Docker no es hipervisor."},
-    {"id":"conf-006","area":"SEGURIDAD","tema":"Seguridad de TI","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA sobre MFA?",
-     "opciones":["MFA significa usar dos contraseñas","MFA combina factores distintos (algo que sabes/tienes/eres)","MFA es un tipo de cifrado","MFA reemplaza a la contraseña"],
-     "correcta":1,"pista":"Más de un tipo de factor.",
-     "explicacion":"MFA exige factores de naturaleza distinta (clave + token/biometría); no es simplemente repetir la contraseña."},
-    {"id":"conf-007","area":"NUBE","tema":"AWS SysOps","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA sobre CloudWatch y CloudTrail?",
-     "opciones":["CloudTrail mide métricas de CPU","CloudWatch audita quién llamó a la API","CloudWatch genera métricas/alarmas y CloudTrail audita llamadas a la API","Ambos hacen lo mismo"],
-     "correcta":2,"pista":"Monitoreo vs auditoría.",
-     "explicacion":"Confusión muy común: CloudWatch = métricas, logs y alarmas; CloudTrail = historial de llamadas a la API (quién hizo qué)."},
-    {"id":"conf-008","area":"DEVOPS","tema":"DevOps CD","type":"confusion",
-     "enunciado":"¿Cuál afirmación es CORRECTA sobre Continuous Delivery y Continuous Deployment?",
-     "opciones":["Son lo mismo y siempre van a prod","Delivery deja el artefacto listo con aprobación manual; Deployment libera a prod automáticamente","Deployment es manual, Delivery es automático","Ninguna libera código"],
-     "correcta":1,"pista":"¿Quién aprueba la liberación?",
-     "explicacion":"Continuous Delivery requiere aprobación humana para liberar; Continuous Deployment automática cada paso verificado hasta producción."},
-
-    {"id":"red-mc1","area":"COMUNICACIONES","tema":"Fundamentos de redes de TI","type":"mc",
-     "enunciado":"¿Qué protocolo resuelve nombres de dominio a direcciones IP?",
-     "opciones":["DHCP","DNS","ARP","SMTP"],
-     "correcta":1,"pista":"Puerto 53.","explicacion":"DNS traduce nombres a IP (puerto 53); DHCP asigna IPs dinámicas y ARP resuelve MAC a IP en la red local."},
-    {"id":"red-mc2","area":"COMUNICACIONES","tema":"Fundamentos de redes de TI","type":"mc",
-     "enunciado":"Una máscara /25 permite cuántos hosts utilizables?",
-     "opciones":["126","254","62","30"],
-     "correcta":0,"pista":"Mitad de un /24.",
-     "explicacion":"/25 da 128 direcciones por bloque y 126 hosts utilizables (/24=254, /26=62, /27=30)."},
-    {"id":"aws-mc1","area":"NUBE","tema":"Conocimientos en AWS","type":"mc",
-     "enunciado":"¿Qué servicio de AWS se usa para almacenar objetos de forma duradera y con versionado?",
-     "opciones":["EBS","S3","EFS","EC2"],
-     "correcta":1,"pista":"Bucket.","explicacion":"S3 guarda objetos en buckets con versionado y alta durabilidad; EBS es bloque y EFS es sistema de archivos."},
-    {"id":"so-mc1","area":"NUBE","tema":"AWS SysOps","type":"mc",
-     "enunciado":"¿Qué recurso mantiene un número deseado de instancias ajustándose a la demanda?",
-     "opciones":["Security Group","Auto Scaling Group","Route 53","Amazon ECR"],
-     "correcta":1,"pista":"Escalado automático.",
-     "explicacion":"El ASG ajusta la cantidad de instancias según políticas (CPU, cola), mejorando disponibilidad y optimizando costo."},
-    {"id":"vz-mc1","area":"INFRAESTRUCTURA","tema":"Virtualizacion-plataformas","type":"mc",
-     "enunciado":"¿Qué es VMware ESXi respecto al hipervisor?",
-     "opciones":["Tipo 2 sobre Windows","Tipo 1 (bare-metal) sobre el hardware","Una herramienta de monitoreo","Un contenedor"],
-     "correcta":1,"pista":"Sin sistema operativo debajo.",
-     "explicacion":"ESXi, Hyper-V y KVM son hipervisores Tipo 1 (bare-metal); VirtualBox/VMware Workstation son Tipo 2 sobre un SO host."},
-    {"id":"lin-mc1","area":"INFRAESTRUCTURA","tema":"Teoria Linux","type":"mc",
-     "enunciado":"¿Cómo se reinicia un servicio con systemd?",
-     "opciones":["service <s> --restart","systemctl restart <s>","systemctl start <s> -f","rc.d <s> restart"],
-     "correcta":1,"pista":"systemctl es la interfaz de systemd.",
-     "explicacion":"systemctl gestiona servicios (start/stop/enable/status); journalctl consulta sus logs."},
-    {"id":"web-mc1","area":"PROGRAMACION","tema":"Webservers","type":"mc",
-     "enunciado":"¿Cuál es la principal ventaja de Nginx frente a Apache en escenarios de muchas conexiones?",
-     "opciones":["No soporta HTTPS","Su modelo orientado a eventos maneja miles de conexiones concurrentes sin bloquear","Es de pago","No sirve contenido estático"],
-     "correcta":1,"pista":"Modelo de concurrencia.",
-     "explicacion":"Nginx es no bloqueante (event-driven) y muy eficiente como servidor estático y reverse proxy frente a miles de conexiones."},
-    {"id":"seg-mc1","area":"SEGURIDAD","tema":"Seguridad de TI","type":"mc",
-     "enunciado":"¿Cuál es la mejor mitigación ante una credencial filtrada en un repositorio?",
-     "opciones":["Ocultar el archivo","Rotarla de inmediato y revisar el alcance del acceso","Esperar que caduque","Cambiar el nombre del repo"],
-     "correcta":1,"pista":"Acción inmediata.",
-     "explicacion":"Se rota enseguida, se audita el acceso y se deja de guardar secretos en código (gestores de secretos)."}
+    {
+      "id": "osi-img1",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "imagen",
+      "img": "assets/img/osi-model.svg",
+      "enunciado": "Observando el diagrama del modelo OSI, ¿en qué capa opera un enrutador (router)?",
+      "opciones": [
+        "Capa 1 — Físico",
+        "Capa 2 — Enlace",
+        "Capa 3 — Red",
+        "Capa 7 — Aplicación"
+      ],
+      "correcta": 2,
+      "pista": "El router toma decisiones con direcciones IP.",
+      "explicacion": "El router enruta paquetes por IP en la capa 3 (Red). El switch opera en capa 2 (MAC) y el cable en capa 1."
+    },
+    {
+      "id": "osi-img2",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "imagen",
+      "img": "assets/img/osi-model.svg",
+      "enunciado": "En la figura, ¿qué capa OSI corresponde a los protocolos HTTP y DNS?",
+      "opciones": [
+        "Capa 4 — Transporte",
+        "Capa 5 — Sesión",
+        "Capa 6 — Presentación",
+        "Capa 7 — Aplicación"
+      ],
+      "correcta": 3,
+      "pista": "Es la capa que ve el usuario final.",
+      "explicacion": "HTTP y DNS operan en la capa 7 (Aplicación). La capa 4 (Transporte) corresponde a TCP/UDP."
+    },
+    {
+      "id": "aws-img1",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/vpc-topology.svg",
+      "enunciado": "Según la topología, ¿dónde reside la IP pública en el diagrama?",
+      "opciones": [
+        "En la EC2 de la subred privada",
+        "En el NAT Gateway de la subred pública",
+        "En la VPC",
+        "En el route table"
+      ],
+      "correcta": 1,
+      "pista": "La EC2 privada sale a internet a través de ese recurso.",
+      "explicacion": "La EC2 vive en subred privada sin IP pública; comparte la IP pública del NAT Gateway para salir a internet."
+    },
+    {
+      "id": "lin-img1",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "imagen",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué directorio del árbol de Linux guarda los archivos de log?",
+      "opciones": [
+        "/home",
+        "/etc",
+        "/var/log",
+        "/proc"
+      ],
+      "correcta": 2,
+      "pista": "'var' por variable.",
+      "explicacion": "FHS: /var/log guarda logs (syslog, journal). /etc es configuración, /home usuarios y /proc es virtual del kernel."
+    },
+    {
+      "id": "vz-img1",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "En la comparación del diagrama, ¿qué comparten los contenedores pero no las máquinas virtuales?",
+      "opciones": [
+        "Su propio kernel",
+        "El kernel del sistema host",
+        "Su propia tarjeta de red",
+        "Su propio hipervisor"
+      ],
+      "correcta": 1,
+      "pista": "Por eso los contenedores arrancan en segundos.",
+      "explicacion": "Cada VM tiene su SO y kernel propio; los contenedores comparten el kernel del host, aislando sólo procesos (más ligeros)."
+    },
+    {
+      "id": "web-img1",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
+      "type": "imagen",
+      "img": "assets/img/http-flow.svg",
+      "enunciado": "En el flujo de la figura, ¿por qué puerto viaja la petición cuando el sitio usa HTTPS?",
+      "opciones": [
+        "80",
+        "53",
+        "443",
+        "3306"
+      ],
+      "correcta": 2,
+      "pista": "HTTPS = HTTP cifrado con TLS.",
+      "explicacion": "HTTPS usa el puerto 443 con TLS; HTTP sin cifrar usa 80 y DNS usa 53."
+    },
+    {
+      "id": "fp-img1",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "imagen",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "¿Qué componente del esquema es el responsable de ejecutar las instrucciones de forma masiva?",
+      "opciones": [
+        "Memoria RAM",
+        "CPU",
+        "Disco",
+        "Tarjeta de red"
+      ],
+      "correcta": 1,
+      "pista": "Es el procesador.",
+      "explicacion": "La CPU ejecuta el ciclo de instrucciones; la RAM mantiene datos en uso y el disco los persiste."
+    },
+    {
+      "id": "conf-001",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA?",
+      "opciones": [
+        "TCP no confirma entrega y UDP sí",
+        "UDP es orientado a conexión con handshakes",
+        "TCP confirma entrega y orden; UDP es rápido sin garantía",
+        "TCP y UDP son idénticos"
+      ],
+      "correcta": 2,
+      "pista": "Uno es fiable, el otro veloz.",
+      "explicacion": "Confusión típica: TCP sí garantiza conexión/orden/retransmisión; UDP prioriza velocidad sin handshakes.",
+      "img": "assets/img/osi-model.svg"
+    },
+    {
+      "id": "conf-002",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA sobre Security Group y NACL?",
+      "opciones": [
+        "Son exactamente lo mismo",
+        "SG es stateful a nivel de instancia; NACL es stateless a nivel de subred",
+        "NACL aplica a instancias y SG a subredes",
+        "SG no permite tráfico saliente"
+      ],
+      "correcta": 1,
+      "pista": "Estado y nivel de aplicación.",
+      "explicacion": "SG trabaja por instancia y recuerda la conexión (stateful, sin negaciones); NACL filtra por subred de forma stateless (con negaciones).",
+      "img": "assets/img/vpc-topology.svg"
+    },
+    {
+      "id": "conf-003",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA sobre gestores de paquetes?",
+      "opciones": [
+        "Ubuntu y Amazon Linux usan apt",
+        "Amazon Linux 2023 usa dnf y Ubuntu usa apt",
+        "RHEL usa brew",
+        "Los dos usan npm"
+      ],
+      "correcta": 1,
+      "pista": "Familia RedHat vs Debian.",
+      "explicacion": "Amazon Linux 2023/RHEL usan dnf; Ubuntu/Debian usan apt. Es error frecuente intentar 'apt' en Amazon Linux.",
+      "img": "assets/img/osi-model.svg"
+    },
+    {
+      "id": "conf-004",
+      "area": "DEVOPS",
+      "tema": "DevOps CI",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA sobre Integración Continua?",
+      "opciones": [
+        "CI significa desplegar directo a producción",
+        "CI integra cambios frecuentes con build y pruebas automatizadas",
+        "CI es instalar servidores a mano",
+        "CI reemplaza al revisor de código"
+      ],
+      "correcta": 1,
+      "pista": "Integrar + validar.",
+      "explicacion": "CI = integrar cambios seguido y validarlos automáticamente en cada push/PR; no es despliegue ni configuración manual.",
+      "img": "assets/img/cicd-pipeline.svg"
+    },
+    {
+      "id": "conf-005",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA sobre los contenedores?",
+      "opciones": [
+        "Cada contenedor incluye su propio SO",
+        "Los contenedores comparten el kernel del host",
+        "Los contenedores son más pesados que las VM",
+        "Docker es un hipervisor"
+      ],
+      "correcta": 1,
+      "pista": "Kernel compartido.",
+      "explicacion": "Los contenedores aíslan procesos sobre el mismo kernel del host; por eso son ligeros y arrancan rápido. Docker no es hipervisor.",
+      "img": "assets/img/vm-vs-container.svg"
+    },
+    {
+      "id": "conf-006",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA sobre MFA?",
+      "opciones": [
+        "MFA significa usar dos contraseñas",
+        "MFA combina factores distintos (algo que sabes/tienes/eres)",
+        "MFA es un tipo de cifrado",
+        "MFA reemplaza a la contraseña"
+      ],
+      "correcta": 1,
+      "pista": "Más de un tipo de factor.",
+      "explicacion": "MFA exige factores de naturaleza distinta (clave + token/biometría); no es simplemente repetir la contraseña.",
+      "img": "assets/img/security-defense.svg"
+    },
+    {
+      "id": "conf-007",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA sobre CloudWatch y CloudTrail?",
+      "opciones": [
+        "CloudTrail mide métricas de CPU",
+        "CloudWatch audita quién llamó a la API",
+        "CloudWatch genera métricas/alarmas y CloudTrail audita llamadas a la API",
+        "Ambos hacen lo mismo"
+      ],
+      "correcta": 2,
+      "pista": "Monitoreo vs auditoría.",
+      "explicacion": "Confusión muy común: CloudWatch = métricas, logs y alarmas; CloudTrail = historial de llamadas a la API (quién hizo qué).",
+      "img": "assets/img/cloudwatch-monitoring.svg"
+    },
+    {
+      "id": "conf-008",
+      "area": "DEVOPS",
+      "tema": "DevOps CD",
+      "type": "confusion",
+      "enunciado": "¿Cuál afirmación es CORRECTA sobre Continuous Delivery y Continuous Deployment?",
+      "opciones": [
+        "Son lo mismo y siempre van a prod",
+        "Delivery deja el artefacto listo con aprobación manual; Deployment libera a prod automáticamente",
+        "Deployment es manual, Delivery es automático",
+        "Ninguna libera código"
+      ],
+      "correcta": 1,
+      "pista": "¿Quién aprueba la liberación?",
+      "explicacion": "Continuous Delivery requiere aprobación humana para liberar; Continuous Deployment automática cada paso verificado hasta producción.",
+      "img": "assets/img/cicd-pipeline.svg"
+    },
+    {
+      "id": "red-mc1",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "mc",
+      "enunciado": "¿Qué protocolo resuelve nombres de dominio a direcciones IP?",
+      "opciones": [
+        "DHCP",
+        "DNS",
+        "ARP",
+        "SMTP"
+      ],
+      "correcta": 1,
+      "pista": "Puerto 53.",
+      "explicacion": "DNS traduce nombres a IP (puerto 53); DHCP asigna IPs dinámicas y ARP resuelve MAC a IP en la red local.",
+      "img": "assets/img/vpc-topology.svg"
+    },
+    {
+      "id": "red-mc2",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "mc",
+      "enunciado": "Una máscara /25 permite cuántos hosts utilizables?",
+      "opciones": [
+        "126",
+        "254",
+        "62",
+        "30"
+      ],
+      "correcta": 0,
+      "pista": "Mitad de un /24.",
+      "explicacion": "/25 da 128 direcciones por bloque y 126 hosts utilizables (/24=254, /26=62, /27=30).",
+      "img": "assets/img/osi-model.svg"
+    },
+    {
+      "id": "aws-mc1",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "mc",
+      "enunciado": "¿Qué servicio de AWS se usa para almacenar objetos de forma duradera y con versionado?",
+      "opciones": [
+        "EBS",
+        "S3",
+        "EFS",
+        "EC2"
+      ],
+      "correcta": 1,
+      "pista": "Bucket.",
+      "explicacion": "S3 guarda objetos en buckets con versionado y alta durabilidad; EBS es bloque y EFS es sistema de archivos.",
+      "img": "assets/img/aws-cloud.svg"
+    },
+    {
+      "id": "so-mc1",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "mc",
+      "enunciado": "¿Qué recurso mantiene un número deseado de instancias ajustándose a la demanda?",
+      "opciones": [
+        "Security Group",
+        "Auto Scaling Group",
+        "Route 53",
+        "Amazon ECR"
+      ],
+      "correcta": 1,
+      "pista": "Escalado automático.",
+      "explicacion": "El ASG ajusta la cantidad de instancias según políticas (CPU, cola), mejorando disponibilidad y optimizando costo.",
+      "img": "assets/img/cloudwatch-monitoring.svg"
+    },
+    {
+      "id": "vz-mc1",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "mc",
+      "enunciado": "¿Qué es VMware ESXi respecto al hipervisor?",
+      "opciones": [
+        "Tipo 2 sobre Windows",
+        "Tipo 1 (bare-metal) sobre el hardware",
+        "Una herramienta de monitoreo",
+        "Un contenedor"
+      ],
+      "correcta": 1,
+      "pista": "Sin sistema operativo debajo.",
+      "explicacion": "ESXi, Hyper-V y KVM son hipervisores Tipo 1 (bare-metal); VirtualBox/VMware Workstation son Tipo 2 sobre un SO host.",
+      "img": "assets/img/vm-vs-container.svg"
+    },
+    {
+      "id": "lin-mc1",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "enunciado": "¿Cómo se reinicia un servicio con systemd?",
+      "opciones": [
+        "service <s> --restart",
+        "systemctl restart <s>",
+        "systemctl start <s> -f",
+        "rc.d <s> restart"
+      ],
+      "correcta": 1,
+      "pista": "systemctl es la interfaz de systemd.",
+      "explicacion": "systemctl gestiona servicios (start/stop/enable/status); journalctl consulta sus logs.",
+      "img": "assets/img/linux-fhs.svg"
+    },
+    {
+      "id": "web-mc1",
+      "area": "PROGRAMACION",
+      "tema": "Webservers",
+      "type": "mc",
+      "enunciado": "¿Cuál es la principal ventaja de Nginx frente a Apache en escenarios de muchas conexiones?",
+      "opciones": [
+        "No soporta HTTPS",
+        "Su modelo orientado a eventos maneja miles de conexiones concurrentes sin bloquear",
+        "Es de pago",
+        "No sirve contenido estático"
+      ],
+      "correcta": 1,
+      "pista": "Modelo de concurrencia.",
+      "explicacion": "Nginx es no bloqueante (event-driven) y muy eficiente como servidor estático y reverse proxy frente a miles de conexiones.",
+      "img": "assets/img/http-flow.svg"
+    },
+    {
+      "id": "seg-mc1",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "type": "mc",
+      "enunciado": "¿Cuál es la mejor mitigación ante una credencial filtrada en un repositorio?",
+      "opciones": [
+        "Ocultar el archivo",
+        "Rotarla de inmediato y revisar el alcance del acceso",
+        "Esperar que caduque",
+        "Cambiar el nombre del repo"
+      ],
+      "correcta": 1,
+      "pista": "Acción inmediata.",
+      "explicacion": "Se rota enseguida, se audita el acceso y se deja de guardar secretos en código (gestores de secretos).",
+      "img": "assets/img/security-defense.svg"
+    }
   ]
 }

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 250" role="img" aria-label="Pipeline de integración y despliegue continuo">
+  <rect width="560" height="250" fill="#0f0f12"/>
+  <text x="16" y="26" fill="#FDDA24" font-family="system-ui,sans-serif" font-size="14" font-weight="800">PIPELINE CI / CD</text>
+  <g font-family="system-ui,sans-serif" font-size="12">
+    <line x1="70" y1="120" x2="490" y2="120" stroke="#2b2b31" stroke-width="3"/>
+    <g>
+      <rect x="40" y="96" width="92" height="52" rx="10" fill="#1c1c20" stroke="#39c5cf"/>
+      <text x="86" y="118" text-anchor="middle" fill="#39c5cf" font-weight="700">Código</text>
+      <text x="86" y="137" text-anchor="middle" fill="#9a9aa3" font-size="10">Git push</text>
+    </g>
+    <g>
+      <rect x="140" y="96" width="92" height="52" rx="10" fill="#1c1c20" stroke="#FDDA24"/>
+      <text x="186" y="118" text-anchor="middle" fill="#FDDA24" font-weight="700">Build</text>
+      <text x="186" y="137" text-anchor="middle" fill="#9a9aa3" font-size="10">compila</text>
+    </g>
+    <g>
+      <rect x="240" y="96" width="92" height="52" rx="10" fill="#1c1c20" stroke="#FDDA24"/>
+      <text x="286" y="118" text-anchor="middle" fill="#FDDA24" font-weight="700">Pruebas</text>
+      <text x="286" y="137" text-anchor="middle" fill="#9a9aa3" font-size="10">test auto</text>
+    </g>
+    <g>
+      <rect x="340" y="96" width="92" height="52" rx="10" fill="#1c1c20" stroke="#a371f7"/>
+      <text x="386" y="118" text-anchor="middle" fill="#a371f7" font-weight="700">Deploy</text>
+      <text x="386" y="137" text-anchor="middle" fill="#9a9aa3" font-size="10">entorno</text>
+    </g>
+    <g>
+      <rect x="440" y="96" width="92" height="52" rx="10" fill="#1c1c20" stroke="#3fb950"/>
+      <text x="486" y="118" text-anchor="middle" fill="#3fb950" font-weight="700">Prod</text>
+      <text x="486" y="137" text-anchor="middle" fill="#9a9aa3" font-size="10">producción</text>
+    </g>
+    <rect x="40" y="176" width="200" height="34" rx="8" fill="#2a2313" stroke="#FDDA24"/>
+    <text x="140" y="198" text-anchor="middle" fill="#FDDA24" font-weight="700">CI · Integración continua</text>
+    <rect x="280" y="176" width="252" height="34" rx="8" fill="#152a17" stroke="#3fb950"/>
+    <text x="406" y="198" text-anchor="middle" fill="#3fb950" font-weight="700">CD · Delivery / Deployment</text>
+    <text x="280" y="236" fill="#9a9aa3" font-size="10" text-anchor="middle">IaC: CloudFormation · Config: Ansible (idempotente) · Versionado: Git</text>
+  </g>
+</svg>
