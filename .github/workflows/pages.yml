@@ -27,16 +27,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Configurar Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6.0.0
 
       - name: Subir artefacto (raiz del repo)
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: .
 
+      # GitHub indexa el artefacto con algo de retardo; evita el error
+      # "No artifacts named github-pages were found" por carrera de metadatos.
+      - name: Esperar a que el artefacto se indexe
+        run: sleep 20
+
       - name: Desplegar a Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.1
