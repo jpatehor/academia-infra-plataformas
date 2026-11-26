@@ -583,14 +583,16 @@ function renderFlash(){
   const head=`<div class="qhead"><span>🃏 ${FCH.queue.length} restantes</span><span>✅ ${FCH.known} · 🔁 ${FCH.unknown}</span></div>`;
   if(!FCH.flipped){
     el.innerHTML=`<div class="quiz">${head}${front}
-      <div class="qnav" style="justify-content:center">
-        <button class="btn primary" id="fFlip">Voltear ▸</button>
+      <div class="qnav" style="justify-content:center;gap:10px;flex-wrap:wrap">
         <button class="btn ghost" id="fExit">Salir</button>
+        <button class="btn ghost" id="fNext">⏭ Siguiente →</button>
+        <button class="btn primary" id="fFlip">Voltear ▸</button>
       </div></div>`;
   } else {
     el.innerHTML=`<div class="quiz">${head}${front}
-      <div class="qnav" style="justify-content:center;gap:12px">
+      <div class="qnav" style="justify-content:center;gap:10px;flex-wrap:wrap">
         <button class="btn" id="fNo" style="border-color:var(--bad);color:var(--bad)">🔁 No la sabía</button>
+        <button class="btn" id="fNext">⏭ Siguiente</button>
         <button class="btn" id="fYes" style="border-color:var(--ok);color:var(--ok);font-weight:700">✅ La sabía</button>
       </div></div>`;
   }
@@ -598,11 +600,20 @@ function renderFlash(){
   const doFlip=()=>{ fc.classList.toggle('flip'); if(fc.classList.contains('flip')) FCH.flipped=true; };
   fc.onclick=doFlip;
   const fb=document.getElementById('fFlip'); if(fb) fb.onclick=doFlip;
+  const nx=document.getElementById('fNext'); if(nx) nx.onclick=()=>nextFlash();
   const fe=document.getElementById('fExit'); if(fe) fe.onclick=()=>{FCH=null;flashSetup();};
   const yes=document.getElementById('fYes');
   if(yes) yes.onclick=()=>{ FCH.known++; S.flash[q.id]=true; save(); FCH.flipped=false; FCH.queue.shift(); renderFlash(); };
   const no=document.getElementById('fNo');
   if(no) no.onclick=()=>{ FCH.unknown++; delete S.flash[q.id]; save(); FCH.flipped=false; FCH.queue.push(FCH.queue.shift()); renderFlash(); };
+}
+
+/* ---- pasar a la siguiente tarjeta (sin marcar) ---- */
+function nextFlash(){
+  if(!FCH || !FCH.queue.length) return;
+  FCH.flipped=false;
+  FCH.queue.push(FCH.queue.shift());  // la actual va al final de la cola
+  renderFlash();
 }
 
 /* ---------------- juego: emparejar (asociar respuesta ↔ pregunta) ---------------- */
