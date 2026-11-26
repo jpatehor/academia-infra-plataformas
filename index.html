@@ -92,6 +92,11 @@
   .area .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px}
   .area .row b{font-size:13px}
   .area .row span{color:var(--muted);font-size:12px}
+  .area.clickable{cursor:pointer;transition:.16s}
+  .area.clickable:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.45)}
+  .area.clickable:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+  .areago{font-size:11.5px;color:var(--brand);font-weight:800;letter-spacing:.4px;margin-top:9px;opacity:0;transform:translateY(-4px);transition:.16s}
+  .area.clickable:hover .areago,.area.clickable:focus-visible .areago{opacity:1;transform:none}
   .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
 
   .plan{display:flex;flex-direction:column;gap:10px}
@@ -345,9 +350,15 @@ function renderAreas(){
     const qs=groups[area];
     const ok=qs.filter(q=>{const a=S.answered[q.id];return a&&a.ok>0&&a.ok>=a.n}).length;
     const p=pct(ok,qs.length);
-    box.innerHTML+=`<div class="area">
+    box.innerHTML+=`<div class="area clickable" role="button" tabindex="0" data-area="${esc(area)}" title="Practicar ${esc(area)}">
       <div class="row"><b><span class="dot" style="background:${AREA_COLOR[area]||'var(--accent)'}"></span>${area}</b><span>${ok}/${qs.length} · ${p}%</span></div>
-      <div class="bar"><i style="width:${p}%;background:${AREA_COLOR[area]||'var(--accent)'}"></i></div></div>`;
+      <div class="bar"><i style="width:${p}%;background:${AREA_COLOR[area]||'var(--accent)'}"></i></div>
+      <div class="areago">Practicar ${area} →</div></div>`;
+  });
+  box.querySelectorAll('[data-area]').forEach(c=>{
+    const goArea=()=>startQuiz('area',c.dataset.area);
+    c.onclick=goArea;
+    c.onkeydown=(e)=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();goArea();} };
   });
 }
 function sortedTemas(){ return DATA.temas.slice().sort((a,b)=> PRI_RANK(a.prioridad)-PRI_RANK(b.prioridad) || b.puntaje-a.puntaje); }
@@ -438,6 +449,7 @@ function nextTemaSugerido(){
 function startQuiz(kind, arg){
   let items=[];
   if(kind==='tema') items=DATA.questions.filter(q=>q.tema===arg);
+  else if(kind==='area') items=DATA.questions.filter(q=>q.area===arg);
   else if(kind==='repaso') items=DATA.questions.filter(q=>{const a=S.answered[q.id];return a&&a.ok<a.n});
   else if(kind==='single') items=[shuffled(DATA.questions)[0]];
   else items=shuffled(DATA.questions);
@@ -563,6 +575,7 @@ function retryWrong(){ if(QZ && QZ.lastWrong && QZ.lastWrong.length) startRetry(
 function repeatQuiz(){
   const m=QZ?QZ.mode:'single', a=QZ?QZ.arg:null;
   if(m==='tema') startQuiz('tema',a);
+  else if(m==='area') startQuiz('area',a);
   else if(m==='sim') startQuiz('sim');
   else if(m==='repaso') startQuiz('repaso');
   else if(m==='single'||m==='retry') startRetry(QZ.items);
