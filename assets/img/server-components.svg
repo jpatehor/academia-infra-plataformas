@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 250" role="img" aria-label="Componentes de un servidor">
+  <rect width="540" height="250" fill="#0f0f12"/>
+  <text x="16" y="26" fill="#FDDA24" font-family="system-ui,sans-serif" font-size="14" font-weight="800">COMPONENTES DE UN SERVIDOR</text>
+  <g font-family="system-ui,sans-serif" font-size="12" fill="#f5f5f6">
+    <rect x="30" y="52" width="480" height="172" rx="14" fill="#16161a" stroke="#2b2b31"/>
+    <rect x="52" y="74" width="200" height="54" rx="10" fill="#1c1c20" stroke="#FDDA24"/>
+    <text x="152" y="98" text-anchor="middle" font-weight="700" fill="#FDDA24">CPU</text>
+    <text x="152" y="118" text-anchor="middle" fill="#9a9aa3" font-size="11">ejecuta instrucciones</text>
+    <rect x="288" y="74" width="200" height="54" rx="10" fill="#1c1c20" stroke="#39c5cf"/>
+    <text x="388" y="98" text-anchor="middle" font-weight="700" fill="#39c5cf">Memoria RAM</text>
+    <text x="388" y="118" text-anchor="middle" fill="#9a9aa3" font-size="11">datos en uso (volátil)</text>
+    <rect x="52" y="146" width="200" height="54" rx="10" fill="#1c1c20" stroke="#a371f7"/>
+    <text x="152" y="170" text-anchor="middle" font-weight="700" fill="#a371f7">Disco (SSD/HDD)</text>
+    <text x="152" y="190" text-anchor="middle" fill="#9a9aa3" font-size="11">persistencia</text>
+    <rect x="288" y="146" width="200" height="54" rx="10" fill="#1c1c20" stroke="#3fb950"/>
+    <text x="388" y="170" text-anchor="middle" font-weight="700" fill="#3fb950">Tarjeta de red</text>
+    <text x="388" y="190" text-anchor="middle" fill="#9a9aa3" font-size="11">conectividad (NIC / IP)</text>
+    <text x="270" y="240" fill="#9a9aa3" font-size="11" text-anchor="middle">E/S virtualizadas en la nube: vCPU, vRAM, vDisco</text>
+  </g>
+</svg>

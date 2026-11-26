@@ -110,6 +110,12 @@
   .quiz{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:14px}
   .qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:var(--muted);flex-wrap:wrap}
   .qtext{font-size:17px;font-weight:600;margin:12px 0 16px;line-height:1.45}
+  .tbadge{display:block;width:max-content;font-size:10px;font-weight:800;letter-spacing:.7px;padding:4px 10px;border-radius:999px;border:1px solid;margin-bottom:9px;text-transform:uppercase}
+  .b-img{color:var(--brand);border-color:#fdda2455;background:#fdda2418}
+  .b-con{color:#ff7b72;border-color:#ff7b7244;background:#ff7b7218}
+  .b-cod{color:#79c0ff;border-color:#79c0ff44;background:#79c0ff18}
+  .qimg{margin:4px 0 18px;text-align:center;background:#0b0b0e;border:1px solid var(--line);border-radius:14px;padding:14px}
+  .qimg img{max-width:100%;height:auto;display:inline-block;max-height:340px}
   .opts{display:flex;flex-direction:column;gap:10px}
   .opt{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 14px;cursor:pointer;text-align:left;font-size:15px;color:var(--txt);display:flex;gap:10px;transition:.15s}
   .opt:hover{border-color:var(--brand);transform:translateX(3px)}
@@ -143,6 +149,15 @@
   .empty{text-align:center;color:var(--muted);padding:30px;font-size:14px}
   .loading{text-align:center;padding:60px;color:var(--muted)}
   footer{color:var(--muted);font-size:12px;text-align:center;padding:26px 14px;border-top:1px solid var(--line);margin-top:40px}
+
+  .matchGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  .mtitle{font-size:11px;letter-spacing:1.4px;color:var(--muted);text-transform:uppercase;margin-bottom:9px}
+  .mcard{width:100%;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;cursor:pointer;font-size:13px;color:var(--txt);transition:.15s;line-height:1.4}
+  .mcard:hover{border-color:var(--brand)}
+  .mcard.sel{border-color:var(--brand);background:#fdda2420;box-shadow:0 0 0 2px #fdda2444}
+  .mcard.done{opacity:.55;border-color:var(--ok);background:#152a17;cursor:default}
+  .mcard:disabled{cursor:default}
+  @media (max-width:640px){ .matchGrid{grid-template-columns:1fr} }
 
   /* ---- Flashcards ---- */
   .fwrap{perspective:1200px;margin:16px auto;max-width:720px}
@@ -336,7 +351,7 @@ function temaRow(t){
   const pr=t.prioridad.toLowerCase(); const prKey= pr.startsWith('alt')?'Alto': pr.startsWith('med')?'Medio':'baja';
   return `<div class="tema" style="border-left-color:${col}">
     <div class="info">
-      <div class="t">${esc(t.tema)}</div>
+      <div class="t">${iconFor(t)} ${esc(t.tema)}</div>
       <div class="m">${t.area} · ${qs.length} preguntas · ${t.puntaje} pts ·
         <span class="badge b-${prKey}">${t.prioridad.toUpperCase()}</span> <span class="pill">${ok}/${qs.length} dominado</span></div>
       <div class="progressbar"><i style="width:${p}%;background:${col}"></i></div>
@@ -353,6 +368,25 @@ function renderPlan(){
   document.querySelectorAll('[data-study]').forEach(c=>c.onchange=e=>{S.study[c.dataset.study]=e.target.checked;save()});
   document.querySelectorAll('[data-practice]').forEach(b=>b.onclick=()=>startQuiz('tema',b.dataset.practice));
 }
+function iconFor(t){
+  const m={
+    "Fundamentos de plataformas de TI":"🖥️",
+    "Teoria Linux":"🐧",
+    "Preguntas teoricas shell":"🐚",
+    "Virtualizacion-plataformas":"📦",
+    "Webservers":"🌐",
+    "Conocimientos en AWS":"☁️",
+    "AWS SysOps":"📊",
+    "Fundamentos de redes de TI":"📡",
+    "Seguridad de TI":"🔒",
+    "DevOps CI":"🔁",
+    "DevOps CD":"🚀",
+    "DevOps CM":"🎛️",
+    "DevOps RM":"🎯"
+  };
+  const fb={INFRAESTRUCTURA:"🖥️",NUBE:"☁️",DEVOPS:"🔄",COMUNICACIONES:"📡",SEGURIDAD:"🔒",PROGRAMACION:"🌐"};
+  return m[t.tema] || fb[t.area] || "📂";
+}
 function renderMenus(){
   document.getElementById('quickMenu').innerHTML=`
     <div class="mcard" data-go="sim"><div class="ic">⏱️</div><h3>Simulacro completo</h3><p>${DATA.questions.length} preguntas, aleatorias, con cronómetro.</p></div>
@@ -364,7 +398,7 @@ function renderMenus(){
   const rb=document.querySelector('[data-reset]'); if(rb) rb.onclick=resetProgress;
   document.getElementById('topicMenu').innerHTML=sortedTemas().map(t=>{
     const col=AREA_COLOR[t.area]||'var(--accent)'; const n=DATA.questions.filter(q=>q.tema===t.tema).length;
-    return `<div class="mcard" data-practice="${esc(t.tema)}"><div class="ic">📂</div><h3 style="color:${col}">${esc(t.tema)}</h3><p>${t.area} · ${n} preguntas · ${t.prioridad}</p></div>`;
+    return `<div class="mcard" data-practice="${esc(t.tema)}"><div class="ic">${iconFor(t)}</div><h3 style="color:${col}">${esc(t.tema)}</h3><p>${t.area} · ${n} preguntas · ${t.prioridad}</p></div>`;
   }).join('');
   document.querySelectorAll('#topicMenu [data-practice]').forEach(b=>b.onclick=()=>startQuiz('tema',b.dataset.practice));
 }
@@ -416,7 +450,8 @@ function renderQuestion(){
       <span><span class="dot" style="background:${AREA_COLOR[q.area]}"></span>${esc(q.area)} · ${esc(title)}</span>
       <span>Pregunta ${QZ.i+1}/${QZ.items.length} · ✅ ${QZ.score} · <span class="timer" id="${QZ.mode==='sim'?'simTime':'quizTimer'}">${QZ.mode==='sim'?fmt(QZ.deadline-Date.now()):''}</span></span>
     </div>
-    <div class="qtext">${esc(q.enunciado)}</div>
+    <div class="qtext">${q.type==='imagen'?'<span class="tbadge b-img">🖼️ Pregunta con imagen</span> ':q.type==='confusion'?'<span class="tbadge b-con">⚠️ Pregunta trampa</span> ':q.type==='codigo'?'<span class="tbadge b-cod">⌨️ Código / terminal</span> ':''}${esc(q.enunciado)}</div>
+    ${q.img?`<div class="qimg"><img src="${esc(q.img)}" alt="Diagrama de apoyo" loading="lazy"></div>`:''}
     <div class="opts">${q.opciones.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
     <div id="fbSlot"></div>
     <div id="hintSlot"></div>
@@ -486,20 +521,24 @@ function flashSetup(){
     <div class="qtext" style="border:none">Flashcards</div>
     <p style="color:var(--muted)">Tarjeta 3D que se voltea con un toque. En la parte trasera ves la respuesta correcta y la explicación.</p>
     <p style="color:var(--muted);font-size:14px">Aprendidas: <b style="color:var(--ok)">${learned}/${DATA.questions.length}</b></p>
-    <div class="qnav" style="justify-content:center">
-      <button class="btn primary" id="flashStart" style="padding:12px 20px;font-size:15px">Iniciar sesión</button>
-      ${learned?`<button class="btn ghost" id="flashReset">Reiniciar avance</button>`:''}
+    <div class="qnav" style="justify-content:center;gap:9px;flex-wrap:wrap">
+      <button class="btn primary" id="flashStart" style="padding:12px 18px;font-size:15px">🃏 Tarjetas</button>
+      <button class="btn ghost" id="flashInv" style="padding:12px 16px">🔀 Tarjetas inversas</button>
+      <button class="btn ghost" id="flashMatch" style="padding:12px 16px">🧩 Juego: emparejar</button>
       ${learned?`<button class="btn ghost" id="flashUnknown">Solo las que no sé</button>`:''}
+      ${learned?`<button class="btn ghost" id="flashReset">Reiniciar</button>`:''}
     </div></div>`;
-  document.getElementById('flashStart').onclick=()=>startFlash(false);
+  document.getElementById('flashStart').onclick=()=>startFlash(false,false);
+  const ri=document.getElementById('flashInv'); if(ri) ri.onclick=()=>startFlash(false,true);
+  const rm=document.getElementById('flashMatch'); if(rm) rm.onclick=()=>startMatch();
   const rr=document.getElementById('flashReset'); if(rr) rr.onclick=()=>{S.flash={};save();flashSetup();};
-  const ru=document.getElementById('flashUnknown'); if(ru) ru.onclick=()=>startFlash(true);
+  const ru=document.getElementById('flashUnknown'); if(ru) ru.onclick=()=>startFlash(true,false);
 }
-function startFlash(onlyUnknown){
+function startFlash(onlyUnknown,inv){
   let pool=DATA.questions.slice();
   if(onlyUnknown) pool=pool.filter(q=>!S.flash[q.id]);
   if(!pool.length){ alert('¡Ya dominas todas las flashcards! 🎉'); return; }
-  FCH={queue:shuffled(pool),flipped:false,known:0,unknown:0};
+  FCH={queue:shuffled(pool),flipped:false,known:0,unknown:0,inv:!!inv};
   renderFlash();
 }
 function renderFlash(){
@@ -511,23 +550,36 @@ function renderFlash(){
       <p style="color:var(--muted)">Marcadas como sabidas: <b style="color:var(--ok)">${FCH?FCH.known:0}</b> · En duda: <b style="color:var(--warn)">${FCH?FCH.unknown:0}</b></p>
       <div class="qnav" style="justify-content:center">
         <button class="btn ghost" onclick="flashSetup()">Menú flashcards</button>
-        <button class="btn primary" onclick="startFlash(false)">Otra ronda</button>
+        <button class="btn primary" onclick="startFlash(false,FCH.inv)">Otra ronda</button>
       </div></div>`;
     return;
   }
   const q=FCH.queue[0]; const area=AREA_COLOR[q.area]||'var(--brand)';
-  const front=`<div class="fwrap"><div class="fcard" id="fc">
-      <div class="face">
-        <div class="tag" style="color:${area}">${esc(q.area)} · ${esc(q.tema)}</div>
-        <div class="q">${esc(q.enunciado)}</div>
-        <div class="tap">👆 toca la tarjeta para ver la respuesta</div>
-      </div>
-      <div class="face back">
-        <div class="tag">✅ Respuesta correcta</div>
-        <div class="ans"><b>${'ABCD'[q.correcta]}. ${esc(q.opciones[q.correcta])}</b></div>
-        <div class="exp">${esc(q.explicacion)}</div>
-      </div>
-    </div></div>`;
+  const front = FCH.inv
+    ? `<div class="fwrap"><div class="fcard" id="fc">
+        <div class="face">
+          <div class="tag" style="color:${area}">RESPUESTA · ${esc(q.tema)}</div>
+          <div class="q">${esc(q.opciones[q.correcta])}</div>
+          <div class="tap">👆 toca la tarjeta para recuperar la pregunta</div>
+        </div>
+        <div class="face back">
+          <div class="tag">❓ Pregunta original</div>
+          <div class="q" style="font-size:15px">${esc(q.enunciado)}</div>
+          <div class="exp">${esc(q.explicacion)}</div>
+        </div>
+      </div></div>`
+    : `<div class="fwrap"><div class="fcard" id="fc">
+        <div class="face">
+          <div class="tag" style="color:${area}">${esc(q.area)} · ${esc(q.tema)}</div>
+          <div class="q">${esc(q.enunciado)}</div>
+          <div class="tap">👆 toca la tarjeta para ver la respuesta</div>
+        </div>
+        <div class="face back">
+          <div class="tag">✅ Respuesta correcta</div>
+          <div class="ans"><b>${'ABCD'[q.correcta]}. ${esc(q.opciones[q.correcta])}</b></div>
+          <div class="exp">${esc(q.explicacion)}</div>
+        </div>
+      </div></div>`;
   const head=`<div class="qhead"><span>🃏 ${FCH.queue.length} restantes</span><span>✅ ${FCH.known} · 🔁 ${FCH.unknown}</span></div>`;
   if(!FCH.flipped){
     el.innerHTML=`<div class="quiz">${head}${front}
@@ -551,6 +603,54 @@ function renderFlash(){
   if(yes) yes.onclick=()=>{ FCH.known++; S.flash[q.id]=true; save(); FCH.flipped=false; FCH.queue.shift(); renderFlash(); };
   const no=document.getElementById('fNo');
   if(no) no.onclick=()=>{ FCH.unknown++; delete S.flash[q.id]; save(); FCH.flipped=false; FCH.queue.push(FCH.queue.shift()); renderFlash(); };
+}
+
+/* ---------------- juego: emparejar (asociar respuesta ↔ pregunta) ---------------- */
+let MT=null;
+function startMatch(){
+  const cands=DATA.questions.filter(q=>q.pista && (q.opciones[q.correcta]||'').length<75);
+  const items=shuffled(cands).slice(0,5);
+  if(items.length<4){ alert('No hay preguntas compatibles para emparejar todavía.'); return; }
+  MT={items, right:shuffled(items), sel:null, matched:[], misses:0, msg:'👆 Elige una pregunta, luego su respuesta'};
+  renderMatch();
+}
+function renderMatch(){
+  const el=document.getElementById('flashBox'); if(!MT||!el) return;
+  if(MT.matched.length===MT.items.length){
+    el.innerHTML=`<div class="quiz" style="text-align:center">
+      <div style="font-size:40px">🧩</div>
+      <div class="qtext" style="border:none">¡Ronda completa!</div>
+      <p style="color:var(--muted)">Pares emparejados: <b style="color:var(--ok)">${MT.matched.length}</b> · Fallos: <b style="color:${MT.misses?'var(--bad)':'var(--ok)'}">${MT.misses}</b>${MT.misses===0?' 🎯':''}</p>
+      <div class="qnav" style="justify-content:center">
+        <button class="btn ghost" onclick="MT=null;flashSetup()">Volver</button>
+        <button class="btn primary" onclick="startMatch()">Otra ronda</button>
+      </div></div>`;
+    return;
+  }
+  const done=id=>MT.matched.includes(id);
+  el.innerHTML=`<div class="quiz">
+    <div class="qhead"><span>🧩 Une cada pregunta con su respuesta correcta</span><span>${MT.matched.length}/${MT.items.length} · fallos ${MT.misses}</span></div>
+    ${MT.msg?`<div class="fb hint" style="text-align:center;font-size:13px"><span class="t" style="margin:0">${MT.msg}</span></div>`:''}
+    <div class="matchGrid">
+      <div class="mcol"><div class="mtitle">Preguntas</div>
+        ${MT.items.map(q=>`<button class="mcard ${MT.sel===q.id?'sel':''} ${done(q.id)?'done':''}" ${done(q.id)?'disabled':''} data-q="${esc(q.id)}">${esc(q.enunciado)}</button>`).join('')}
+      </div>
+      <div class="mcol"><div class="mtitle">Respuestas</div>
+        ${MT.right.map(q=>`<button class="mcard ${done(q.id)?'done':''}" ${done(q.id)?'disabled':''} data-a="${esc(q.id)}">${esc(q.opciones[q.correcta])}</button>`).join('')}
+      </div>
+    </div>
+    <div class="qnav" style="justify-content:center"><button class="btn ghost" onclick="MT=null;flashSetup()">Salir</button></div>
+  </div>`;
+  el.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{
+    if(done(b.dataset.q)) return;
+    MT.sel=b.dataset.q; MT.msg='✅ Ahora elige su respuesta a la derecha'; renderMatch();
+  });
+  el.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{
+    if(!MT.sel){ MT.msg='👆 Primero selecciona una pregunta'; renderMatch(); return; }
+    if(b.dataset.a===MT.sel){ MT.matched.push(MT.sel); MT.msg='✅ ¡Correcto!'; MT.sel=null; }
+    else { MT.misses++; MT.msg='❌ No coincide, intenta de nuevo.'; MT.sel=null; }
+    renderMatch();
+  });
 }
 
 /* ---------------- init ---------------- */

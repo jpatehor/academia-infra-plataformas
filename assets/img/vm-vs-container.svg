@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" role="img" aria-label="Máquina virtual versus contenedor">
+  <rect width="520" height="300" fill="#0f0f12"/>
+  <text x="16" y="26" fill="#FDDA24" font-family="system-ui,sans-serif" font-size="14" font-weight="800">MÁQUINA VIRTUAL vs CONTENEDOR</text>
+  <g font-family="system-ui,sans-serif" font-size="12" fill="#f5f5f6">
+    <!-- VM -->
+    <rect x="26" y="46" width="220" height="234" rx="12" fill="#16161a" stroke="#2b2b31"/>
+    <text x="136" y="68" fill="#a371f7" font-weight="800" text-anchor="middle">MÁQUINA VIRTUAL</text>
+    <rect x="44" y="82" width="184" height="44" rx="8" fill="#1c1c20" stroke="#2b2b31"/><text x="136" y="109" text-anchor="middle">App A · App B</text>
+    <rect x="44" y="134" width="184" height="44" rx="8" fill="#1c1c20" stroke="#2b2b31"/><text x="136" y="161" text-anchor="middle">SO invitado</text>
+    <rect x="44" y="186" width="184" height="34" rx="8" fill="#2a2313" stroke="#FDDA24"/><text x="136" y="208" fill="#FDDA24" text-anchor="middle">Hipervisor (Type 1)</text>
+    <rect x="44" y="228" width="184" height="44" rx="8" fill="#1c1c20" stroke="#2b2b31"/><text x="136" y="255" text-anchor="middle">Hardware</text>
+    <text x="136" y="296" fill="#9a9aa3" font-size="10" text-anchor="middle">Cada VM con su propio kernel</text>
+    <!-- Contenedor -->
+    <rect x="274" y="46" width="220" height="234" rx="12" fill="#16161a" stroke="#2b2b31"/>
+    <text x="384" y="68" fill="#39c5cf" font-weight="800" text-anchor="middle">CONTENEDOR</text>
+    <rect x="292" y="82" width="184" height="34" rx="8" fill="#1c1c20" stroke="#2b2b31"/><text x="384" y="104" text-anchor="middle">App A</text>
+    <rect x="292" y="122" width="184" height="34" rx="8" fill="#1c1c20" stroke="#2b2b31"/><text x="384" y="144" text-anchor="middle">App B</text>
+    <rect x="292" y="162" width="184" height="34" rx="8" fill="#2a2313" stroke="#FDDA24"/><text x="384" y="184" fill="#FDDA24" text-anchor="middle">Docker / motor</text>
+    <rect x="292" y="204" width="184" height="68" rx="8" fill="#1c1c20" stroke="#2b2b31"/>
+    <text x="384" y="230" text-anchor="middle">SO host + kernel</text>
+    <text x="384" y="252" text-anchor="middle">Hardware</text>
+    <text x="384" y="296" fill="#9a9aa3" font-size="10" text-anchor="middle">Comparten el kernel del host</text>
+  </g>
+</svg>
