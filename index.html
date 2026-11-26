@@ -135,6 +135,8 @@
   .timer{font-variant-numeric:tabular-nums;font-weight:800;color:var(--brand);font-size:15px}
   .timer.low{color:var(--bad)}
   .progressbar{height:10px;background:#0b0b0e;border-radius:8px;overflow:hidden;margin-top:6px}
+  .progressbar.lg{height:16px;border-radius:10px;margin-top:10px}
+  .barlab{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#c9c9d3;font-weight:800;letter-spacing:.4px;margin-top:16px;text-transform:uppercase}
   .progressbar i{display:block;height:100%;background:var(--brand);transition:width .3s}
   .pill{font-size:11px;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
 
@@ -213,6 +215,8 @@
           <button class="btn primary cta" id="btnContinue">Continuar donde iba →</button>
           <button class="btn ghost cta" id="btnRandom">Sorpréndeme</button>
         </div>
+        <div class="barlab"><span>Dominio global</span><span id="heroBarTxt">0% dominado</span></div>
+        <div class="progressbar lg"><i id="heroBar" style="width:0%"></i></div>
         <div class="meta" id="heroMeta"></div>
       </div>
       <div class="right">
@@ -318,6 +322,8 @@ function renderHero(){
   const p=pct(dom,total), pend=pendingCount();
   document.getElementById('greet').textContent=greeting();
   document.getElementById('ringNum').textContent=p+'%';
+  const hb=document.getElementById('heroBar'); if(hb) hb.style.width=p+'%';
+  const hbt=document.getElementById('heroBarTxt'); if(hbt) hbt.textContent=p+'% dominado ('+dom+'/'+total+')';
   document.getElementById('ringFg').setAttribute('stroke-dashoffset', String(CIRC - CIRC*p/100));
   document.getElementById('sResp').textContent=att;
   document.getElementById('sPrec').textContent=prec===null?'—':prec+'%';
@@ -450,6 +456,7 @@ function renderQuestion(){
       <span><span class="dot" style="background:${AREA_COLOR[q.area]}"></span>${esc(q.area)} · ${esc(title)}</span>
       <span>Pregunta ${QZ.i+1}/${QZ.items.length} · ✅ ${QZ.score} · <span class="timer" id="${QZ.mode==='sim'?'simTime':'quizTimer'}">${QZ.mode==='sim'?fmt(QZ.deadline-Date.now()):''}</span></span>
     </div>
+    <div class="progressbar lg" style="margin-top:4px"><i style="width:${Math.round(((QZ.i+1)/QZ.items.length)*100)}%"></i></div>
     <div class="qtext">${q.type==='imagen'?'<span class="tbadge b-img">🖼️ Pregunta con imagen</span> ':q.type==='confusion'?'<span class="tbadge b-con">⚠️ Pregunta trampa</span> ':q.type==='codigo'?'<span class="tbadge b-cod">⌨️ Código / terminal</span> ':''}${esc(q.enunciado)}</div>
     ${q.img?`<div class="qimg"><img src="${esc(q.img)}" alt="Diagrama de apoyo" loading="lazy"></div>`:''}
     <div class="opts">${q.opciones.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
@@ -509,7 +516,9 @@ function finishQuiz(timeout){
       <div class="kpi ${p>=60?'ok':'bad'}"><div class="n">${p}%</div><div class="l">Puntuación</div></div>
       <div class="kpi"><div class="n">${n-sc}</div><div class="l">Por repasar</div></div>
     </div>
-    <p style="color:var(--muted)">${timeout?'⏰ Tiempo agotado. ':''}${msg}</p>
+    <div class="barlab" style="justify-content:center"><span>Puntuación</span></div>
+    <div class="progressbar lg" style="max-width:440px;margin:6px auto 0"><i style="width:${p}%;background:${p>=60?'var(--ok)':'var(--bad)'}"></i></div>
+    <p style="color:var(--muted);margin-top:16px">${timeout?'⏰ Tiempo agotado. ':''}${msg}</p>
     <div class="qnav" style="justify-content:center;gap:10px;flex-wrap:wrap">
       <button class="btn ghost" onclick="go('inicio')">Volver al inicio</button>
       ${repBtn}
