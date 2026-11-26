@@ -331,6 +331,7 @@ function renderHero(){
   document.getElementById('sRep').textContent=pend;
   document.getElementById('heroMeta').innerHTML=
     `${total} preguntas · ${Object.keys(groupBy(DATA.questions,'area')).length} áreas · ${pend} por repasar `+
+    `<button class="reset" style="color:var(--brand);margin-left:14px" onclick="paintAll()">🔄 Actualizar progreso</button>`+
     `<button class="reset" onclick="resetProgress()">♻️ Reiniciar progreso</button>`;
   document.getElementById('heroLead').textContent =
     `Tu banco de ${total} preguntas con explicación, flashcards y repaso espaciado. Todo lo que necesitas para la prueba, en un solo lugar.`;
@@ -425,6 +426,7 @@ function go(v){
   window.scrollTo({top:0,behavior:'smooth'});
   if(v!=='quiz'&&timerId){clearInterval(timerId);timerId=null}
   if(v==='flash') flashSetup();
+  if(v==='inicio') paintAll();   // refresca KPIs, anillo, barra y áreas al volver al inicio
 }
 function nextTemaSugerido(){
   const pend=sortedTemas().find(t=>{const qs=DATA.questions.filter(q=>q.tema===t.tema);
