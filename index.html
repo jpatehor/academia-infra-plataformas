@@ -767,7 +767,7 @@ document.getElementById('startSim').onclick=()=>startQuiz('sim');
 document.getElementById('btnRandom').onclick=()=>startQuiz('single');
 document.getElementById('btnContinue').onclick=()=>{ const t=nextTemaSugerido(); t?startQuiz('tema',t):startQuiz('single'); };
 
-fetch('data/questions.json').then(r=>r.json()).then(d=>{
+fetch('data/questions.json?t='+Date.now(), {cache:'no-store'}).then(r=>r.json()).then(d=>{
   DATA=d; loadState(); applyTheme(S.theme||'dark'); paintAll();
   document.getElementById('subtitle').textContent=`${d.meta.titulo} · ${d.questions.length} preguntas · ${d.meta.totalPuntaje} pts`;
   document.getElementById('loading').remove();
