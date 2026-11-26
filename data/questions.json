@@ -2592,6 +2592,703 @@
       "correcta": 1,
       "pista": "Éxito.",
       "explicacion": "El health check espera un 2xx (típicamente 200). Códigos 4xx/5xx o timeout marcan la instancia como no saludable."
+    },
+    {
+      "id": "lin-020",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Cómo se cambia el propietario y el grupo de un archivo?",
+      "opciones": [
+        "chmod 755 archivo",
+        "chown juan:dev archivo",
+        "usermod -G archivo",
+        "ls -l archivo"
+      ],
+      "correcta": 1,
+      "pista": "change owner.",
+      "explicacion": "chown propietario:grupo archivo cambia la propiedad; chmod modifica los permisos de lectura/escritura/ejecución."
+    },
+    {
+      "id": "lin-021",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Cómo añades un usuario al grupo sudo de forma persistente?",
+      "opciones": [
+        "passwd juan sudo",
+        "usermod -aG sudo juan",
+        "echo sudo >> /etc/group",
+        "chmod sudo juan"
+      ],
+      "correcta": 1,
+      "pista": "append group.",
+      "explicacion": "usermod -aG sudo juan agrega el usuario al grupo (sin quitar los que ya tiene). Luego sudo visudo para definir reglas."
+    },
+    {
+      "id": "lin-022",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "imagen",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué archivo define los sistemas de archivos que se montan al arrancar?",
+      "opciones": [
+        "/etc/hosts",
+        "/etc/fstab",
+        "/etc/resolv.conf",
+        "/proc/mounts (temporal)"
+      ],
+      "correcta": 1,
+      "pista": "filesystem table.",
+      "explicacion": "/etc/fstab lista los montajes automáticos al arranque. /proc/mounts refleja los montajes ACTUALES, no los de configuración."
+    },
+    {
+      "id": "lin-023",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué es un 'daemon' en Linux?",
+      "opciones": [
+        "Un usuario privilegiado",
+        "Un proceso que corre en segundo plano atendiendo peticiones",
+        "Un tipo de disco",
+        "Un error del kernel"
+      ],
+      "correcta": 1,
+      "pista": "Servicio residente.",
+      "explicacion": "Los daemons (httpd, sshd, systemd-journald) se ejecutan en segundo plano, sin terminal, y suelen arrancar con el sistema."
+    },
+    {
+      "id": "lin-024",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué hace la prioridad de CPU 'nice' de un proceso?",
+      "opciones": [
+        "Duerme el proceso",
+        "Ajusta cuánto de CPU puede reclamar (mayor nice = menos prioridad)",
+        "Elimina el proceso",
+        "Lo eleva a root"
+      ],
+      "correcta": 1,
+      "pista": "Valor de -20 a 19.",
+      "explicacion": "nice ajusta la prioridad: valores negativos dan más prioridad (solo root); positivos, menos. Útil para no saturar el servidor."
+    },
+    {
+      "id": "lin-025",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "imagen",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué encontrarás en el directorio /dev?",
+      "opciones": [
+        "Programas instalados",
+        "Dispositivos de hardware virtualizados (blocar y de caracteres)",
+        "Log del kernel",
+        "Copias de seguridad"
+      ],
+      "correcta": 1,
+      "pista": "devices.",
+      "explicacion": "/dev contiene nodos de dispositivo como /dev/sda (disco), /dev/null, /dev/urandom: el kernel expone el hardware como archivos."
+    },
+    {
+      "id": "lin-026",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "mc",
+      "img": "assets/img/linux-fhs.svg",
+      "enunciado": "¿Qué es un proceso zombi?",
+      "opciones": [
+        "Un proceso que consume mucha RAM",
+        "Un proceso terminado cuyo padre no ha recogido su estado",
+        "Un proceso con permisos de root",
+        "Uno bloqueado por disco"
+      ],
+      "correcta": 1,
+      "pista": "Estado pendiente de recolección.",
+      "explicacion": "Zombi = ya terminó pero conserva una entrada en la tabla de procesos porque el padre no hizo wait(); señala una mala práctica en el programa."
+    },
+    {
+      "id": "lin-027",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Teoria Linux",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "En Amazon Linux 2023, ¿qué comando lista las actualizaciones de paquetes disponibles?",
+      "opciones": [
+        "apt update",
+        "dnf check-update",
+        "pip list",
+        "yum search"
+      ],
+      "correcta": 1,
+      "pista": "Gestor de paquetes de RedHat.",
+      "explicacion": "dnf check-update muestra actualizaciones pendientes; `dnf update --security` aplica solo las de seguridad."
+    },
+    {
+      "id": "shl-016",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace sort -n archivo?",
+      "opciones": [
+        "Cuenta las líneas",
+        "Ordena numéricamente (no alfabéticamente)",
+        "Borra duplicados",
+        "Invierte el orden"
+      ],
+      "correcta": 1,
+      "pista": "numeric sort.",
+      "explicacion": "sin -n ordena como texto ('10' antes que '2'); con -n ordena por valor numérico. Suele combinarse con uniq y head."
+    },
+    {
+      "id": "shl-017",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace cut -d',' -f2 archivo.csv?",
+      "opciones": [
+        "Borra la columna 1",
+        "Extrae el 2.º campo usando la coma como delimitador",
+        "Corta el archivo",
+        "Cambia permisos"
+      ],
+      "correcta": 1,
+      "pista": "Delimitador y campo.",
+      "explicacion": "-d define el separador y -f el campo. Muy usado para extraer columnas de logs o CSV con awk o cut."
+    },
+    {
+      "id": "shl-018",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace uniq y por qué necesita sort antes?",
+      "opciones": [
+        "Ordena archivos",
+        "Elimina líneas DUPLICADAS consecutivas (por eso se ordena antes)",
+        "Copia archivos",
+        "Busca en archivos"
+      ],
+      "correcta": 1,
+      "pista": "Duplicados contiguos.",
+      "explicacion": "uniq solo detecta duplicados adyacentes; `sort archivo | uniq -c` cuenta ocurrencias de cada línea."
+    },
+    {
+      "id": "shl-019",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace diff a.txt b.txt?",
+      "opciones": [
+        "Une los archivos",
+        "Muestra las diferencias entre dos archivos",
+        "Cifra el contenido",
+        "Lo envía a la papelera"
+      ],
+      "correcta": 1,
+      "pista": "Diferencias.",
+      "explicacion": "diff lista las líneas distintas; `<` y `>` señalan el archivo de origen. Es la base de los parches y de la revisión de cambios."
+    },
+    {
+      "id": "shl-020",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace el comando tr 'a-z' 'A-Z'?",
+      "opciones": [
+        "Traduce cada carácter de minúscula a mayúscula",
+        "Borra caracteres",
+        "Ordena el texto",
+        "Reemplaza palabras completas"
+      ],
+      "correcta": 0,
+      "pista": "translate carácter a carácter.",
+      "explicacion": "tr transforma carácter por carácter (no palabras). Para sustituir palabras se usa sed 's/antiguo/nuevo/g'."
+    },
+    {
+      "id": "shl-021",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Preguntas teoricas shell",
+      "type": "imagen",
+      "img": "assets/img/terminal-shell.svg",
+      "enunciado": "¿Qué hace el comando 2>/dev/null?",
+      "opciones": [
+        "Guarda la salida en el archivo /dev/null",
+        "Descarta los mensajes de ERROR (stderr)",
+        "Borra el directorio",
+        "Ejecuta en segundo plano"
+      ],
+      "correcta": 1,
+      "pista": "Descriptor 2.",
+      "explicacion": "El descriptor 2 es stderr; /dev/null lo descarta. Es muy usado para silenciar ruido: `find / -perm 777 2>/dev/null`."
+    },
+    {
+      "id": "vz-016",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "¿Qué es un Pod en Kubernetes?",
+      "opciones": [
+        "Un nodo físico",
+        "La unidad mínima: uno o varios contenedores agrupados y con la misma red",
+        "Un tipo de imagen",
+        "Un script de despliegue"
+      ],
+      "correcta": 1,
+      "pista": "Unidad de despliegue.",
+      "explicacion": "El Pod agrupa contenedores que comparten IP y volumen; es lo que Kubernetes crea, replica y gestiona."
+    },
+    {
+      "id": "vz-017",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "¿Para qué sirve un volumen en Docker?",
+      "opciones": [
+        "Guardar datos de forma persistente FUERA del ciclo de vida del contenedor",
+        "Aumentar la CPU",
+        "Reemplazar al SO",
+        "Cifrar la red"
+      ],
+      "correcta": 0,
+      "pista": "Persistencia.",
+      "explicacion": "El contenedor es efímero; los volúmenes sobreviven al borrar/crear el contenedor y evitan perder datos al redesplegar."
+    },
+    {
+      "id": "vz-018",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "¿Qué permite una red en Docker?",
+      "opciones": [
+        "Aislar y conectar contenedores entre sí de forma controlada",
+        "Acceso directo al host",
+        "Cifrar tráfico",
+        "Crear instancias EC2"
+      ],
+      "correcta": 0,
+      "pista": "Aislamiento/aislamiento.",
+      "explicacion": "Por defecto cada contenedor tiene su red; las redes de Docker permiten descubrimiento y comunicación segura entre servicios del mismo stack."
+    },
+    {
+      "id": "vz-019",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Virtualizacion-plataformas",
+      "type": "imagen",
+      "img": "assets/img/vm-vs-container.svg",
+      "enunciado": "¿Qué define un Dockerfile?",
+      "opciones": [
+        "La infraestructura de red",
+        "La receta para construir una imagen de forma reproducible",
+        "El código de la base de datos",
+        "Las credenciales de acceso"
+      ],
+      "correcta": 1,
+      "pista": "Receta.",
+      "explicacion": "Instrucciones por capas (FROM, RUN, COPY, CMD) que producen la imagen; al ejecutarla se crea el contenedor."
+    },
+    {
+      "id": "pl-006",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "En RAID 5, ¿cuántos discos pueden fallar sin perder datos?",
+      "opciones": [
+        "Ninguno",
+        "Uno",
+        "Dos",
+        "Todos menos uno"
+      ],
+      "correcta": 1,
+      "pista": "Paridad distribuida.",
+      "explicacion": "RAID 5 distribuye la paridad entre los discos y tolera UN fallo; requiere mínimo 3 discos. RAID 10 tolera uno por par."
+    },
+    {
+      "id": "pl-007",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "¿Qué es un SLO?",
+      "opciones": [
+        "Contrato legal con penalización",
+        "Objetivo interno de nivel de servicio medible",
+        "Certificado de seguridad",
+        "Tipo de servidor"
+      ],
+      "correcta": 1,
+      "pista": "Objetivo, no contrato.",
+      "explicacion": "El SLA es el acuerdo contractual (con penalizaciones); el SLO es la meta interna (p.ej. 99.9% mensual) que se vigila con alarmas."
+    },
+    {
+      "id": "pl-008",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "mc",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "¿Cómo suelen comunicarse los microservicios?",
+      "opciones": [
+        "Compartiendo memoria del mismo proceso",
+        "A través de APIs (REST/HTTP) o mensajería",
+        "Con archivos compartidos en /tmp",
+        "Por RDP"
+      ],
+      "correcta": 1,
+      "pista": "Desacoplados en red.",
+      "explicacion": "Al estar desacoplados, hablan por red: APIs REST/HTTP, gRPC o colas (SQS, Kafka), lo que añade complejidad y observabilidad."
+    },
+    {
+      "id": "pl-009",
+      "area": "INFRAESTRUCTURA",
+      "tema": "Fundamentos de plataformas de TI",
+      "type": "imagen",
+      "img": "assets/img/server-components.svg",
+      "enunciado": "¿Cuál es la diferencia entre latencia y ancho de banda?",
+      "opciones": [
+        "Son lo mismo",
+        "Latencia = retardo en ms; ancho de banda = cantidad de datos por segundo",
+        "Latencia es de red y ancho de banda de disco",
+        "Latencia mide errores"
+      ],
+      "correcta": 1,
+      "pista": "Tiempo vs volumen.",
+      "explicacion": "Se puede tener mucho ancho de banda y alta latencia (tarda en llegar pero viaja mucho). Ambos afectan la experiencia de usuario."
+    },
+    {
+      "id": "aws-015",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/vpc-topology.svg",
+      "enunciado": "¿Puedes añadir una regla de DENEGACIÓN (deny) a una Security Group?",
+      "opciones": [
+        "Sí, siempre",
+        "No: las Security Groups solo permiten; para denegar se usa una NACL",
+        "Solo con la consola",
+        "Solo si está en una VPC pública"
+      ],
+      "correcta": 1,
+      "pista": "Positivas por defecto.",
+      "explicacion": "Las SG evalúan reglas de permiso y todo lo no permitido queda denegado; las NACL sí soportan reglas explícitas de deny (con prioridad numérica)."
+    },
+    {
+      "id": "aws-016",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/vpc-topology.svg",
+      "enunciado": "¿Qué conecta una VPC con internet?",
+      "opciones": [
+        "El Network ACL",
+        "El Internet Gateway (IGW) adjunto a la VPC",
+        "El DNS",
+        "El NAT Gateway (solo de salida)"
+      ],
+      "correcta": 1,
+      "pista": "Puerta de salida.",
+      "explicacion": "El IGW adjunto a la VPC + una ruta 0.0.0.0/0 hacia él permiten tráfico. El NAT Gateway da salida a instancias PRIVADAS, no expone servicios."
+    },
+    {
+      "id": "aws-017",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/vpc-topology.svg",
+      "enunciado": "¿Qué es un VPC Endpoint?",
+      "opciones": [
+        "Un puerto abierto",
+        "Un punto privado para acceder a servicios AWS sin salir por internet/NAT",
+        "Una IP pública elástica",
+        "Un balanceador"
+      ],
+      "correcta": 1,
+      "pista": "Salida privada.",
+      "explicacion": "Los endpoints (interface/gateway) conectan la VPC a servicios como S3 o SSM de forma privada, reduciendo coste de NAT y superficie de ataque."
+    },
+    {
+      "id": "aws-018",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/vpc-topology.svg",
+      "enunciado": "En una subred PRIVADA, ¿qué destino indica la ruta 0.0.0.0/0?",
+      "opciones": [
+        "A ningún sitio (si no hay NAT/endpoint)",
+        "Al NAT Gateway",
+        "A la VPC misma",
+        "Al DNS"
+      ],
+      "correcta": 0,
+      "pista": "Depende de la ruta.",
+      "explicacion": "Si una subred privada apunta 0.0.0.0/0 al NAT Gateway, sale a internet por él; sin esa ruta (o endpoint) no tiene salida y el agente SSM no conecta."
+    },
+    {
+      "id": "aws-019",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "¿Qué es un snapshot de EBS?",
+      "opciones": [
+        "Una imagen AMI",
+        "Una copia incremental de un volumen en un momento dado",
+        "Un respaldo de la VPC",
+        "Un registro de CloudTrail"
+      ],
+      "correcta": 1,
+      "pista": "Copia incremental.",
+      "explicacion": "El snapshot copia el volumen para restaurarlo o crear un volumen nuevo; la AMI incluye además el arranque e imagen base del SO."
+    },
+    {
+      "id": "aws-020",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "¿Qué hace el versionado de un bucket S3?",
+      "opciones": [
+        "Acelera las consultas",
+        "Conserva versiones anteriores de los objetos para recuperar o cumplir retención",
+        "Cifra los archivos",
+        "Impide borrar"
+      ],
+      "correcta": 1,
+      "pista": "Historial de objetos.",
+      "explicacion": "Con versionado, eliminar un objeto deja una versión que se puede recuperar; imprescindible para auditoría y ante borrados accidentales."
+    },
+    {
+      "id": "aws-021",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "¿Qué es un Instance Profile?",
+      "opciones": [
+        "La ficha de la instancia",
+        "El puente IAM que permite a una EC2 asumir un rol SIN llaves estáticas",
+        "Un tipo de AMI",
+        "Una política S3"
+      ],
+      "correcta": 1,
+      "pista": "Puente EC2 → rol.",
+      "explicacion": "Es un contenedor para un rol en EC2: la instancia obtiene credenciales temporales. Reemplaza el guardar access keys."
+    },
+    {
+      "id": "aws-022",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "¿Qué servicio gestiona las llaves de cifrado (KMS)?",
+      "opciones": [
+        "IAM",
+        "AWS KMS (gestión de llaves)",
+        "S3",
+        "Route 53"
+      ],
+      "correcta": 1,
+      "pista": "Key Management Service.",
+      "explicacion": "KMS crea y controla llaves de cifrado centralizadas, con rotación y auditoría; se usa para cifrar EBS, S3, etc."
+    },
+    {
+      "id": "aws-023",
+      "area": "NUBE",
+      "tema": "Conocimientos en AWS",
+      "type": "imagen",
+      "img": "assets/img/aws-cloud.svg",
+      "enunciado": "¿Qué modelo de datos es Amazon DynamoDB?",
+      "opciones": [
+        "Relacional con SQL",
+        "NoSQL clave-valor/documento gestionado",
+        "Archivo en red",
+        "Almacenamiento de bloques"
+      ],
+      "correcta": 1,
+      "pista": "NoSQL gestionado.",
+      "explicacion": "DynamoDB es NoSQL clave-valor de bajo latencia y escalable; RDS es el relacional (MySQL/PostgreSQL) gestionado."
+    },
+    {
+      "id": "so-009",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿Qué agente se instala en el servidor para enviar logs a CloudWatch?",
+      "opciones": [
+        "Ninguno, todo es automático",
+        "CloudWatch Logs Agent / Unified Agent",
+        "CloudTrail Agent",
+        "AWS CLI"
+      ],
+      "correcta": 1,
+      "pista": "Agente de logs.",
+      "explicacion": "Sin el agente (o SSM/Observability), los logs locales no llegan a CloudWatch Logs; el agente los remite para alambrar alarmas."
+    },
+    {
+      "id": "so-010",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿Qué diferencia hay entre SNS y SQS?",
+      "opciones": [
+        "SNS notifica (pub/sub) a suscriptores; SQS es una COLA que el consumidor procesa cuando puede",
+        "Ambos son colas",
+        "SNS es un almacén de objetos",
+        "SQS notifica por correo"
+      ],
+      "correcta": 0,
+      "pista": "Push vs pull.",
+      "explicacion": "SNS publica y envía a muchos suscriptores; SQS mantiene mensajes en cola para consumidores desacoplados (patrón inbox)."
+    },
+    {
+      "id": "so-011",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿Qué aporta desplegar una RDS en modo Multi-AZ?",
+      "opciones": [
+        "Menor coste",
+        "Réplica en otra AZ con conmutación automática ante fallo",
+        "Copias diarias",
+        "Más CPU"
+      ],
+      "correcta": 1,
+      "pista": "Alta disponibilidad.",
+      "explicacion": "Multi-AZ mantiene una réplica sincronizada en otra zona y hace failover automático; la réplica de LECTURA es otra cosa (read replica)."
+    },
+    {
+      "id": "so-012",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿Para qué sirve un dashboard de CloudWatch?",
+      "opciones": [
+        "Para escribir código",
+        "Para visualizar métricas y alarmas en un panel único",
+        "Para alojar el sitio web",
+        "Para gestionar usuarios"
+      ],
+      "correcta": 1,
+      "pista": "Panel unificado.",
+      "explicacion": "Agrupa métricas, logs y alarmas en un panel, clave para observabilidad y revisiones operativas."
+    },
+    {
+      "id": "so-013",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "En un grupo de balanceo, ¿qué ocurre si el health check marca unhealthy a TODAS las instancias?",
+      "opciones": [
+        "Sigue enviando tráfico normalmente",
+        "El balanceador no puede enrutar y el servicio queda caído",
+        "Se crea una nueva VPC",
+        "Se reinicia el SO"
+      ],
+      "correcta": 1,
+      "pista": "Sin backends sanos.",
+      "explicacion": "Sin instancias healthy no hay destino: el balanceador responde error (503). Por eso conviene alarmar el unhealthy host count."
+    },
+    {
+      "id": "so-014",
+      "area": "NUBE",
+      "tema": "AWS SysOps",
+      "type": "imagen",
+      "img": "assets/img/cloudwatch-monitoring.svg",
+      "enunciado": "¿Qué es una cola de mensajes (messaging queue) en términos de disponibilidad?",
+      "opciones": [
+        "Sincroniza el estado de la VPC",
+        "Desacopla productor y consumidor para absorber picos y reintentar fallos",
+        "Balancea CPU",
+        "Almacena credenciales"
+      ],
+      "correcta": 1,
+      "pista": "Acolchón.",
+      "explicacion": "Las colas amortiguan picos, permiten reintentos y desacoplan servicios: si un consumidor cae, los mensajes esperan."
+    },
+    {
+      "id": "red-009",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "imagen",
+      "img": "assets/img/osi-model.svg",
+      "enunciado": "¿Qué resuelve el protocolo ARP?",
+      "opciones": [
+        "Nombre de dominio a IP",
+        "IP a dirección MAC dentro de la red local",
+        "Puerto a proceso",
+        "IP a IP pública"
+      ],
+      "correcta": 1,
+      "pista": "Local (capa 2).",
+      "explicacion": "ARP traduce IP a MAC en el segmento local para que el enlace físico entregue la trama al equipo correcto."
+    },
+    {
+      "id": "red-010",
+      "area": "COMUNICACIONES",
+      "tema": "Fundamentos de redes de TI",
+      "type": "imagen",
+      "img": "assets/img/osi-model.svg",
+      "enunciado": "¿Qué es una transmisión broadcast?",
+      "opciones": [
+        "Enviada a todos los equipos del segmento",
+        "Enviada a un solo destino",
+        "Solo entre routers",
+        "Reservada a servidores"
+      ],
+      "correcta": 0,
+      "pista": "A todos.",
+      "explicacion": "Broadcast envía a la dirección de difusión (p.ej. 255.255.255.255 o la de red); lo limitan los dominios de broadcast (VLAN, router)."
+    },
+    {
+      "id": "seg-009",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "type": "imagen",
+      "img": "assets/img/security-defense.svg",
+      "enunciado": "¿Qué significa 'defensa en profundidad'?",
+      "opciones": [
+        "Usar un solo muro muy fuerte",
+        "Aplicar controles en varias capas (red, SO, app, datos)",
+        "Cifrar dos veces",
+        "Contratar más personal"
+      ],
+      "correcta": 1,
+      "pista": "Capas redundantes.",
+      "explicacion": "Si una capa falla, otras contienen el incidente: firewall, IAM, cifrado, parches y auditoría trabajando juntos."
+    },
+    {
+      "id": "seg-010",
+      "area": "SEGURIDAD",
+      "tema": "Seguridad de TI",
+      "type": "imagen",
+      "img": "assets/img/security-defense.svg",
+      "enunciado": "¿Qué protege un HASH y el cifrado respectivamente?",
+      "opciones": [
+        "Hash = integridad; cifrado = confidencialidad",
+        "Ambos protegen la confidencialidad",
+        "Ambos protegen la integridad",
+        "Ninguno protege nada"
+      ],
+      "correcta": 0,
+      "pista": "Integridad vs secreto.",
+      "explicacion": "El hash detecta alteraciones (integridad); el cifrado impide que otro lo lea (confidencialidad). Complementarios, no iguales."
     }
   ]
 }
