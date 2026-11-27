@@ -109,6 +109,17 @@
   .stat{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:14px}
   .stat .n{font-size:26px;font-weight:800;line-height:1}
   .stat .l{font-size:10.5px;letter-spacing:1.5px;color:#c9c9d3;text-transform:uppercase;margin-top:7px;font-weight:800}
+  .stat.clickable{cursor:pointer;transition:.16s}
+  .stat.clickable:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.4)}
+  .stat.clickable:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+  .histlist{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+  .histrow{display:flex;gap:12px;justify-content:space-between;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 14px;flex-wrap:wrap}
+  .histmain{flex:1 1 340px;min-width:240px}
+  .histq{font-size:13.5px;font-weight:600;line-height:1.4}
+  .histmeta{font-size:11.5px;color:var(--muted);margin-top:4px;display:flex;align-items:center;gap:6px}
+  .histright{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+  .histnum{font-weight:800;font-size:13px;min-width:40px;text-align:center}
+  .histnum.ok{color:var(--ok)} .histnum.bad{color:var(--bad)}
   .stat.ok .n{color:var(--ok)} .stat.bad .n{color:var(--bad)} .stat.acc .n{color:var(--brand)}
   @media (max-width:900px){ .hero{grid-template-columns:1fr;padding:26px 20px} .hero .right{justify-content:flex-start} }
   @media (max-width:420px){ .stats{grid-template-columns:1fr 1fr} .ringwrap{width:130px;height:130px} }
@@ -239,6 +250,7 @@
       <button data-view="sim">⏱️ Simulacro</button>
       <button data-view="repaso">🔁 Repaso</button>
       <button data-view="flash">🃏 Flashcards</button>
+      <button data-view="historial">📜 Historial</button>
     </nav>
     <button class="themeBtn" id="themeBtn" title="Cambiar a tema claro / oscuro">🌙</button>
     <div class="sub" id="subtitle">Ingeniero de Infraestructura y Plataformas</div>
@@ -272,10 +284,10 @@
           <div class="ring-txt"><div class="ring-num" id="ringNum">0%</div><div class="ring-lbl">Dominado</div></div>
         </div>
         <div class="stats">
-          <div class="stat acc"><div class="n" id="sResp">0</div><div class="l">Respondidas</div></div>
-          <div class="stat"><div class="n" id="sPrec">—</div><div class="l">Precisión</div></div>
-          <div class="stat ok"><div class="n" id="sDom">0</div><div class="l">Dominadas</div></div>
-          <div class="stat bad"><div class="n" id="sRep">0</div><div class="l">Por repasar</div></div>
+          <div class="stat acc clickable" role="button" tabindex="0" data-go="historial" title="Retomar el historial de respuestas"><div class="n" id="sResp">0</div><div class="l">Respondidas</div></div>
+          <div class="stat clickable" role="button" tabindex="0" data-go="historial" title="Ver el historial"><div class="n" id="sPrec">—</div><div class="l">Precisión</div></div>
+          <div class="stat ok clickable" role="button" tabindex="0" data-go="historial" title="Ver dominadas"><div class="n" id="sDom">0</div><div class="l">Dominadas</div></div>
+          <div class="stat bad clickable" role="button" tabindex="0" data-go="repaso" title="Repasar las pendientes"><div class="n" id="sRep">0</div><div class="l">Por repasar</div></div>
         </div>
       </div>
     </div>
@@ -304,6 +316,10 @@
 
   <section id="v-flash" class="view" hidden>
     <div class="sec"><h2>🃏 Flashcards</h2><p class="hint">Tarjeta 3D con volteo. Toca para girar, marca si la sabías o no; las falladas vuelven en la ronda.</p><div id="flashBox"></div></div>
+  </section>
+
+  <section id="v-historial" class="view" hidden>
+    <div class="sec"><h2>📜 Historial de respuestas</h2><p class="hint">Todo lo que has respondido: aciertos, intentos y estado. Puedes repracticar cada pregunta.</p><div id="histBox"></div></div>
   </section>
 
   <section id="v-quiz" class="view" hidden><div id="quizBox"></div></section>
@@ -476,6 +492,7 @@ function go(v){
   window.scrollTo({top:0,behavior:'smooth'});
   if(v!=='quiz'&&timerId){clearInterval(timerId);timerId=null}
   if(v==='flash') flashSetup();
+  if(v==='historial') renderHistorial();
   if(v==='inicio') paintAll();   // refresca KPIs, anillo, barra y áreas al volver al inicio
 }
 function nextTemaSugerido(){
@@ -503,7 +520,7 @@ function startQuiz(kind, arg){
 }
 function renderQuestion(){
   const q=QZ.items[QZ.i], box=document.getElementById('quizBox');
-  const title=QZ.mode==='tema'?q.tema:(QZ.mode==='sim'?'Simulacro':QZ.mode==='repaso'?'Repaso de falladas':QZ.mode==='retry'?'🔁 Repetir falladas':QZ.mode==='single'?'Sorpréndeme':q.tema);
+  const title=QZ.mode==='tema'?q.tema:(QZ.mode==='sim'?'Simulacro':QZ.mode==='repaso'?'Repaso de falladas':QZ.mode==='retry'?'🔁 Repetir falladas':QZ.mode==='one'?'Repracticar':QZ.mode==='single'?'Sorpréndeme':q.tema);
   box.innerHTML=`<div class="quiz">
     <div class="qhead">
       <span><span class="dot" style="background:${AREA_COLOR[q.area]}"></span>${esc(q.area)} · ${esc(title)}</span>
@@ -617,7 +634,7 @@ function repeatQuiz(){
   else if(m==='area') startQuiz('area',a);
   else if(m==='sim') startQuiz('sim');
   else if(m==='repaso') startQuiz('repaso');
-  else if(m==='single'||m==='retry') startRetry(QZ.items);
+  else if(m==='single'||m==='retry'||m==='one') startRetry(QZ.items);
   else startQuiz('single');
 }
 function startRetry(items){
@@ -704,6 +721,58 @@ function nextFlash(){
   FCH.flipped=false;
   FCH.queue.push(FCH.queue.shift());  // la actual va al final de la cola
   renderFlash();
+}
+
+/* ---------------- historial de respuestas ---------------- */
+function startOne(q){
+  if(!q) return;
+  QZ={items:[q],i:0,score:0,mode:'one',arg:null,wrong:[],answered:false,deadline:0};
+  if(timerId){clearInterval(timerId);timerId=null}
+  document.querySelectorAll('.view').forEach(s=>s.hidden=true);
+  document.getElementById('v-quiz').hidden=false;
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
+  renderQuestion();
+}
+function renderHistorial(){
+  const el=document.getElementById('histBox'); if(!el) return;
+  const rowsAll=Object.keys(S.answered)
+    .map(id=>({q:DATA.questions.find(x=>x.id===id), a:S.answered[id]}))
+    .filter(x=>x.q)
+    .sort((x,y)=> (y.a.last||'').localeCompare(x.a.last||''));   // más recientes primero
+  if(!rowsAll.length){
+    el.innerHTML='<div class="empty">Aún no has respondido ninguna pregunta.<br>Empieza con «Sorpréndeme» o «Continuar donde iba» y aquí verás todo tu historial.</div>';
+    return;
+  }
+  const dom=rowsAll.filter(x=>x.a.ok>0 && x.a.ok>=x.a.n).length;
+  const pend=rowsAll.length-dom;
+  const rows=rowsAll.map(x=>{
+    const dominada = x.a.ok>0 && x.a.ok>=x.a.n;
+    return `<div class="histrow">
+      <div class="histmain">
+        <div class="histq">${esc(x.q.enunciado)}</div>
+        <div class="histmeta"><span class="dot" style="background:${AREA_COLOR[x.q.area]||'var(--accent)'}"></span>${esc(x.q.area)} · ${esc(x.q.tema)}</div>
+      </div>
+      <div class="histright">
+        <span class="histnum ${dominada?'ok':'bad'}">${x.a.ok}/${x.a.n}</span>
+        <span class="pill">${dominada?'✅ dominada':'⚠️ por repasar'}</span>
+        <button class="btn ghost" data-one="${esc(x.q.id)}">Repracticar</button>
+      </div>
+    </div>`;
+  }).join('');
+  el.innerHTML=`<div class="quiz">
+    <div class="qhead"><span>📜 Tu recorrido</span><span>${rowsAll.length} preguntas con historial</span></div>
+    <div class="kpis" style="margin-top:8px">
+      <div class="kpi acc"><div class="n">${rowsAll.length}</div><div class="l">Respondidas</div></div>
+      <div class="kpi ok"><div class="n">${dom}</div><div class="l">Dominadas</div></div>
+      <div class="kpi bad"><div class="n">${pend}</div><div class="l">Por repasar</div></div>
+    </div>
+    ${pend?`<div class="qnav"><button class="btn primary" onclick="startQuiz('repaso')">🔁 Repasar mis ${pend} falladas</button></div>`:''}
+    <div class="histlist">${rows}</div>
+  </div>`;
+  el.querySelectorAll('[data-one]').forEach(b=>b.onclick=()=>{
+    const q=DATA.questions.find(x=>x.id===b.dataset.one);
+    startOne(q);
+  });
 }
 
 /* ---------------- juego: emparejar (asociar respuesta ↔ pregunta) ---------------- */
